@@ -24,7 +24,7 @@ $this->load->helper('url');
 </style>
 <body>
 
-    
+    111
     <div class="container">
         <div class="row" style="padding:10px 0px;">        
             	<div class="col-md-2 col-sm-2 col-xs-2"><img src="<?php echo base_url()?>images/57klogo.jpg" class="img-responsive" style="margin-left:10px;" ></div>
