@@ -6,7 +6,6 @@ class Login extends CI_Controller {
     public function index()
     {
         $data = array();
-        $data['game_name'] = 'abcc';
         $this->load->model('user_model');
         $result=$this->user_model->user_info_model('hanzc','123');
         $data['username']=$result;
