@@ -54,17 +54,34 @@ $this->load->helper('url');
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="<?php echo base_url()?>images/huandeng.jpg" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-    <div class="item">
-      <img src="<?php echo base_url()?>images/huandeng.jpg" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-  </div>
+      <?php
+      //var_dump($kv);
+      //exit;
+      foreach($kv as $key => $k)
+      {
+          if($key == 0)
+          {
+                echo '
+                <div class="item active">
+                   <a href="'.$k['url'].'"><img src="'.$k['pic'].'" alt="..."></a>
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                ';
+          }
+          else
+          {
+              echo '
+                <div class="item">
+                  <a href="'.$k['url'].'"><img src="'.$k['pic'].'" alt="..."></a> 
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                ';
+          }
+      }
+?>
+
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -104,33 +121,18 @@ $this->load->helper('url');
 
 <div class="container-fluid" style="margin-bottom:10px;" >
 	<div class="row">
-  		<div class="col-md-3 col-sm-3 col-xs-3">
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">战术大师</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">冒险 200.6M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="gameinfo" role="button">下载</a></div></div>
-    	</div>
-        
-        <div class="col-md-3 col-sm-3 col-xs-3">
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">战术大师</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">冒险 200.6M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="gameinfo" role="button">下载</a></div></div>
-    	</div>
-        
-        <div class="col-md-3 col-sm-3 col-xs-3">
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">战术大师</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">冒险 200.6M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="gameinfo" role="button">下载</a></div></div>
-    	</div>
-        
-       <div class="col-md-3 col-sm-3 col-xs-3">
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">战术大师</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">冒险 200.6M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="gameinfo" role="button">下载</a></div></div>
-    	</div>
+        <?php
+        foreach ($game_jp as $key=>$v)
+        {
+            echo '<div class="col-md-3 col-sm-3 col-xs-3">
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">下载</a></div></div>
+    	</div>';
+        }
+
+        ?>
  	</div>
 </div>
 
@@ -140,26 +142,20 @@ $this->load->helper('url');
 <div class="container-fluid" style="background:url(<?php echo base_url()?>images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >
 <div class="row" style=" text-align:center; padding:5px 0px; color:#FFF"><div class="col-md-12 col-sm-12 col-xs-12" ><strong>&nbsp;</strong></div></div>
 	<div class="row">
-  		<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:30px">
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">战术大师</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">冒险 200.6M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="gameinfo" role="button">下载</a></div></div>
-    	</div>
-        
-        <div class="col-md-3 col-sm-3 col-xs-3 zj_di">
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">战术大师</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">冒险 200.6M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="gameinfo" role="button">下载</a></div></div>
-    	</div>
-        
-        <div class="col-md-3 col-sm-3 col-xs-3 zj_di">
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">战术大师</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">冒险 200.6M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="gameinfo" role="button">下载</a></div></div>
-    	</div>
+        <?php
+        foreach ($game_rq as $key=>$v)
+        {
+            echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:30px">
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">下载</a></div></div>
+    	</div>';
+        }
+
+        ?>
+
+
  	</div>
 
 </div>
@@ -168,72 +164,31 @@ $this->load->helper('url');
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table">
-<tr><td style=" padding:5px 2px;">
-<div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div>
-<div class="col-md-6 col-sm-6 col-xs-6">
-	<div class="row">
-    	<div class="col-md-6 col-sm-6 col-xs-6"><strong>战术大师</strong></div>
-        <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>冒险|3423次下载</small></div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><nobr>一款大师傅dfffffdsfdsfdsfsfsdfsf电费.....</nobr></small></div>
-    </div>
-</div>
-<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="gameinfo" role="button">下载</a></div>
-</td></tr>
-<tr><td style=" padding:5px 2px;">
-<div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div>
-<div class="col-md-6 col-sm-6 col-xs-6">
-	<div class="row">
-    	<div class="col-md-6 col-sm-6 col-xs-6"><strong>战术大师</strong></div>
-        <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>冒险|3423次下载</small></div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><nobr>一款大师傅dfffffdsfdsfdsfsfsdfsf电费.....</nobr></small></div>
-    </div>
-</div>
-<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="gameinfo" role="button">下载</a></div>
-</td></tr>
 
-<tr><td style=" padding:5px 2px;">
-<div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div>
+    <?php
+    foreach ($game as $key=>$v)
+    {
+        echo '<tr><td style=" padding:5px 2px;">
+<div class="col-md-3 col-sm-3 col-xs-3"><img src="'.$v['logo'].'" class="img-responsive"></div>
 <div class="col-md-6 col-sm-6 col-xs-6">
 	<div class="row">
-    	<div class="col-md-6 col-sm-6 col-xs-6"><strong>战术大师</strong></div>
+    	<div class="col-md-6 col-sm-6 col-xs-6"><strong>'.$v['name'].'</strong></div>
         <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
     </div>
     <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>冒险|3423次下载</small></div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$v['gametype'].'|'.$v['downnum'].'次下载</small></div>
     </div>
     <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><nobr>一款大师傅dfffffdsfdsfdsfsfsdfsf电费.....</nobr></small></div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><nobr>'.$v['about'].'</nobr></small></div>
     </div>
 </div>
-<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="gameinfo" role="button">下载</a></div>
-</td></tr>
+<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$v['id'].'" role="button">下载</a></div>
+</td></tr>';
+    }
+    ?>
 
-<tr><td style=" padding:5px 2px;">
-<div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div>
-<div class="col-md-6 col-sm-6 col-xs-6">
-	<div class="row">
-    	<div class="col-md-6 col-sm-6 col-xs-6"><strong>战术大师</strong></div>
-        <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>冒险|3423次下载</small></div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><nobr>一款大师傅dfffffdsfdsfdsfsfsdfsf电费.....</nobr></small></div>
-    </div>
-</div>
-<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="gameinfo" role="button">下载</a></div>
-</td></tr>
+
+
 
 </table>
 </div>
