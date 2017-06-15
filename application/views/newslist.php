@@ -25,31 +25,26 @@ $this->load->helper('url');
 	.zj_overflow{overflow:hidden;text-overflow:ellipsis; width:70%;height:20px;line-height:20px;vertical-align:middle;}
 </style>
 <body>
-
+<?php
+//var_dump($news)
+?>
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
-<tr><td style=" padding:5px 2px;">
-<div class="col-md-8 col-sm-8 col-xs-8 zj_overflow" ><nobr>新闻标题新闻dsssssssss标题新题新闻标题</nobr></div>
-<div class="col-md-3 col-sm-3 col-xs-3" style="color:#999"><small>2015-05-12</small></div>
-</td></tr>
-<tr><td style=" padding:5px 2px;">
-<div class="col-md-8 col-sm-8 col-xs-8 zj_overflow" ><nobr>新闻标题新闻dsssssssss标题新题新闻标题</nobr></div>
-<div class="col-md-3 col-sm-3 col-xs-3" style="color:#999"><small>2015-05-12</small></div>
-</td></tr>
-<tr><td style=" padding:5px 2px;">
-<div class="col-md-8 col-sm-8 col-xs-8 zj_overflow" ><nobr>新闻标题新闻dsssssssss标题新题新闻标题</nobr></div>
-<div class="col-md-3 col-sm-3 col-xs-3" style="color:#999"><small>2015-05-12</small></div>
-</td></tr>
-<tr><td style=" padding:5px 2px;">
-<div class="col-md-8 col-sm-8 col-xs-8 zj_overflow" ><nobr>新闻标题新闻dsssssssss标题新题新闻标题</nobr></div>
-<div class="col-md-3 col-sm-3 col-xs-3" style="color:#999"><small>2015-05-12</small></div>
-</td></tr>
-<tr><td style=" padding:5px 2px;">
-<div class="col-md-8 col-sm-8 col-xs-8 zj_overflow" ><nobr>新闻标题新闻dsssssssss标题新题新闻标题</nobr></div>
-<div class="col-md-3 col-sm-3 col-xs-3" style="color:#999"><small>2015-05-12</small></div>
-</td></tr>
+<?php
+if(count($news)>0){
+    foreach ($news as $val)
+    {
+        echo '<tr><td style=" padding:5px 2px;">
+<div class="col-md-8 col-sm-8 col-xs-8 zj_overflow" ><nobr>'.$val['title'].'</nobr></div>
+<div class="col-md-3 col-sm-3 col-xs-3" style="color:#999"><small>'.substr($val['addtime'],5,5).'</small></div>
+</td></tr>';
+
+    }
+}
+?>
+
 </table>
 </div>
 </div>

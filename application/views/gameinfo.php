@@ -66,10 +66,15 @@ $this->load->helper('url');
     <a href="javascript:void(0);" class="btn_right" style="display:none;"></a>
     <div class="wrap">
         <ul>
-            <li><img src="<?php echo $game['pic']?>"/></li>
-            <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
-            <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
-            <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
+            <?php
+            //var_dump($game['pic']);
+            $new_arr = json_decode($game['pic'], true);
+            //echo $n=count($new_arr);
+            foreach ($new_arr as $val)
+            {
+                echo '<li><img src="'.$val.'"/></li>';
+            }
+            ?>
         </ul>
     </div>
 </div>

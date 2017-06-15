@@ -145,7 +145,7 @@ $this->load->helper('url');
         <?php
         foreach ($game_rq as $key=>$v)
         {
-            echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:30px">
+            echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:20px">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
