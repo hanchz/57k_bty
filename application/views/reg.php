@@ -19,7 +19,7 @@ $this->load->helper('url');
 <title>注册</title>
 </head>
 <style>
-.zj_input {  	border:0px;BACKGROUND-COLOR: transparent;COLOR: #ffffff;color:#fff; border:none; } 
+.zj_input {  	border:0px;BACKGROUND-COLOR: transparent;COLOR: #ffffff;color:#fff; border:none; }
 .zj_btn{
   width: 100%;
   height: 100%;
