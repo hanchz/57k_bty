@@ -1,5 +1,6 @@
 <?php
 $this->load->helper('url');
+include ('top.php');
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -33,6 +34,7 @@ $this->load->helper('url');
                 	 <div class="input-group">
                      <span class="input-group-btn">
       			     <img src="<?php echo base_url()?>images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">
+      			     <img src="/images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">
                      	
                      </span>
                		 <input type="text" class="form-control" id="name" placeholder="s" style="background:#e8e8e8; border-bottom-right-radius:75px; border-top-right-radius:75px;">
@@ -41,6 +43,7 @@ $this->load->helper('url');
                      </form>
                 </div>                
             	<div class="col-md-2 col-sm-2 col-xs-2"><a href="login_user"><img src="<?php echo base_url()?>images/user.jpg" class="img-responsive" style="margin-left:-10px;"></a></div>
+            	<div class="col-md-2 col-sm-2 col-xs-2"><a href="login_user"><img src="/images/user.jpg" class="img-responsive" style="margin-left:-10px;"></a></div>
         </div>
     </div>  
 
@@ -94,10 +97,12 @@ $this->load->helper('url');
   </a>
 </div>
 
+</div>
   
 <div class="container-fluid" >
     <div class="row">
 		 <!--<img src="<?php echo base_url()?>images/dh.jpg" usemap="#Map" class="img-responsive" >
+		 <!--<img src="/images/dh.jpg" usemap="#Map" class="img-responsive" >
          <map name="Map">
            <area shape="rect" coords="66,14,222,190" href="#1">
            <area shape="rect" coords="339,19,472,185" href="#2">
@@ -108,6 +113,10 @@ $this->load->helper('url');
          <div class="col-md-3 col-sm-3 col-xs-3"><a href="kf"><img src="<?php echo base_url()?>images/kaifubiao.jpg" class="img-responsive" ></a></div>
          <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><img src="<?php echo base_url()?>images/libao.jpg" class="img-responsive" ></a></div>
          <div class="col-md-3 col-sm-3 col-xs-3"><a href="newslist"><img src="<?php echo base_url()?>images/zixun.jpg" class="img-responsive" ></a></div>
+         <div class="col-md-3 col-sm-3 col-xs-3"><a href="top10"><img src="/images/rebang.jpg" class="img-responsive" ></a></div>
+         <div class="col-md-3 col-sm-3 col-xs-3"><a href="kf"><img src="/images/kaifubiao.jpg" class="img-responsive" ></a></div>
+         <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><img src="/images/libao.jpg" class="img-responsive" ></a></div>
+         <div class="col-md-3 col-sm-3 col-xs-3"><a href="newslist"><img src="/images/zixun.jpg" class="img-responsive" ></a></div>
   </div>
   </div>
 
@@ -140,12 +149,14 @@ $this->load->helper('url');
 
 
 <div class="container-fluid" style="background:url(<?php echo base_url()?>images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >
+<div class="container-fluid" style="background:url(/images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >
 <div class="row" style=" text-align:center; padding:5px 0px; color:#FFF"><div class="col-md-12 col-sm-12 col-xs-12" ><strong>&nbsp;</strong></div></div>
 	<div class="row">
         <?php
         foreach ($game_rq as $key=>$v)
         {
             echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:30px">
+            echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:20px">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
@@ -180,6 +191,9 @@ $this->load->helper('url');
     </div>
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><nobr>'.$v['about'].'</nobr></small></div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).'</nobr></small></div>
     </div>
 </div>
 <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$v['id'].'" role="button">下载</a></div>
