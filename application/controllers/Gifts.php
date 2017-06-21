@@ -6,9 +6,12 @@ class Gifts extends CI_Controller {
     public function index()
     {
         $data = array();
+<<<<<<< HEAD
         //$this->load->model('Kv_model');
         //$result=$this->Kv_model->kv_model();
         //$data['kv']=$result;
+=======
+>>>>>>> 0c5ea3768964886e8cc844ef77a545c9ca89ce1c
         $this->load->model('gifts_model');
         $result=$this->gifts_model->gifts_model();
         $data['gifts']=$result;
@@ -30,6 +33,7 @@ class Gifts extends CI_Controller {
         $this->load->view('login',$data);
         //var_dump($result);exit;
     }
+
 
 
 }

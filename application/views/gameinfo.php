@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 $this->load->helper('url');
+=======
+>>>>>>> 0c5ea3768964886e8cc844ef77a545c9ca89ce1c
 include ('top.php');
 ?>
 <!DOCTYPE html>
@@ -67,10 +70,13 @@ include ('top.php');
     <a href="javascript:void(0);" class="btn_right" style="display:none;"></a>
     <div class="wrap">
         <ul>
+<<<<<<< HEAD
             <li><img src="<?php echo $game['pic']?>"/></li>
             <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
             <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
             <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
+=======
+>>>>>>> 0c5ea3768964886e8cc844ef77a545c9ca89ce1c
             <?php
             //var_dump($game['pic']);
             $new_arr = json_decode($game['pic'], true);
@@ -97,6 +103,7 @@ include ('top.php');
 </div>
 
 
+<<<<<<< HEAD
 <div class="container-fluid" style=" background:#e7eaf1;position:fixed; bottom:0px; width:100%" >
 	<div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999; text-align:center; margin-top:5px;">客服电话：18515635581</div>
@@ -109,6 +116,8 @@ include ('top.php');
     </div>
 
 </div>
+=======
+>>>>>>> 0c5ea3768964886e8cc844ef77a545c9ca89ce1c
 <?php
 include ('bottom.php');
 ?>

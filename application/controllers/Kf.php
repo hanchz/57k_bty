@@ -6,9 +6,12 @@ class Kf extends CI_Controller {
     public function index()
     {
         $data = array();
+<<<<<<< HEAD
         //$this->load->model('Kv_model');
         //$result=$this->Kv_model->kv_model();
         //$data['kv']=$result;
+=======
+>>>>>>> 0c5ea3768964886e8cc844ef77a545c9ca89ce1c
         $this->load->model('kf_model');
         $result = $this->kf_model->kf_model();
         $data['kf']=$result;
