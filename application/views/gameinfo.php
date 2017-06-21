@@ -1,5 +1,6 @@
 <?php
 $this->load->helper('url');
+include ('top.php');
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -70,6 +71,15 @@ $this->load->helper('url');
             <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
             <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
             <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
+            <?php
+            //var_dump($game['pic']);
+            $new_arr = json_decode($game['pic'], true);
+            //echo $n=count($new_arr);
+            foreach ($new_arr as $val)
+            {
+                echo '<li><img src="'.$val.'"/></li>';
+            }
+            ?>
         </ul>
     </div>
 </div>
@@ -99,6 +109,9 @@ $this->load->helper('url');
     </div>
 
 </div>
+<?php
+include ('bottom.php');
+?>
 
 
 </body>

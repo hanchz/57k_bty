@@ -9,6 +9,9 @@ class Gifts extends CI_Controller {
         //$this->load->model('Kv_model');
         //$result=$this->Kv_model->kv_model();
         //$data['kv']=$result;
+        $this->load->model('gifts_model');
+        $result=$this->gifts_model->gifts_model();
+        $data['gifts']=$result;
         $this->load->view('gifts',$data);
         //var_dump($data);
     }
@@ -27,6 +30,7 @@ class Gifts extends CI_Controller {
         $this->load->view('login',$data);
         //var_dump($result);exit;
     }
+
 
 }
 
