@@ -12,7 +12,10 @@ $this->load->helper('url');
 
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+<<<<<<< HEAD
 <link rel="stylesheet" href="<?php echo base_url()?>bootstrap-3.3.7-dist/css/bootstrap.min.css">
+=======
+>>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
@@ -20,7 +23,10 @@ $this->load->helper('url');
 <title>注册</title>
 </head>
 <style>
+<<<<<<< HEAD
 .zj_input {  	border:0px;BACKGROUND-COLOR: transparent;COLOR: #ffffff;color:#fff; border:none; } 
+=======
+>>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 .zj_input {  	border:0px;BACKGROUND-COLOR: transparent;COLOR: #ffffff;color:#fff; border:none; }
 .zj_btn{
   width: 100%;
@@ -37,7 +43,10 @@ a{ color:#FFF; border-bottom:1px solid #FFF;}
 a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
 a:hover{color:#FFF;}
 </style>
+<<<<<<< HEAD
 <body  style="background:url(<?php echo base_url()?>images/login_bg.jpg) no-repeat; background-size:100% 100%; ">
+=======
+>>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 <body  style="background:url(/images/login_bg.jpg) no-repeat; background-size:100% 100%; ">
 <div class="container" >
 	<div class="row" style="margin-top:220px; padding:0 50px; ">

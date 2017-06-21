@@ -11,7 +11,10 @@ $this->load->helper('url');
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<<<<<<< HEAD
 <link rel="stylesheet" href="<?php echo base_url()?>bootstrap-3.3.7-dist/css/bootstrap.min.css">
+=======
+>>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
@@ -20,7 +23,10 @@ $this->load->helper('url');
 </head>
 <style>
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 
 	.zj_down{border:1px solid #ff3a25; color:#ff3a25; height:30px; line-height:10px; vertical-align:middle; margin-top:10px;}
 	.zj_di{ background:#FFF; margin:10px 10px; border-radius: 5px; padding:15px;  }
@@ -55,6 +61,7 @@ $new_arr = json_decode($kf, true);
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
+<<<<<<< HEAD
 <tr><td style=" padding:5px 2px;">
 <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div>
 <div class="col-md-4 col-sm-4 col-xs-4"  style=" margin-left:-20px;">
@@ -69,6 +76,8 @@ $new_arr = json_decode($kf, true);
 <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;" href="gameinfo" role="button">下载</a></div>
 </td></tr>
 
+=======
+>>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
     <?php
     if(count($new_arr[0][0])>0) {
         foreach ($new_arr[0][0] as $v1) {
@@ -124,6 +133,7 @@ $new_arr = json_decode($kf, true);
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
+<<<<<<< HEAD
 <tr><td style=" padding:5px 2px;">
 <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div>
 <div class="col-md-4 col-sm-4 col-xs-4"  style=" margin-left:-20px;">
@@ -138,6 +148,8 @@ $new_arr = json_decode($kf, true);
 <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;" href="gameinfo" role="button">下载</a></div>
 </td></tr>
 
+=======
+>>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
     <?php
     if(count($new_arr[1][1])>0) {
         foreach ($new_arr[1][1] as $v1) {
@@ -195,6 +207,7 @@ $new_arr = json_decode($kf, true);
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
+<<<<<<< HEAD
 <tr><td style=" padding:5px 2px;">
 <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="<?php echo base_url()?>images/gamelogo.png" class="img-responsive"></div>
 <div class="col-md-4 col-sm-4 col-xs-4"  style=" margin-left:-20px;">
@@ -209,6 +222,8 @@ $new_arr = json_decode($kf, true);
 <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;" href="gameinfo" role="button">下载</a></div>
 </td></tr>
 
+=======
+>>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
     <?php
     if(count($new_arr[2][2])>0) {
         foreach ($new_arr[2][2] as $v1) {
@@ -266,6 +281,7 @@ $new_arr = json_decode($kf, true);
 
 </div>
 
+<<<<<<< HEAD
 <div class="container-fluid" style=" background:#e7eaf1; position:fixed; bottom:0px; width:100%" >
 	<div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999; text-align:center; margin-top:5px;">客服电话：18515635581</div>
@@ -276,6 +292,8 @@ $new_arr = json_decode($kf, true);
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;text-align:center; margin-top:5px;">京ICP设备号11003178号 57k手游网版权所有</div>
     </div>
+=======
+>>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 <?php
 include ('bottom.php');
 ?>
