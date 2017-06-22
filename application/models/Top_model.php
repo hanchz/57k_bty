@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Game_Model extends CI_Model{
+class Top_Model extends CI_Model{
 
     function __construct(){
         parent::__construct();
@@ -8,22 +8,10 @@ class Game_Model extends CI_Model{
         $this->load->driver('cache',array('adapter' => 'redis'));
     }
 
-    public function game_model($args)
+    public function top_model()
     {
-        $type = $args['type'];
-        $num = $args['num'];
-        if ($type == 0)
-        {
-            $sql = "select * from game_info order by addtime desc limit 0,?";
-        }elseif($num==0)
-        {
-            $sql = "select * from game_info order by addtime desc";
-        }
-        else{
-            $sql = "select * from game_info where type=? order by addtime desc limit 0,?";
-        }
-        $query=$this->db->query($sql,array($type,$num));
-        //return $sql;
+        $sql="select * from top10  order by id asc";
+        $query=$this->db->query($sql);
         $result=$query->result_array();
         //var_dump($result);
         return $result;
