@@ -1,11 +1,4 @@
 <?php
-<<<<<<< HEAD
-$this->load->helper('url');
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0c5ea3768964886e8cc844ef77a545c9ca89ce1c
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 include ('top.php');
 ?>
 <!DOCTYPE html>
@@ -73,16 +66,6 @@ include ('top.php');
     <a href="javascript:void(0);" class="btn_right" style="display:none;"></a>
     <div class="wrap">
         <ul>
-<<<<<<< HEAD
-            <li><img src="<?php echo $game['pic']?>"/></li>
-            <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
-            <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
-            <li><img src="<?php echo base_url()?>images/gameimg.jpg"/></li>
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0c5ea3768964886e8cc844ef77a545c9ca89ce1c
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
             <?php
             //var_dump($game['pic']);
             $new_arr = json_decode($game['pic'], true);
@@ -109,24 +92,7 @@ include ('top.php');
 </div>
 
 
-<<<<<<< HEAD
-<div class="container-fluid" style=" background:#e7eaf1;position:fixed; bottom:0px; width:100%" >
-	<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999; text-align:center; margin-top:5px;">客服电话：18515635581</div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;text-align:center; margin-top:5px;">客服QQ:2453458109</div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;text-align:center; margin-top:5px;">京ICP设备号11003178号 57k手游网版权所有</div>
-    </div>
 
-</div>
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0c5ea3768964886e8cc844ef77a545c9ca89ce1c
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 <?php
 include ('bottom.php');
 ?>

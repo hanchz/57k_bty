@@ -47,13 +47,8 @@ $this->load->helper('url');
         color:#F60;
     }
 
-<<<<<<< HEAD
     /*a{ color:#FFF; border-bottom:1px solid #FFF;}
     a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
     a:hover{color:#FFF;}*/
-=======
-    a{ color:#FFF; border-bottom:1px solid #FFF;}
-    a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
-    a:hover{color:#FFF;}
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
+
 </style>
