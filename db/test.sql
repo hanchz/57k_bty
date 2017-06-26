@@ -10,7 +10,11 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
+<<<<<<< HEAD
 Date: 2017-06-22 11:09:57
+=======
+Date: 2017-06-24 18:23:49
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,13 +34,19 @@ CREATE TABLE `game_info` (
   `pic` varchar(225) DEFAULT NULL COMMENT '游戏截图',
   `url` varchar(225) DEFAULT NULL,
   `type` int(2) DEFAULT NULL COMMENT '游戏是否推荐：1：精品，2：人气，3：普通',
+  `del` int(2) DEFAULT NULL COMMENT '是否删除，0是未删除，1是已删除',
   `addtime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 
 -- ----------------------------
 -- Records of game_info
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `game_info` VALUES ('1', '战术大师', '冒险', '《战术大师》是一款西方魔幻战争题材、超强策略互动玩法手游,以人族、兽族、精灵、亡灵四个种族间的争斗为背景,穿插着各种惊险刺激的冒险和战斗。', '20.1', '300', '/images/gamelogo.png', '[\"/images/gamelogo.png\",\"/images/gamelogo.png\",\"/images/gamelogo.png\"]', '/images/gamelogo.png', '1', '2017-06-10 15:55:02');
 INSERT INTO `game_info` VALUES ('2', '萌兔跳跳跳', '冒险', '萌兔已经做好准备,主人求包养~飞跃云霄,不是问题,就看你有没有时间!', '2331', '32', '/images/gamelogo2.png', '[\"/images/gamelogo2.png\",\"/images/gamelogo2.png\",\"/images/gamelogo2.png\"]', '/images/gamelogo2.png', '2', '2017-06-10 15:55:02');
 INSERT INTO `game_info` VALUES ('3', '传奇', '传奇', '《热血传奇》是2017年推出的一款大型多人在线角色扮演游戏（MMORPG）。该游戏具有战士、魔法师和道士三种', '2331', '32', '/images/gamelogo3.png', '[\"/images/gamelogo3.png\",\"/images/gamelogo3.png\",\"/images/gamelogo3.png\"]', '/images/gamelogo.png', '2', '2017-06-10 15:55:02');
@@ -45,6 +55,16 @@ INSERT INTO `game_info` VALUES ('5', '约斗', '卡牌', '斗地主约牌下载,
 
 -- ----------------------------
 -- Table structure for gifts
+=======
+INSERT INTO `game_info` VALUES ('1', '战术大师', '冒险', '《战术大师》是一款西方魔幻战争题材、超强策略互动玩法手游,以人族、兽族、精灵、亡灵四个种族间的争斗为背景,穿插着各种惊险刺激的冒险和战斗。', '20.1', '300', '/images/gamelogo.png', '[\"/images/gamelogo.png\",\"/images/gamelogo.png\",\"/images/gamelogo.png\"]', '/images/gamelogo.png', '1', '0', '2017-06-10 15:55:02');
+INSERT INTO `game_info` VALUES ('2', '萌兔跳跳跳', '冒险', '萌兔已经做好准备,主人求包养~飞跃云霄,不是问题,就看你有没有时间!', '2331', '32', '/images/gamelogo2.png', '[\"/images/gamelogo2.png\",\"/images/gamelogo2.png\",\"/images/gamelogo2.png\"]', '/images/gamelogo2.png', '2', '0', '2017-06-10 15:55:02');
+INSERT INTO `game_info` VALUES ('3', '传奇', '传奇', '《热血传奇》是2017年推出的一款大型多人在线角色扮演游戏（MMORPG）。该游戏具有战士、魔法师和道士三种', '2331', '32', '/images/gamelogo3.png', '[\"/images/gamelogo3.png\",\"/images/gamelogo3.png\",\"/images/gamelogo3.png\"]', '/images/gamelogo.png', '2', '0', '2017-06-10 15:55:02');
+INSERT INTO `game_info` VALUES ('4', '暮光', '冒险', '暮光之城是一款根据同名小说，电影改编而成的经典解密游戏，不过因为文化原因，对中国玩家来说比较难懂些。', '2331', '32', '/images/gamelogo4.png', '[\"/images/gamelogo4.png\",\"/images/gamelogo4.png\",\"/images/gamelogo4.png\"]', '/images/gamelogo.png', '2', '0', '2017-06-10 15:55:02');
+INSERT INTO `game_info` VALUES ('5', '约斗', '卡牌', '斗地主约牌下载,斗地主约牌为玩家们带来了非常独特的斗地主游戏,游戏中玩家们将享受趣味性的游戏玩法,游戏画面精美,多人在线互动游戏让玩家们享受畅爽的趣味玩法', '2331', '32', '/images/gamelogo5.png', '[\"/images/gamelogo5.png\",\"/images/gamelogo5.png\",\"/images/gamelogo5.png\"]', '/images/gamelogo.png', '2', '0', '2017-06-10 15:55:02');
+
+-- ----------------------------
+-- Table structure for `gifts`
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 -- ----------------------------
 DROP TABLE IF EXISTS `gifts`;
 CREATE TABLE `gifts` (
@@ -123,7 +143,11 @@ INSERT INTO `news` VALUES ('2', 'dfsf ', 'dsfsfsdf 发送的', '2017-06-16 17:35
 INSERT INTO `news` VALUES ('3', '我发的说法', '水电费的说法是的范德萨', '2017-06-13 17:35:24');
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for top10
+=======
+-- Table structure for `top10`
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 -- ----------------------------
 DROP TABLE IF EXISTS `top10`;
 CREATE TABLE `top10` (
@@ -131,6 +155,18 @@ CREATE TABLE `top10` (
   `gameid` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+<<<<<<< HEAD
+=======
+
+-- ----------------------------
+-- Records of top10
+-- ----------------------------
+INSERT INTO `top10` VALUES ('1', '1');
+INSERT INTO `top10` VALUES ('2', '3');
+INSERT INTO `top10` VALUES ('3', '4');
+INSERT INTO `top10` VALUES ('4', '15');
+INSERT INTO `top10` VALUES ('5', '6');
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 
 -- ----------------------------
 -- Records of top10
@@ -158,7 +194,11 @@ CREATE TABLE `users` (
 INSERT INTO `users` VALUES ('1', 'zj', '123456');
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for user_info
+=======
+-- Table structure for `user_info`
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 -- ----------------------------
 DROP TABLE IF EXISTS `user_info`;
 CREATE TABLE `user_info` (

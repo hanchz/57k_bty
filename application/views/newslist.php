@@ -1,7 +1,15 @@
 <?php
+<<<<<<< HEAD
 include ('top.php');
 ?>
 <body>
+=======
+
+include ('top.php');
+?>
+<body>
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 <?php
 //var_dump($news)
 ?>
@@ -9,6 +17,10 @@ include ('top.php');
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 <?php
 if(count($news)>0){
     foreach ($news as $val)

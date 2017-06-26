@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 include ('top.php');
 ?>
 <body>
@@ -30,12 +34,25 @@ if(count($top)>0){
         <div class="col-md-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
     </div>
     <div class="row">
+<<<<<<< HEAD
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$result['gametype'].'|'.$result['downnum'].'次下载</small></div>
     </div>
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow"><small><nobr>'.$result['about'].'</nobr></small></div>
     </div>
 </div>
+=======
+
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$result['gametype'].'|'.$result['downnum'].'次下载</small></div>
+    </div>
+    <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow" style="color:#999;overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis; width:200px;"><small><nobr>'.$result['about'].'</nobr></small></div>
+    </div>
+</div>
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 <div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-20px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$result['id'].'" role="button">下载</a></div>
 </td></tr>';
     }

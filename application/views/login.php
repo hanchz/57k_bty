@@ -1,6 +1,11 @@
 <?php
 $this->load->helper('url');
+if(isset($error) && $error == 1)
+{
+    echo '<script language="JavaScript">alert("账号密码错误，或没有次账号")</script>';
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -12,6 +17,10 @@ $this->load->helper('url');
 
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
@@ -19,10 +28,14 @@ $this->load->helper('url');
 <title>登录</title>
 </head>
 <style>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 .zj_input {  	border:0px;BACKGROUND-COLOR: transparent;COLOR: #ffffff;color:#fff; border:none; }
 .zj_btn{
   width: 100%;
-  height: 100%;
+  height: 30px;
   text-align: center;
   padding: 6px 0;
   font-size: 12px;
@@ -35,17 +48,21 @@ a{ color:#FFF; border-bottom:1px solid #FFF;}
 a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
 a:hover{color:#FFF;}
 </style>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 <body  style="background:url(/images/login_bg.jpg) no-repeat; background-size:100% 100%; ">
 <div class="container" >
+    <form action="<?php echo site_url('/login_user/check_login'); ?>"  method="post"><!--http://localhost:8080/test/index.php/login_user/check_login-->
 	<div class="row" style="margin-top:220px; padding:0 50px; ">
-
     <ul class="list-unstyled" >
   	<li style="height:35px;border-bottom:1px solid #FFF;">
     <div class="col-md-1 col-sm-1 col-xs-1" >
     <span class="glyphicon glyphicon-user" style="color:#fff; margin-top:10px;"></span>
     </div>
     <div class="col-md-10 col-sm-10 col-xs-10" >
-    <input type="text" class="form-control input-group-sm zj_input" id="username" placeholder="输入用户名">
+    <input type="text" class="form-control input-group-sm zj_input" id="username" name="username" placeholder="输入用户名">
     </div>
     </li>
     
@@ -54,16 +71,16 @@ a:hover{color:#FFF;}
     <span class="glyphicon glyphicon-lock" style="color:#fff; margin-top:10px;"></span>
     </div>
     <div class="col-md-10 col-sm-10 col-xs-10" >
-    <input type="password" class="form-control input-group-sm zj_input" id="password" placeholder="输入密码">
+    <input type="password" class="form-control input-group-sm zj_input" id="password" name="password" placeholder="输入密码">
     </div>
     </li>
     
 	</ul>
-    
     <div class="row" style="margin-top:60px;">
-      <button type="button" class="btn btn-default btn-lg btn-block zj_btn">登录</button>
+      <input type="submit" class="btn btn-default btn-lg btn-block zj_btn" value="登陆">
     </div>
-    
+
+</form>
     <div class="row" style="margin-top:20px; color:#FFF;">
     	<div class="col-md-4 col-sm-4 col-xs-4"  style="float:left;">
         <a href="#">忘记密码</a>

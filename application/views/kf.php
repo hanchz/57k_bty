@@ -11,6 +11,10 @@ $this->load->helper('url');
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
@@ -19,7 +23,10 @@ $this->load->helper('url');
 </head>
 <style>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 	.zj_down{border:1px solid #ff3a25; color:#ff3a25; height:30px; line-height:10px; vertical-align:middle; margin-top:10px;}
 	.zj_di{ background:#FFF; margin:10px 10px; border-radius: 5px; padding:15px;  }
 	.zj_nav33{width:33%;text-align:center;}
@@ -53,6 +60,10 @@ $new_arr = json_decode($kf, true);
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
     <?php
     if(count($new_arr[0][0])>0) {
         foreach ($new_arr[0][0] as $v1) {

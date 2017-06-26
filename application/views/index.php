@@ -1,5 +1,11 @@
 <?php
 include ('top.php');
+<<<<<<< HEAD
+=======
+$this->load->library('session');
+//$username=$_SESSION['username'];
+//echo $username;
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 ?>
 <body>
 
@@ -11,6 +17,10 @@ include ('top.php');
                      	<form action="" method="get">
                 	 <div class="input-group">
                      <span class="input-group-btn">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
       			     <img src="/images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">
                      	
                      </span>
@@ -19,6 +29,10 @@ include ('top.php');
                 	 </div>
                      </form>
                 </div>                
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
             	<div class="col-md-2 col-sm-2 col-xs-2"><a href="login_user"><img src="/images/user.jpg" class="img-responsive" style="margin-left:-10px;"></a></div>
         </div>
     </div>  
@@ -71,10 +85,15 @@ include ('top.php');
     <span class="sr-only">Next</span>
   </a>
 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 </div>
   
 <div class="container-fluid" >
     <div class="row">
+<<<<<<< HEAD
 		 <!--<img src="/images/dh.jpg" usemap="#Map" class="img-responsive" >
          <map name="Map">
            <area shape="rect" coords="66,14,222,190" href="#1">
@@ -82,6 +101,10 @@ include ('top.php');
            <area shape="rect" coords="618,20,729,182" href="#3">
            <area shape="rect" coords="894,16,1030,189" href="#4">
          </map>-->
+=======
+
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
          <div class="col-md-3 col-sm-3 col-xs-3"><a href="top10"><img src="/images/rebang.jpg" class="img-responsive" ></a></div>
          <div class="col-md-3 col-sm-3 col-xs-3"><a href="kf"><img src="/images/kaifubiao.jpg" class="img-responsive" ></a></div>
          <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><img src="/images/libao.jpg" class="img-responsive" ></a></div>
@@ -123,6 +146,11 @@ include ('top.php');
         <?php
         foreach ($game_rq as $key=>$v)
         {
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
             echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:20px">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>

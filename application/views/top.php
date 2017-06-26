@@ -50,4 +50,8 @@ $this->load->helper('url');
     /*a{ color:#FFF; border-bottom:1px solid #FFF;}
     a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
     a:hover{color:#FFF;}*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 </style>

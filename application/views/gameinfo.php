@@ -61,6 +61,10 @@ include ('top.php');
 </div>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 <?php
 include ('bottom.php');
 ?>
