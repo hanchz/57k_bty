@@ -31,6 +31,9 @@ class Indexx extends CI_Controller {
         $params['num']=3;
         $result=$this->game_model->game_model($params);
         $data['game_rq']=$result;
+
+        //$username=$this->getsession();
+        //$data['username']=$username;
         $this->load->view('index',$data);
         //var_dump($data);
     }
@@ -49,6 +52,26 @@ class Indexx extends CI_Controller {
         $data['result1'] = $result1;
         $this->load->view('login',$data);
         //var_dump($result);exit;
+    }
+
+    public function getsession(){
+
+        $username=$this->session->userdata('username');
+
+        echo $username;
+        $validate=$this->session->flashdata('validate');
+
+        echo
+        $validate;
+
+    }
+
+    public function logout()
+    {
+        session_start();
+        //$data=array();
+        session_destroy (); // 最后彻底销毁session.
+        header('Location: /test/index.php/indexx');
     }
 
 }

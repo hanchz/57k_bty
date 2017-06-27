@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
-$this->load->helper('url');
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
+
 include ('top.php');
 ?>
 <body>
@@ -15,10 +12,7 @@ include ('top.php');
                      	<form action="" method="get">
                 	 <div class="input-group">
                      <span class="input-group-btn">
-<<<<<<< HEAD
-      			     <img src="<?php echo base_url()?>images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
+
       			     <img src="/images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">
                      	
                      </span>
@@ -27,10 +21,7 @@ include ('top.php');
                 	 </div>
                      </form>
                 </div>                
-<<<<<<< HEAD
-            	<div class="col-md-2 col-sm-2 col-xs-2"><a href="login_user"><img src="<?php echo base_url()?>images/user.jpg" class="img-responsive" style="margin-left:-10px;"></a></div>
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
+
             	<div class="col-md-2 col-sm-2 col-xs-2"><a href="login_user"><img src="/images/user.jpg" class="img-responsive" style="margin-left:-10px;"></a></div>
         </div>
     </div>  
@@ -83,32 +74,13 @@ include ('top.php');
     <span class="sr-only">Next</span>
   </a>
 </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 </div>
   
 <div class="container-fluid" >
     <div class="row">
-<<<<<<< HEAD
-		 <!--<img src="<?php echo base_url()?>images/dh.jpg" usemap="#Map" class="img-responsive" >
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
-		 <!--<img src="/images/dh.jpg" usemap="#Map" class="img-responsive" >
-         <map name="Map">
-           <area shape="rect" coords="66,14,222,190" href="#1">
-           <area shape="rect" coords="339,19,472,185" href="#2">
-           <area shape="rect" coords="618,20,729,182" href="#3">
-           <area shape="rect" coords="894,16,1030,189" href="#4">
-         </map>-->
-<<<<<<< HEAD
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="top10"><img src="<?php echo base_url()?>images/rebang.jpg" class="img-responsive" ></a></div>
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="kf"><img src="<?php echo base_url()?>images/kaifubiao.jpg" class="img-responsive" ></a></div>
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><img src="<?php echo base_url()?>images/libao.jpg" class="img-responsive" ></a></div>
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="newslist"><img src="<?php echo base_url()?>images/zixun.jpg" class="img-responsive" ></a></div>
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
+
+
          <div class="col-md-3 col-sm-3 col-xs-3"><a href="top10"><img src="/images/rebang.jpg" class="img-responsive" ></a></div>
          <div class="col-md-3 col-sm-3 col-xs-3"><a href="kf"><img src="/images/kaifubiao.jpg" class="img-responsive" ></a></div>
          <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><img src="/images/libao.jpg" class="img-responsive" ></a></div>
@@ -144,20 +116,14 @@ include ('top.php');
 <div class="container-fluid" style=" height:10px; background:#e7eaf1;" ></div>
 
 
-<<<<<<< HEAD
-<div class="container-fluid" style="background:url(<?php echo base_url()?>images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 <div class="container-fluid" style="background:url(/images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >
 <div class="row" style=" text-align:center; padding:5px 0px; color:#FFF"><div class="col-md-12 col-sm-12 col-xs-12" ><strong>&nbsp;</strong></div></div>
 	<div class="row">
         <?php
         foreach ($game_rq as $key=>$v)
         {
-<<<<<<< HEAD
-            echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:30px">
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
+
+
             echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:20px">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
@@ -192,7 +158,6 @@ include ('top.php');
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$v['gametype'].'|'.$v['downnum'].'次下载</small></div>
     </div>
     <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><nobr>'.$v['about'].'</nobr></small></div>
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).'</nobr></small></div>
