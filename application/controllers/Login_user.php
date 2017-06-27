@@ -55,16 +55,13 @@ class Login_user extends CI_Controller {
             $this->load->view('login',$data);
 
             header('Location: /test/index.php/indexx');
-                //$this->setsession($username);
-            //$this->session->set_userdata('username','zj');
         }else{
-        //echo $sign;
             $data = array();
             //$data['login']=$output;
 
             $error = '1';
             $data['error']=$error;
-        $this->load->view('login',$data);
+            $this->load->view('login',$data);
         }
         //var_dump($result);exit;
     }
