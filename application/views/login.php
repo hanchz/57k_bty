@@ -17,10 +17,7 @@ if(isset($error) && $error == 1)
 
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-<<<<<<< HEAD
-=======
 
->>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
@@ -28,10 +25,7 @@ if(isset($error) && $error == 1)
 <title>登录</title>
 </head>
 <style>
-<<<<<<< HEAD
-=======
 
->>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 .zj_input {  	border:0px;BACKGROUND-COLOR: transparent;COLOR: #ffffff;color:#fff; border:none; }
 .zj_btn{
   width: 100%;
@@ -48,10 +42,7 @@ a{ color:#FFF; border-bottom:1px solid #FFF;}
 a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
 a:hover{color:#FFF;}
 </style>
-<<<<<<< HEAD
-=======
 
->>>>>>> 5088077b4dacfcbbf00d26db7b4098f914154877
 <body  style="background:url(/images/login_bg.jpg) no-repeat; background-size:100% 100%; ">
 <div class="container" >
     <form action="<?php echo site_url('/login_user/check_login'); ?>"  method="post"><!--http://localhost:8080/test/index.php/login_user/check_login-->
