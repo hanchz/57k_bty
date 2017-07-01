@@ -839,7 +839,6 @@
 
 <script src="media/js/app.js"></script>
 
-<script src="media/js/table-managed.js"></script>
 
 <script>
 
@@ -850,6 +849,57 @@
         TableManaged.init();
 
     });
+
+    var TableManaged = function () {
+
+        return{
+            init: function () {
+                if (!jQuery().dataTable) {
+                    return;
+                }
+
+                $('#sample_1').dataTable({
+                    "bServerSide": true,
+                    'bPaginate': true, //是否分页
+                    "bProcessing": true, //datatable获取数据时候是否显示正在处理提示信息。
+                    "iDisplayLength": 10, //每页显示10条记录
+                    'bFilter': true, //是否使用内置的过滤功能
+                    "sAjaxSource": '/admin.php/get_gift_list/1/',
+                    "aaSorting": [
+                        [0, "desc"],
+                    ],
+                    "aoColumns": [
+                        {"mData": "id", "bSortable": true, "bSearchable": true, "sWidth": "250px"},
+                        {"mData": "name", "bSortable": true, "bSearchable": true},
+                        {"mData": "gametype", "bSortable": true, "bSearchable": true},
+                        {"mData": "about", "bSortable": true, "bSearchable": true},
+                        {"mData": "size", "bSortable": true, "bSearchable": true},
+                        {"mData": "type", "bSortable": true, "bSearchable": true},
+                        {
+                            "mData": "id", "bSortable": true, "mRender": function (data, type, full) {
+                            return "<a href='//games/edit/" + data + "' >修改</a>|<a href='/admin.php/games/gift_list/" + data + "' >礼包</a>";
+                        }
+                        }
+                        // {"sWidth": "220px", "mData": "storageSize", "bSortable": true, "mRender": function(data, type, full) {
+                        //     return "" + data + "";
+                        // }
+                        // }
+                    ],
+                    "oLanguage": {
+                        'sSearch': '数据筛选:',
+                        "sLengthMenu": "每页显示 _MENU_ 项记录",
+                        "sZeroRecords": "没有符合项件的数据...",
+                        "sInfo": "当前数据为从第 _START_ 到第 _END_ 项数据；总共有 _TOTAL_ 项记录",
+                        "sInfoEmpty": "显示 0 至 0 共 0 项",
+                        "sInfoFiltered": "(_MAX_)"
+                    },
+                });
+
+            }
+
+        };
+
+    }();
 
 </script>
 

@@ -15,7 +15,7 @@ var TableManaged = function () {
                 "bProcessing": true, //datatable获取数据时候是否显示正在处理提示信息。
                 "iDisplayLength": 10, //每页显示10条记录
                 'bFilter': true, //是否使用内置的过滤功能
-                "sAjaxSource": '/games/get_list',
+                "sAjaxSource": '/admin.php/games/get_list',
                 "aaSorting": [
                     [0, "desc"],
                 ],
@@ -27,7 +27,7 @@ var TableManaged = function () {
                     {"mData": "size", "bSortable": true, "bSearchable": true},
                     {"mData": "type", "bSortable": true, "bSearchable": true},
                     {"mData": "id", "bSortable": true, "mRender": function(data, type, full) {
-                        return "<a href='/games/edit/"+data+"' >修改</a>";
+                        return "<a href='//games/edit/"+data+"' >修改</a>|<a href='/admin.php/games/gift_list/"+data+"' >礼包</a>";
                     }}
                     // {"sWidth": "220px", "mData": "storageSize", "bSortable": true, "mRender": function(data, type, full) {
                     //     return "" + data + "";

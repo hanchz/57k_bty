@@ -87,7 +87,7 @@ class Games extends MY_Controller{
 
         $this ->db->update('game_info',$update_arr,array('id'=>$gameid));
 
-        header('location: /games/');
+        header('location: /admin.php/games/');
 
     }
 
@@ -125,6 +125,85 @@ class Games extends MY_Controller{
         $return['iTotalDisplayRecords'] = $count;
         $return['iTotalRecords'] = $count;
         echo json_encode($return);exit;
+    }
+
+    public function gift_list($game_id)
+    {
+        $this->load->view('gift_list');
+    }
+
+    public function get_gift_list()
+    {
+        $params = $this->input->get();
+        $limit1 = $params['iDisplayStart'];
+        $limit2 = $params['iDisplayLength'];
+        $limit = " limit $limit1,$limit2";
+
+        $where = ' 1 = 1 ';
+
+        $sql = "select * from gifts where gameid = ? where $where ";
+        $query = $this->db->query($sql.$limit);
+        $result = $query->result_array();
+
+        $count = $this->db->query($sql)->result_array();
+        $count = count($count);
+
+        $return = array();
+        $return['aaData'] = $result;
+        $return['iTotalDisplayRecords'] = $count;
+        $return['iTotalRecords'] = $count;
+        echo json_encode($return);exit;
+
+    }
+
+    public function gift_create($game_id)
+    {
+        if(is_null($game_id))
+        {
+            echo 'gameid_error';exit;
+        }
+
+        $data = array();
+        $data['game_id'] = $game_id;
+
+        $this->load->view('gift_create',$data);
+
+    }
+
+    public function gift_do_create()
+    {
+        $params = $this->input->post();
+        $game_id = $params['game_id'];
+        $giftname = $params['giftname'];
+        $giftinfo = $params['giftinfo'];
+        $giftkey = $params['giftkey'];
+
+        $giftkey = explode("\r\n",$giftkey);
+
+        $sql = "insert into gifts set giftsname=? , giftsinfo = ? , addtime = ? ,gameid = ?";
+        $query = $this->db->query($sql,array($giftname,$giftinfo,date('Y-m-d H:i:s'),$game_id));
+        $giftid = $this->db->insert_id();
+
+        if($giftid > 0)
+        {
+            $gkl = array();
+            foreach($giftkey as $key => $gk)
+            {
+                $gkl[] = array(
+                    'gameid'=>$game_id,
+                    'key' => $gk,
+                );
+            }
+
+            $this->db->insert_batch('gifts_list',$gkl);
+        }
+
+        header('location: /admin.php/games/gifts_lists/'.$game_id);
+    }
+
+    public function gift_edit($gift_id)
+    {
+
     }
 
     private function get_pic($filename,$id='temp')

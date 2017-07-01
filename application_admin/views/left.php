@@ -18,21 +18,22 @@
 <!--            </form>-->
             <!-- END RESPONSIVE QUICK SEARCH FORM -->
         </li>
-        <li class="start active ">
-            <a href="/index">
+        <li class="start <?php if($this->router->class=='index') echo 'active' ; ?> ">
+            <a href="/admin.php/index">
                 <i class="icon-home"></i>
                 <span class="title">MAIN</span>
-                <span class="selected"></span>
+                <?php if($this->router->class=='index') echo '<span class="selected"></span>' ; ?>
             </a>
         </li>
-        <li class="last ">
-            <a href="/games">
+        <li class="last <?php if($this->router->class=='games') echo 'active' ; ?>">
+            <a href="/admin.php/games">
                 <i class="icon-bar-chart"></i>
-                <span class="title">games</span>
+                <span class="title">games<?php  ?></span>
+                <?php if($this->router->class=='games') echo '<span class="selected"></span>' ; ?>
             </a>
         </li>
         <li class="last ">
-            <a href="/config">
+            <a href="/admin.php/config">
                 <i class="icon-bar-chart"></i>
                 <span class="title">config</span>
             </a>
