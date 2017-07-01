@@ -1,4 +1,16 @@
 <?php
+session_start();
+//$_SESSION['uid']='123131231';
+//$_SESSION['username']='123131231';
+if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+    //echo "登录成功：".$_SESSION['username'];
+    //var_dump($_SESSION['uid']);
+    $uid=$_SESSION['uid'];
+    $username=$_SESSION['username'];
+    //echo "<a href='indexx/logout'>点此退出</a>";
+}else{
+    //echo "你还没有登录，<a href='login.php'>请登录</a>";
+}
 $this->load->helper('url');
 ?>
 <!DOCTYPE html>
@@ -47,13 +59,8 @@ $this->load->helper('url');
         color:#F60;
     }
 
-<<<<<<< HEAD
     /*a{ color:#FFF; border-bottom:1px solid #FFF;}
     a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
     a:hover{color:#FFF;}*/
-=======
-    a{ color:#FFF; border-bottom:1px solid #FFF;}
-    a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
-    a:hover{color:#FFF;}
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
+
 </style>
