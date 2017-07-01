@@ -11,19 +11,19 @@ include ('sou.php');
 //var_dump($gifts);
 ?>
 <div class="container-fluid">
-<div class="row">
-<div class="col-md-12 col-sm-12 col-xs-12">
-<table class="table" style="border-bottom:1px solid #e7eaf1;">
-<?php
-if (count($gifts)>0){
-    foreach ($gifts as $val)
-    {
-        $params = array();
-        $params['id'] = $val['gameid'];
-        $this->load->model('gifts_model');
-        $gameinfo=$this->gifts_model->game_info($params);
-        //var_dump($gameinfo);
-        echo '
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table class="table" style="border-bottom:1px solid #e7eaf1;">
+                <?php
+                if (count($gifts)>0){
+                    foreach ($gifts as $val)
+                    {
+                        $params = array();
+                        $params['id'] = $val['gameid'];
+                        $this->load->model('gifts_model');
+                        $gameinfo=$this->gifts_model->game_info($params);
+                        //var_dump($gameinfo);
+                        echo '
         <tr><td style=" padding:5px 2px;">
     <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="'.$gameinfo['logo'].'" class="img-responsive"></div>
     <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
@@ -41,13 +41,13 @@ if (count($gifts)>0){
     </td></tr>
         ';
 
-    }
-}
-?>
+                    }
+                }
+                ?>
 
-</table>
-</div>
-</div>
+            </table>
+        </div>
+    </div>
 </div>
 
 <?php
