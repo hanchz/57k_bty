@@ -8,7 +8,8 @@ class MY_Controller extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-
+        $this->db->query('set names utf8');
+        
         if( $this->is_login !== false ) {
             $this->load->driver('cache', array('adapter' => 'redis'));
             $this->load->helper('url');
