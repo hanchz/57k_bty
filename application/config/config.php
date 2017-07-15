@@ -521,3 +521,11 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+/*
+ * heepay_config
+ */
+$config['PAY_URL'] = 'https://pay.Heepay.com/Payment/Index.aspx';
+$config['QUERY_URL'] = 'https://query.heepay.com/Payment/Query.aspx';
+$config['AGENT_ID'] = '2105570';
+$config['SIGN_KEY'] = '2C53EAF2F317499B9B2D3E10';

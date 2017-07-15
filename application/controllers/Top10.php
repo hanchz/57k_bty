@@ -6,10 +6,14 @@ class Top10 extends CI_Controller {
     public function index()
     {
         $data = array();
-        //$data['kv']=$result;
         $this->load->model('top_model');
         $result=$this->top_model->top_model();
         $data['top']=$result;
+
+        $this->load->model('kv_model');
+        $result=$this->kv_model->kv_model();
+        $data['kv']=$result;
+
         $this->load->view('top10',$data);
         //var_dump($data);
     }
