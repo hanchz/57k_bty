@@ -685,7 +685,7 @@
 
                                 <div class="btn-group">
 
-                                    <a id="sample_editable_1_new" class="btn green" href="/admin.php/games/create">
+                                    <a id="sample_editable_1_new" class="btn green" href="/admin.php/games/gift_create/<?php echo $game_id;?>">
 
                                         Add New <i class="icon-plus"></i>
 
@@ -725,13 +725,8 @@
 
                                     <th>name</th>
 
-                                    <th>gametype</th>
+                                    <th>info</th>
 
-                                    <th>about</th>
-
-                                    <th>size</th>
-
-                                    <th>type</th>
 
                                     <th >option</th>
 
@@ -864,20 +859,17 @@
                     "bProcessing": true, //datatable获取数据时候是否显示正在处理提示信息。
                     "iDisplayLength": 10, //每页显示10条记录
                     'bFilter': true, //是否使用内置的过滤功能
-                    "sAjaxSource": '/admin.php/get_gift_list/1/',
+                    "sAjaxSource": '/admin.php/games/get_gift_list/'+<?php echo $game_id; ?>+'/',
                     "aaSorting": [
                         [0, "desc"],
                     ],
                     "aoColumns": [
                         {"mData": "id", "bSortable": true, "bSearchable": true, "sWidth": "250px"},
-                        {"mData": "name", "bSortable": true, "bSearchable": true},
-                        {"mData": "gametype", "bSortable": true, "bSearchable": true},
-                        {"mData": "about", "bSortable": true, "bSearchable": true},
-                        {"mData": "size", "bSortable": true, "bSearchable": true},
-                        {"mData": "type", "bSortable": true, "bSearchable": true},
+                        {"mData": "giftsname", "bSortable": true, "bSearchable": true},
+                        {"mData": "giftsinfo", "bSortable": true, "bSearchable": true},
                         {
                             "mData": "id", "bSortable": true, "mRender": function (data, type, full) {
-                            return "<a href='//games/edit/" + data + "' >修改</a>|<a href='/admin.php/games/gift_list/" + data + "' >礼包</a>";
+                            return "<a href='/admin.php/games/gift_edit/" + data + "' >修改</a>";
                         }
                         }
                         // {"sWidth": "220px", "mData": "storageSize", "bSortable": true, "mRender": function(data, type, full) {

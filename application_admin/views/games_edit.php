@@ -141,7 +141,7 @@
 							<div class="portlet-body form">
 								<!-- BEGIN FORM-->
 								<h3>修改游戏</h3>
-                                <form action="/games/do_edit" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
+                                <form action="/admin.php/games/do_edit/<?php echo $id; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
 
                                 <div class="control-group">
                                     <label class="control-label">游戏名称<span class="required">*</span></label>
@@ -192,7 +192,7 @@
                                     <div class="control-group">
                                         <label class="control-label">游戏介绍<span class="required">*</span></label>
                                         <div class="controls">
-                                            <textarea name="about" type="text" class="span6 m-wrap" value="<?php echo $about; ?>" ></textarea>
+                                            <textarea name="about" type="text" class="span6 m-wrap"><?php echo $about; ?></textarea>
                                             <span class="help-inline"></span>
                                         </div>
                                     </div>

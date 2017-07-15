@@ -141,14 +141,14 @@
 							<div class="portlet-body form">
 								<!-- BEGIN FORM-->
 								<h3>创建礼包</h3>
-                                <form action="/admin.php/games/gift_do_create/<?php echo $game_id; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
+                                <form action="/admin.php/games/gift_do_edit/<?php echo $id; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
 
-                                    <input name="game_id" type="text" style="display:none;" value="<?php echo $game_id; ?>"/>
+                                    <input name="id" type="text" style="display:none;" value="<?php echo $id; ?>"/>
 
                                     <div class="control-group">
                                         <label class="control-label">礼包名称<span class="required">*</span></label>
                                         <div class="controls">
-                                            <input name="giftname" type="text" class="span6 m-wrap" />
+                                            <input name="giftname" type="text" value="<?php echo $giftsname; ?>" class="span6 m-wrap" />
                                             <span class="help-inline"></span>
                                         </div>
                                     </div>
@@ -156,13 +156,13 @@
                                     <div class="control-group">
                                         <label class="control-label">礼包内容<span class="required">*</span></label>
                                         <div class="controls">
-                                            <input name="giftinfo" type="text" class="span6 m-wrap" />
+                                            <input name="giftinfo" type="text" value="<?php echo $giftsinfo; ?>" class="span6 m-wrap" />
                                             <span class="help-inline"></span>
                                         </div>
                                     </div>
 
                                     <div class="control-group">
-                                        <label class="control-label">礼包码<span class="required">*</span></label>
+                                        <label class="control-label">礼包码(续填)<span class="required">*</span></label>
                                         <div class="controls">
                                             <textarea rows="20" name="giftkey" type="text" class="span6 m-wrap" ></textarea>
                                             <span class="help-inline"></span>

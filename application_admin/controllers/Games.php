@@ -91,10 +91,71 @@ class Games extends MY_Controller{
 
     }
 
-    public function do_edit()
+    public function do_edit($game_id)
     {
         $params = $this->input->post();
-        var_dump($params);exit;
+        $logo = $gamepic = $lb1 = $lb2 = $lb3 = $lb4 = $lb = array();
+
+        $name = $params['gamename'];
+        $gametype = $params['gametype'];
+        $size = $params['gamesize'];
+        $downnum = $params['downnum'];
+        $type = $params['tj'];
+        $about = $params['about'];
+        $url = $params['url'];
+
+        $update_arr = array(
+            'name' => $name,
+            'gametype' => $gametype,
+            'size' => $size,
+            'downnum' => $downnum,
+            'type' => $type,
+            'about' => $about,
+            'url' => $url,
+        );
+
+        $this->db->update('game_info',$update_arr,array('id'=>$game_id));
+
+        foreach($_FILES as $key => $f)
+        {
+            if($f['size']>0)
+            {
+                $$key = $this->get_pic($key,$game_id);
+            }
+        }
+
+        $update_arr = array();
+
+        if(!empty($logo))
+        {
+            $logo = '/upload/'.$game_id.'/'.$logo['upload_data']['file_name'];
+            $update_arr['logo'] = $logo;
+        }
+
+        for($i=1;$i<=4;$i++)
+        {
+            $tempname = 'lb'.$i;
+            if(isset($$tempname) && !empty($$tempname))
+            {
+                $tname = $$tempname;
+                $lb[] = '/upload/'.$game_id.'/'.$tname['upload_data']['file_name'];
+            }
+        }
+
+        if(!empty($lb))
+        {
+            $pic = json_encode($lb);
+
+            $update_arr['pic'] = $pic;
+        }
+
+        if(!empty($update_arr))
+        {
+            $this ->db->update('game_info',$update_arr,array('id'=>$gameid));
+        }
+
+        header('location: /admin.php/games/');
+
     }
 
     public function get_list()
@@ -129,10 +190,12 @@ class Games extends MY_Controller{
 
     public function gift_list($game_id)
     {
-        $this->load->view('gift_list');
+        $data = array();
+        $data['game_id'] = $game_id;
+        $this->load->view('gift_list',$data);
     }
 
-    public function get_gift_list()
+    public function get_gift_list($game_id)
     {
         $params = $this->input->get();
         $limit1 = $params['iDisplayStart'];
@@ -141,7 +204,7 @@ class Games extends MY_Controller{
 
         $where = ' 1 = 1 ';
 
-        $sql = "select * from gifts where gameid = ? where $where ";
+        $sql = "select * from gifts where gameid = $game_id ";
         $query = $this->db->query($sql.$limit);
         $result = $query->result_array();
 
@@ -180,6 +243,18 @@ class Games extends MY_Controller{
 
         $giftkey = explode("\r\n",$giftkey);
 
+        $select = 'select * from gifts where gameid = ? and giftsname = ?';
+        $selquery = $this->db->query($select,array($game_id,$giftname));
+        $result = $selquery->result_array();
+        if(!empty($result))
+        {
+            echo '<script>alert("礼包名称重复");history.go(-1);</script>';exit;
+        }
+        if(empty($params['giftkey']))
+        {
+            echo '<script>alert("礼包码不能为空");history.go(-1);</script>';exit;
+        }
+
         $sql = "insert into gifts set giftsname=? , giftsinfo = ? , addtime = ? ,gameid = ?";
         $query = $this->db->query($sql,array($giftname,$giftinfo,date('Y-m-d H:i:s'),$game_id));
         $giftid = $this->db->insert_id();
@@ -190,7 +265,7 @@ class Games extends MY_Controller{
             foreach($giftkey as $key => $gk)
             {
                 $gkl[] = array(
-                    'gameid'=>$game_id,
+                    'giftsid'=>$giftid,
                     'key' => $gk,
                 );
             }
@@ -198,12 +273,72 @@ class Games extends MY_Controller{
             $this->db->insert_batch('gifts_list',$gkl);
         }
 
-        header('location: /admin.php/games/gifts_lists/'.$game_id);
+        header('location: /admin.php/games/gift_list/'.$game_id);
     }
 
     public function gift_edit($gift_id)
     {
+        $sql = 'select * from gifts where id = ?';
+        $query = $this->db->query($sql,array($gift_id));
+        $result = $query->first_row('array');
 
+        $data = $result;
+
+        $this->load->view('gift_edit',$data);
+    }
+
+    public function gift_do_edit()
+    {
+        $params = $this->input->post();
+        $id = $params['id'];
+        $giftname = $params['giftname'];
+        $giftinfo = $params['giftinfo'];
+        $giftkey = $params['giftkey'];
+
+        $giftkey = explode("\r\n",$giftkey);
+
+        $sql = 'select * from gifts where id = ?';
+        $query = $this->db->query($sql,array($id));
+        $resultsql = $query->first_row('array');
+
+        $select = 'select * from gifts where id!= ? and giftsname = ?';
+        $selquery = $this->db->query($select,array($id,$giftname));
+        $result = $selquery->result_array();
+
+
+        if(!empty($result))
+        {
+            echo '<script>alert("礼包名称重复");history.go(-1);</script>';exit;
+        }
+//        if(empty($params['giftkey']))
+//        {
+//            echo '<script>alert("礼包码不能为空");history.go(-1);</script>';exit;
+//        }
+
+        $update_arr = array(
+            'giftsname' => $giftname,
+            'giftsinfo' => $giftinfo,
+        );
+
+        $update = $this->db->update('gifts',$update_arr,array('id'=>$id));
+
+        if($update)
+        {
+            if(!empty($params['giftkey']))
+            {
+                $gkl = array();
+                foreach($giftkey as $key => $gk)
+                {
+                    $gkl[] = array(
+                        'giftsid'=>$id,
+                        'key' => $gk,
+                    );
+                }
+                $this->db->insert_batch('gifts_list',$gkl);
+            }
+        }
+
+        header('location: /admin.php/games/gift_list/'.$resultsql['gameid']);
     }
 
     private function get_pic($filename,$id='temp')

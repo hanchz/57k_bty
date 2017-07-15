@@ -141,7 +141,7 @@
 							<div class="portlet-body form">
 								<!-- BEGIN FORM-->
 								<h3>创建游戏</h3>
-                                <form action="/games/do_create" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
+                                <form action="/admin.php/games/do_create" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
 
                                 <div class="control-group">
                                     <label class="control-label">游戏名称<span class="required">*</span></label>

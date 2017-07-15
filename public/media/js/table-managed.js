@@ -27,7 +27,7 @@ var TableManaged = function () {
                     {"mData": "size", "bSortable": true, "bSearchable": true},
                     {"mData": "type", "bSortable": true, "bSearchable": true},
                     {"mData": "id", "bSortable": true, "mRender": function(data, type, full) {
-                        return "<a href='//games/edit/"+data+"' >修改</a>|<a href='/admin.php/games/gift_list/"+data+"' >礼包</a>";
+                        return "<a href='/admin.php/games/edit/"+data+"' >修改</a>|<a href='/admin.php/games/gift_list/"+data+"' >礼包</a>";
                     }}
                     // {"sWidth": "220px", "mData": "storageSize", "bSortable": true, "mRender": function(data, type, full) {
                     //     return "" + data + "";
