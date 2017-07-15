@@ -3,112 +3,131 @@
 include ('top.php');
 ?>
 <body>
+
+
 <?php
 
 include ('sou.php');
 ?>
-<?php
-//var_dump($gifts);
-?>
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-12 col-sm-12 col-xs-12">
-<table class="table" style="border-bottom:1px solid #e7eaf1;">
-<?php
-if (count($gifts)>0){
-    foreach ($gifts as $val)
-    {
-        $params = array();
-        $params['id'] = $val['gameid'];
-        $this->load->model('gifts_model');
-        $gameinfo=$this->gifts_model->game_info($params);
-        //var_dump($gameinfo);
+
+
+<div class="container-fluid" style=" height:10px; background:#e7eaf1;" ></div>
+
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-md-4" style="margin-top:5px;"><strong>精品推荐</strong></div>
+    </div>
+</div>
+
+<div class="container-fluid" style="margin-bottom:10px;" >
+    <div class="row">
+        <?php
+        foreach ($game_jp as $key=>$v)
+        {
+            echo '<div class="col-md-3 col-sm-3 col-xs-3">
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">开始</a></div></div>
+    	</div>';
+        }
+
         ?>
-		 <tr><td style=" padding:5px 2px;">
-    <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="'.$gameinfo['logo'].'" class="img-responsive"></div>
-    <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12"><strong><?php echo $gameinfo['name'].':'.$val['giftsname']?></strong></div>
-        </div>
-        <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow"><small><nobr><?php echo $val['giftsinfo']?></nobr></small></div>
-        </div>
-        <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12" style="color:red"><small>剩余<?php echo $val['giftsnum']?>个</small></div>
+    </div>
+</div>
+
+<div class="container-fluid" style=" height:10px; background:#e7eaf1;" ></div>
+
+
+<div class="container-fluid" style="background:url(/images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >
+    <div class="row" style=" text-align:center; padding:5px 0px; color:#FFF"><div class="col-md-12 col-sm-12 col-xs-12" ><strong>&nbsp;</strong></div></div>
+    <div class="row">
+        <?php
+        foreach ($game_rq as $key=>$v)
+        {
+
+
+            echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:20px">
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">开始</a></div></div>
+    	</div>';
+        }
+
+        ?>
+
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table class="table">
+
+                <?php
+                foreach ($game as $key=>$v)
+                {
+                    echo '<tr><td style=" padding:5px 2px;">
+<div class="col-md-3 col-sm-3 col-xs-3"><img src="'.$v['logo'].'" class="img-responsive"></div>
+<div class="col-md-6 col-sm-6 col-xs-6">
+	<div class="row">
+    	<div class="col-md-6 col-sm-6 col-xs-6"><strong>'.$v['name'].'</strong></div>
+        <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$v['gametype'].'|'.$v['downnum'].'次开始</small></div>
+    </div>
+    <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).'</nobr></small></div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$v['id'].'" role="button">开始</a></div>
+</td></tr>';
+                }
+                ?>
+
+
+
+
+            </table>
         </div>
     </div>
-    
-    <?php if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {?>
-    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;" href="#" role="button"  onClick="tc(<?php echo $val["gameid"].','.$uid?>)">领取</a></div>
-    <?php }else{?>
-    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;" href="#" role="button" onClick="alert('请先登录')">领取</a></div>
-    <?php }?>
-    </td></tr>
-		
-		<?php
-
-    }
-}
-?>
-</table>
-</div>
-</div>
 </div>
 
+<div class="container-fluid" style=" height:10px; background:#e7eaf1;" ></div>
 
-<div class="tanchukuang" id="tck" style="display:none;">
-	<div class="tck-top">领取礼包</div>
-	<div class="tck-con">
-    	<p style="width:100%">礼包内容：<span style="color:#999; width:100%" id="gifts_info"> 佛挡杀佛萨法撒旦法撒飞洒发达省份萨芬</span></p>
-        
-    	<p>礼包码：<div style="color:red; background:#ccc; width:70%; height:10%; float:left; text-align:center;" id="key"> </div></p>
-        
-    	<p style="margin-top:20px; width:200px; margin-left:-55px; color:red;">请长按礼包码复制</p>
-        
-        <div style="margin-top:10px; width:100px; height:100px;"><a class="btn btn-danger" style="margin-top:20px; width:80px; background:red; margin-left:100px;" href="#" role="button" onClick="tc_cls()" >关闭</a></div>
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-md-4" style="margin-top:5px;"><strong>分类精选</strong></div>
     </div>
-    
-    
+
+    <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">动作</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">冒险</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">模拟</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">角色</a></div>
+    </div>
+    <div class="row" style="margin-bottom:20px;">
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">休闲</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">沙盒</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">求生</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">益智</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">其他</a></div>
+    </div>
+
+</div>
+<div style="margin-top:80px;">
+    <?php
+    include ('bottom.php');
+    ?>
 </div>
 
-<div class="zhezhao" id="zhezhao" style="display:none;"></div>
-
-<?php
-include ('bottom.php');
-?>
-<script type="text/javascript" src="http://www.webxgame.com/js/jquery.min.js"></script>
-<script language="javascript">
-    function tc(id,uid)
-    {
-		//alert(id);
-		//alert(uid);
-		var url='get_gifts';
-		$.get(
-            url,
-            {uid:uid,id:id},
-            function(data){
-				//alert(data);
-            $("#key").html(data);
-            });
-			
-		$.get(
-            url+'/gifts_info',
-            {id:id},
-            function(dataa){
-            $("#gifts_info").html(dataa);
-            })	
-document.getElementById("tck").style.display="block";
-document.getElementById("zhezhao").style.display="block";
-    }
-	
-	function tc_cls()
-	{
-document.getElementById("tck").style.display="none";
-document.getElementById("zhezhao").style.display="none";
-	}
-
-
-</script>
 
 </body>
 </html>
