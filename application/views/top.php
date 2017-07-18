@@ -58,19 +58,19 @@ $this->load->helper('url');
         border-radius: 15px;
         color:#F60;
     }
-	
-	    /*.jindutiao{ width:60%; background: #ccc; height:5px; margin-left: -20px; margin-top: 5px; padding: 0 0;};*/
 
-	
-	.tanchukuang{ width:80%; height:50%; position:absolute; top:25%; left:10%;-webkit-border-radius: 10px; border-radius: 10px; z-index:2;}
-		.tck-top{ width:100%; height:20%; float:left;background: -webkit-linear-gradient(left top, #ff9c72 , #F00);
-  background: -o-linear-gradient(bottom right, #ff9c72, #F00);
-  background: -moz-linear-gradient(bottom right, #ff9c72, #F00);
-  background: linear-gradient(to bottom right, #ff9c72 , #F00);  background-size:100% 100%; border-radius:10px 10px 0 0; text-align:center; line-height:60px; vertical-align:middle; font-size:25px; color:#FFF; font-weight: bold; }
-  		.tck-con{width:100%; height:80%; float:left; padding:5% 5%; background:#FFF;border-radius: 0 0 10px 10px;}
-			.tck-con p{ margin-bottom:10%; float:left;}
-			
-	.zhezhao{ width:100%; height:100%; position:absolute;top:0; left:0;filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5; background:black; z-index:1;}		
+    /*.jindutiao{ width:60%; background: #ccc; height:5px; margin-left: -20px; margin-top: 5px; padding: 0 0;};*/
+
+
+    .tanchukuang{ width:80%; height:50%; position:absolute; top:25%; left:10%;-webkit-border-radius: 10px; border-radius: 10px; z-index:2;}
+    .tck-top{ width:100%; height:20%; float:left;background: -webkit-linear-gradient(left top, #ff9c72 , #F00);
+        background: -o-linear-gradient(bottom right, #ff9c72, #F00);
+        background: -moz-linear-gradient(bottom right, #ff9c72, #F00);
+        background: linear-gradient(to bottom right, #ff9c72 , #F00);  background-size:100% 100%; border-radius:10px 10px 0 0; text-align:center; line-height:60px; vertical-align:middle; font-size:25px; color:#FFF; font-weight: bold; }
+    .tck-con{width:100%; height:80%; float:left; padding:5% 5%; background:#FFF;border-radius: 0 0 10px 10px;}
+    .tck-con p{ margin-bottom:10%; float:left;}
+
+    .zhezhao{ width:100%; height:100%; position:absolute;top:0; left:0;filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5; background:black; z-index:1;}
     /*a{ color:#FFF; border-bottom:1px solid #FFF;}
     a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
     a:hover{color:#FFF;}*/

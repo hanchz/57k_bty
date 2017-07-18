@@ -1,7 +1,11 @@
 /*
 Navicat MySQL Data Transfer
 
+<<<<<<< HEAD
 Source Server         : 本地
+=======
+Source Server         : localhost
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : test
@@ -10,13 +14,21 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
+<<<<<<< HEAD
 Date: 2017-07-18 18:18:23
+=======
+Date: 2017-07-15 20:08:25
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for game_info
+=======
+-- Table structure for `game_info`
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 -- ----------------------------
 DROP TABLE IF EXISTS `game_info`;
 CREATE TABLE `game_info` (
@@ -44,7 +56,7 @@ INSERT INTO `game_info` VALUES ('4', '暮光', '冒险', '暮光之城是一款�
 INSERT INTO `game_info` VALUES ('5', '约斗', '卡牌', '斗地主约牌下载,斗地主约牌为玩家们带来了非常独特的斗地主游戏,游戏中玩家们将享受趣味性的游戏玩法,游戏画面精美,多人在线互动游戏让玩家们享受畅爽的趣味玩法', '2331', '32', '/images/gamelogo5.png', '[\"/images/gamelogo5.png\",\"/images/gamelogo5.png\",\"/images/gamelogo5.png\"]', '/images/gamelogo.png', '2', '2017-06-10 15:55:02');
 
 -- ----------------------------
--- Table structure for gifts
+-- Table structure for `gifts`
 -- ----------------------------
 DROP TABLE IF EXISTS `gifts`;
 CREATE TABLE `gifts` (
@@ -64,12 +76,20 @@ INSERT INTO `gifts` VALUES ('1', '1', '新手礼包', '好吃的X*1', '20', '201
 INSERT INTO `gifts` VALUES ('2', '3', '独家礼包', 'hhh*99', '11', '2017-06-17 16:55:01');
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for gifts_list
+=======
+-- Table structure for `gifts_list`
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 -- ----------------------------
 DROP TABLE IF EXISTS `gifts_list`;
 CREATE TABLE `gifts_list` (
   `id` int(225) NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
   `giftsid` int(10) NOT NULL,
+=======
+  `gameid` int(10) NOT NULL,
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
   `userid` int(10) DEFAULT NULL,
   `key` varchar(50) NOT NULL,
   `gettime` datetime DEFAULT NULL,
@@ -80,7 +100,11 @@ CREATE TABLE `gifts_list` (
 -- Records of gifts_list
 -- ----------------------------
 INSERT INTO `gifts_list` VALUES ('1', '1', '1', 'dsfsf1231', '2017-07-01 18:14:18');
+<<<<<<< HEAD
 INSERT INTO `gifts_list` VALUES ('2', '1', null, 'dsfsf1231', null);
+=======
+INSERT INTO `gifts_list` VALUES ('2', '1', '332', 'dsfsf1231', null);
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 INSERT INTO `gifts_list` VALUES ('3', '3', null, 'dsfsf1231', '0000-00-00 00:00:00');
 INSERT INTO `gifts_list` VALUES ('4', '3', null, 'dsfsf1231', '0000-00-00 00:00:00');
 INSERT INTO `gifts_list` VALUES ('5', '2', null, 'dsfsf1231', null);
@@ -90,7 +114,11 @@ INSERT INTO `gifts_list` VALUES ('8', '2', null, 'dsfsf1231', null);
 INSERT INTO `gifts_list` VALUES ('9', '2', null, 'dsfsf1231', null);
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for kf
+=======
+-- Table structure for `kf`
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 -- ----------------------------
 DROP TABLE IF EXISTS `kf`;
 CREATE TABLE `kf` (
@@ -112,7 +140,11 @@ INSERT INTO `kf` VALUES ('5', '1', '2017-07-14 18:30:16', '7');
 INSERT INTO `kf` VALUES ('6', '5', '2017-06-19 18:30:31', '8');
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for kv
+=======
+-- Table structure for `kv`
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 -- ----------------------------
 DROP TABLE IF EXISTS `kv`;
 CREATE TABLE `kv` (
@@ -130,7 +162,11 @@ INSERT INTO `kv` VALUES ('1', '/images/huandeng.jpg', '/images/huandeng.jpg', '2
 INSERT INTO `kv` VALUES ('2', '/images/huandeng1.jpg', '/images/huandeng1.jpg', '2017-06-10 14:43:19');
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for news
+=======
+-- Table structure for `news`
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 -- ----------------------------
 DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
@@ -151,7 +187,11 @@ INSERT INTO `news` VALUES ('2', '2', 'dfsf ', 'dsfsfsdf 发送的', '2017-06-16 
 INSERT INTO `news` VALUES ('3', '3', '我发的说法', '水电费的说法是的范德萨', '2017-06-13 17:35:24', '3333');
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for orders
+=======
+-- Table structure for `orders`
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 -- ----------------------------
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
@@ -163,14 +203,22 @@ CREATE TABLE `orders` (
   `serverid` int(11) NOT NULL,
   `money` int(11) NOT NULL,
   `goodsid` varchar(50) NOT NULL,
+<<<<<<< HEAD
   `ispay` int(11) NOT NULL COMMENT '0:游戏内发起支付，1：已经支付，2：已经充值游戏',
   `addtime` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=latin1;
+=======
+  `ispay` int(11) NOT NULL,
+  `addtime` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `orders` VALUES ('95', '42336448585246664645684164564E4447413D3D3136', '42336448585246664645684164564E4447413D3D', '2986257', '91284', '1', '10', '2', '0', '2017-07-18 12:12:46');
 INSERT INTO `orders` VALUES ('96', '42336448585246664645684164564E4447413D3D3136', '42336448585246664645684164564E4447413D3D', '2986257', '91284', '1', '10', '2', '0', '2017-07-18 12:12:49');
 INSERT INTO `orders` VALUES ('97', '42336448585246664645684164564E4447413D3D3136', '42336448585246664645684164564E4447413D3D', '2986257', '91284', '1', '10', '2', '0', '2017-07-18 12:12:51');
@@ -191,9 +239,17 @@ CREATE TABLE `test` (
 -- Records of test
 -- ----------------------------
 INSERT INTO `test` VALUES ('1', '1=============', '2017-07-18 11:50:16');
+=======
+INSERT INTO `orders` VALUES ('26', '11231239031', '1123123', '1', '91284', '1', '1', '1', '0', '2017-07-15 13:43:40');
+INSERT INTO `orders` VALUES ('27', null, '1123123', '1', '91284', '1', '1', '1', '0', '2017-07-15 13:47:29');
+INSERT INTO `orders` VALUES ('28', null, '1123123', '1', '91284', '1', '1', '1', '0', '2017-07-15 13:47:35');
+INSERT INTO `orders` VALUES ('29', '112312364409', '11231236', '1', '91284', '1', '1', '1', '0', '2017-07-15 13:47:38');
+INSERT INTO `orders` VALUES ('30', null, '11231236', '1', '91284', '1', '1', '1', '0', '2017-07-15 13:48:43');
+INSERT INTO `orders` VALUES ('31', '1123123115069', '112312311', '1', '91284', '1', '1', '1', '0', '2017-07-15 13:48:48');
+>>>>>>> b753f8248938b7f7ecfa30c658a9fb19334bbc4b
 
 -- ----------------------------
--- Table structure for top10
+-- Table structure for `top10`
 -- ----------------------------
 DROP TABLE IF EXISTS `top10`;
 CREATE TABLE `top10` (
@@ -212,7 +268,7 @@ INSERT INTO `top10` VALUES ('4', '15');
 INSERT INTO `top10` VALUES ('5', '6');
 
 -- ----------------------------
--- Table structure for users
+-- Table structure for `users`
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -228,7 +284,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` VALUES ('1', 'zj', '123456');
 
 -- ----------------------------
--- Table structure for user_info
+-- Table structure for `user_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `user_info`;
 CREATE TABLE `user_info` (

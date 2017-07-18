@@ -8,13 +8,13 @@ class Heepay extends CI_Controller {
         $data = array();
         $this->load->model('order_model');
         //$result=$this->kv_model->kv_model();
-       /* $this->load->model('gifts_model');
-        $result=$this->gifts_model->gifts_model();
-        $data['gifts']=$result;
+        /* $this->load->model('gifts_model');
+         $result=$this->gifts_model->gifts_model();
+         $data['gifts']=$result;
 
-        $this->load->model('kv_model');
-        $result=$this->kv_model->kv_model();
-        $data['kv']=$result;*/
+         $this->load->model('kv_model');
+         $result=$this->kv_model->kv_model();
+         $data['kv']=$result;*/
         $data['PAY_URL']=$this->config->config['PAY_URL'];
         $data['QUERY_URL']=$this->config->config['QUERY_URL'];
         $data['AGENT_ID']=$this->config->config['AGENT_ID'];
@@ -26,13 +26,13 @@ class Heepay extends CI_Controller {
     //接收支付回调通知
     public function notify()
     {
-		//记录接收到的所有信息
-		$content=file_get_contents('php://input');  //post方式
-		$content1=$_SERVER["QUERY_STRING"]."<br>";//获取PHP后的网址参数
-		$params=$content."=============".$content1;
+        //记录接收到的所有信息
+        $content=file_get_contents('php://input');  //post方式
+        $content1=$_SERVER["QUERY_STRING"]."<br>";//获取PHP后的网址参数
+        $params=$content."=============".$content1;
         $this->load->model('order_model');
         $this->order_model->order_return_test_model($params);
-		
+
         $result = $this->input->get('result',true);
         $pay_message = $this->input->get('pay_message',true);
         $agent_id = $this->input->get('agent_id',true);
@@ -63,7 +63,7 @@ class Heepay extends CI_Controller {
             echo 'ok';
             //商户自行处理自己的业务逻辑
             ispay($agent_bill_id);              //支付成功，更新订单号
-			isgamepay($agent_bill_id);			//支付成功，给玩家加金币
+            isgamepay($agent_bill_id);			//支付成功，给玩家加金币
         }
         else{
             echo 'error';
@@ -71,45 +71,45 @@ class Heepay extends CI_Controller {
         }
     }
 
-	//更新订单状态，
+    //更新订单状态，
     public function ispay($val)
     {
         $params=$val;
         $this->load->model('order_model');
         $result=$this->order_model->ispay_model($params);
     }
-	
-	//给玩家充值，充值成功后，更新订单状态
+
+    //给玩家充值，充值成功后，更新订单状态
     public function isgamepay($val)
     {
-		$regamepay=gamepay($val);
-		if($regamepay=='ok'){				
-        $params=$val;
-        $result=$this->order_model->isgamepay_model($params);
-		}else{
-		//游戏没给玩家充值成功	
-		}
+        $regamepay=gamepay($val);
+        if($regamepay=='ok'){
+            $params=$val;
+            $result=$this->order_model->isgamepay_model($params);
+        }else{
+            //游戏没给玩家充值成功
+        }
     }
-	
-	//游戏充值
-	public function gamepay($val)
-	{
-		//根据订单号查询订单信息
-		$orderid=$val;
+
+    //游戏充值
+    public function gamepay($val)
+    {
+        //根据订单号查询订单信息
+        $orderid=$val;
         $this->load->model('order_model');
-		$result=$this->order_model->order_info_model($orderid); //订单全部信息
-		$time=time();
-		$key="e2SExYMWng9fMVQS";
-		$sign=strtolower(md5($result['uid'].$result['serverid'].$time.$result['gameorderid'].$result['money'].$result['goodsid'].$key.$result['gameid'].$result['orderid']));
-		$url="http://api.egret-labs.org/v2/pay/22694/91284";
-		$str="?uid=".$result['uid']."&serverid=".$result['serverid']."&time=".$time."&orderid=".$result['gameorderid']."&money=".$result['money']."&goodsid=".$result['goodsid']."&order=".$result['orderid']."&sign=".$sign;
-		$url=$url.$str;
-		$result = $this->post_url($url);	
-		////////////////////////返回做判断
-	}
-	
-	//post
-	public function post_url($url)
+        $result=$this->order_model->order_info_model($orderid); //订单全部信息
+        $time=time();
+        $key="e2SExYMWng9fMVQS";
+        $sign=strtolower(md5($result['uid'].$result['serverid'].$time.$result['gameorderid'].$result['money'].$result['goodsid'].$key.$result['gameid'].$result['orderid']));
+        $url="http://api.egret-labs.org/v2/pay/22694/91284";
+        $str="?uid=".$result['uid']."&serverid=".$result['serverid']."&time=".$time."&orderid=".$result['gameorderid']."&money=".$result['money']."&goodsid=".$result['goodsid']."&order=".$result['orderid']."&sign=".$sign;
+        $url=$url.$str;
+        $result = $this->post_url($url);
+        ////////////////////////返回做判断
+    }
+
+    //post
+    public function post_url($url)
     {
         //初始化
         $ch = curl_init();
