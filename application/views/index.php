@@ -1,120 +1,15 @@
 <?php
-<<<<<<< HEAD
-$this->load->helper('url');
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
+
 include ('top.php');
 ?>
 <body>
 
-    
-    <div class="container">
-        <div class="row" style="padding:10px 0px;">        
-            	<div class="col-md-2 col-sm-2 col-xs-2"><img src="/images/57klogo.jpg" class="img-responsive" style="margin-left:10px;" ></div>
-            	<div class="col-md-8 col-sm-8 col-xs-8">
-                     	<form action="" method="get">
-                	 <div class="input-group">
-                     <span class="input-group-btn">
-<<<<<<< HEAD
-      			     <img src="<?php echo base_url()?>images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
-      			     <img src="/images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">
-                     	
-                     </span>
-               		 <input type="text" class="form-control" id="name" placeholder="s" style="background:#e8e8e8; border-bottom-right-radius:75px; border-top-right-radius:75px;">
-                     
-                	 </div>
-                     </form>
-                </div>                
-<<<<<<< HEAD
-            	<div class="col-md-2 col-sm-2 col-xs-2"><a href="login_user"><img src="<?php echo base_url()?>images/user.jpg" class="img-responsive" style="margin-left:-10px;"></a></div>
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
-            	<div class="col-md-2 col-sm-2 col-xs-2"><a href="login_user"><img src="/images/user.jpg" class="img-responsive" style="margin-left:-10px;"></a></div>
-        </div>
-    </div>  
 
-    <!--幻灯-->
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-  </ol>
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-      <?php
-      //var_dump($kv);
-      //exit;
-      foreach($kv as $key => $k)
-      {
-          if($key == 0)
-          {
-                echo '
-                <div class="item active">
-                   <a href="'.$k['url'].'"><img src="'.$k['pic'].'" alt="..."></a>
-                  <div class="carousel-caption">
-                  </div>
-                </div>
-                ';
-          }
-          else
-          {
-              echo '
-                <div class="item">
-                  <a href="'.$k['url'].'"><img src="'.$k['pic'].'" alt="..."></a> 
-                  <div class="carousel-caption">
-                  </div>
-                </div>
-                ';
-          }
-      }
+<?php
+
+include ('sou.php');
 ?>
 
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<<<<<<< HEAD
-
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
-</div>
-  
-<div class="container-fluid" >
-    <div class="row">
-<<<<<<< HEAD
-		 <!--<img src="<?php echo base_url()?>images/dh.jpg" usemap="#Map" class="img-responsive" >
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
-		 <!--<img src="/images/dh.jpg" usemap="#Map" class="img-responsive" >
-         <map name="Map">
-           <area shape="rect" coords="66,14,222,190" href="#1">
-           <area shape="rect" coords="339,19,472,185" href="#2">
-           <area shape="rect" coords="618,20,729,182" href="#3">
-           <area shape="rect" coords="894,16,1030,189" href="#4">
-         </map>-->
-<<<<<<< HEAD
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="top10"><img src="<?php echo base_url()?>images/rebang.jpg" class="img-responsive" ></a></div>
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="kf"><img src="<?php echo base_url()?>images/kaifubiao.jpg" class="img-responsive" ></a></div>
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><img src="<?php echo base_url()?>images/libao.jpg" class="img-responsive" ></a></div>
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="newslist"><img src="<?php echo base_url()?>images/zixun.jpg" class="img-responsive" ></a></div>
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="top10"><img src="/images/rebang.jpg" class="img-responsive" ></a></div>
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="kf"><img src="/images/kaifubiao.jpg" class="img-responsive" ></a></div>
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><img src="/images/libao.jpg" class="img-responsive" ></a></div>
-         <div class="col-md-3 col-sm-3 col-xs-3"><a href="newslist"><img src="/images/zixun.jpg" class="img-responsive" ></a></div>
-  </div>
-  </div>
 
 <div class="container-fluid" style=" height:10px; background:#e7eaf1;" ></div>
 
@@ -133,7 +28,7 @@ include ('top.php');
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">下载</a></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">开始</a></div></div>
     	</div>';
         }
 
@@ -144,25 +39,19 @@ include ('top.php');
 <div class="container-fluid" style=" height:10px; background:#e7eaf1;" ></div>
 
 
-<<<<<<< HEAD
-<div class="container-fluid" style="background:url(<?php echo base_url()?>images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
 <div class="container-fluid" style="background:url(/images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >
 <div class="row" style=" text-align:center; padding:5px 0px; color:#FFF"><div class="col-md-12 col-sm-12 col-xs-12" ><strong>&nbsp;</strong></div></div>
 	<div class="row">
         <?php
         foreach ($game_rq as $key=>$v)
         {
-<<<<<<< HEAD
-            echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:30px">
-=======
->>>>>>> fadb9f797bade8e95edfbbe15cc80ec609c4a592
+
+
             echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:20px">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">下载</a></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">开始</a></div></div>
     	</div>';
         }
 
@@ -189,16 +78,15 @@ include ('top.php');
         <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
     </div>
     <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$v['gametype'].'|'.$v['downnum'].'次下载</small></div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$v['gametype'].'|'.$v['downnum'].'次开始</small></div>
     </div>
     <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><nobr>'.$v['about'].'</nobr></small></div>
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).'</nobr></small></div>
     </div>
 </div>
-<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$v['id'].'" role="button">下载</a></div>
+<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$v['id'].'" role="button">开始</a></div>
 </td></tr>';
     }
     ?>
@@ -220,32 +108,24 @@ text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).
     
     <div class="row">
     <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>    
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>   
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
+    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">动作</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">冒险</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">模拟</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">角色</a></div>
     </div>
     <div class="row" style="margin-bottom:20px;">
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>    
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>   
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
+    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">休闲</a></div>
+    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">沙盒</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">求生</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">益智</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">其他</a></div>
     </div>
     
 </div>
-
-<div class="container-fluid" style=" background:#e7eaf1;" >
-	<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999; text-align:center; margin-top:5px;">客服电话：18515635581</div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;text-align:center; margin-top:5px;">客服QQ:2453458109</div>
-    </div>
-    <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;text-align:center; margin-top:5px;">京ICP设备号11003178号 57k手游网版权所有</div>
-    </div>
-
+<div style="margin-top:80px;">
+<?php
+include ('bottom.php');
+?>
 </div>
 
 

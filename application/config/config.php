@@ -324,7 +324,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'zj';
 
 /*
 |--------------------------------------------------------------------------
@@ -521,3 +521,11 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+/*
+ * heepay_config
+ */
+$config['PAY_URL'] = 'https://pay.Heepay.com/Payment/Index.aspx';
+$config['QUERY_URL'] = 'https://query.heepay.com/Payment/Query.aspx';
+$config['AGENT_ID'] = '1664502';						//测试账号：1664502						//正式：2105570
+$config['SIGN_KEY'] = '4B05A95416DB4184ACEE4313';		//测试key：4B05A95416DB4184ACEE4313		//正式：2C53EAF2F317499B9B2D3E10
