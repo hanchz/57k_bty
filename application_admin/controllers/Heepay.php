@@ -33,7 +33,8 @@ class Heepay extends CI_Controller {
         $this->load->model('order_model');
         $this->order_model->order_return_test_model($params);
 		*/
-	
+		//$content1="result=1&pay_message=&agent_id=1664502&jnet_bill_no=H1707197176391AT&agent_bill_id=4233644858524666464568426356684745773D3D9300&pay_type=30&pay_amt=10.00&remark=&sign=ffb19a996f299c96462c59a491847e27";
+		
         $result = $this->input->get('result',true);
         $pay_message = $this->input->get('pay_message',true);
         $agent_id = $this->input->get('agent_id',true);
@@ -46,19 +47,34 @@ class Heepay extends CI_Controller {
 
         $remark = iconv("GB2312","UTF-8//IGNORE",urldecode($remark));//签名验证中的中文采用UTF-8编码;
 
-		$key=$this->config->config['SIGN_KEY'];
-		//$key="4B05A95416DB4184ACEE4313";
-		$sign=md5('result='.$result.'&agent_id='.$agent_id.'&jnet_bill_no='.$jnet_bill_no.'&agent_bill_id='.$agent_bill_id.'&pay_type='.$pay_type.'&pay_amt='.$pay_amt.'&remark='.$remark.'&key='.$key);
+       /* $signStr='';
+        $signStr  = $signStr . 'result=' . $result;
+        $signStr  = $signStr . '&agent_id=' . $agent_id;
+        $signStr  = $signStr . '&jnet_bill_no=' . $jnet_bill_no;
+        $signStr  = $signStr . '&agent_bill_id=' . $agent_bill_id;
+        $signStr  = $signStr . '&pay_type=' . $pay_type;
+
+        $signStr  = $signStr . '&pay_amt=' . $pay_amt;
+        $signStr  = $signStr .  '&remark=' . $remark;
+
+        $signStr = $signStr . '&key=' . '2C53EAF2F317499B9B2D3E10'; //商户签名密钥
 		
+		
+
+        $sign='';
+        $sign=md5($signStr);*/
+		$key="4B05A95416DB4184ACEE4313";
+		//echo $str='result='.$result.'&agent_id='.$agent_id.'&jnet_bill_no='.$jnet_bill_no.'&agent_bill_id='.$agent_bill_id.'&pay_type='.$pay_type.'&pay_amt='.$pay_amt.'&remark='.$remark.'&key='.$key;
 		//echo "<br />";
-		//echo $return_sign;
+		echo $sign=md5('result='.$result.'&agent_id='.$agent_id.'&jnet_bill_no='.$jnet_bill_no.'&agent_bill_id='.$agent_bill_id.'&pay_type='.$pay_type.'&pay_amt='.$pay_amt.'&remark='.$remark.'&key='.$key);
+		
+		echo "<br />";
+		echo $return_sign;
         if($sign==$return_sign){   //比较签名密钥结果是否一致，一致则保证了数据的一致性
             echo 'ok';
             //商户自行处理自己的业务逻辑
-            //支付成功，更新订单号
-			$result1 = $this->ispay($agent_bill_id);	
-			//支付成功，给玩家加金币
-			$result2 = $this->isgamepay($agent_bill_id);	
+            ispay($agent_bill_id);              //支付成功，更新订单号
+			isgamepay($agent_bill_id);			//支付成功，给玩家加金币
         }
         else{
             echo 'error';
@@ -77,7 +93,7 @@ class Heepay extends CI_Controller {
 	//给玩家充值，充值成功后，更新订单状态
     public function isgamepay($val)
     {
-		$regamepay = $this->gamepay($val);	
+		$regamepay=gamepay($val);
 		if($regamepay=='ok'){				
         $params=$val;
         $result=$this->order_model->isgamepay_model($params);
@@ -93,23 +109,13 @@ class Heepay extends CI_Controller {
 		$orderid=$val;
         $this->load->model('order_model');
 		$result=$this->order_model->order_info_model($orderid); //订单全部信息
-		//var_dump($result);
-		$uid=$result[0]['uid'];
-		$serverid=$result[0]['serverid'];
-		$gameorderid=$result[0]['gameorderid'];
-		$money=$result[0]['money'];
-		$goodsid=$result[0]['goodsid'];
-		$gameid=$result[0]['gameid'];
-		$orderid=$result[0]['orderid'];
 		$time=time();
 		$key="e2SExYMWng9fMVQS";
-		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
+		$sign=strtolower(md5($result['uid'].$result['serverid'].$time.$result['gameorderid'].$result['money'].$result['goodsid'].$key.$result['gameid'].$result['orderid']));
 		$url="http://api.egret-labs.org/v2/pay/22694/91284";
-		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
+		$str="?uid=".$result['uid']."&serverid=".$result['serverid']."&time=".$time."&orderid=".$result['gameorderid']."&money=".$result['money']."&goodsid=".$result['goodsid']."&order=".$result['orderid']."&sign=".$sign;
 		$url=$url.$str;
-		//exit;
-		$result = $this->post_url($url);
-		return $result;	
+		$result = $this->post_url($url);	
 		////////////////////////返回做判断
 	}
 	

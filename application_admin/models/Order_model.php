@@ -46,11 +46,6 @@ class Order_Model extends CI_Model{
         $ispay="1";
         $sql = "UPDATE orders SET ispay=?  WHERE orderid= ?";
         $query = $this->db->query($sql, array($ispay, $payorderid));
-		if ($query) {
-        return "ok";
-        } else {
-        return "eorror";
-        }
 
     }
 	
@@ -70,9 +65,9 @@ class Order_Model extends CI_Model{
 		$orderid=$key;
 		$sql = "select * from orders where orderid=?";
         $query=$this->db->query($sql,array($orderid));
+        //echo $sql;
         $result=$query->result_array();
         //var_dump($result);
-		return $result;
 		
 	}
 	
