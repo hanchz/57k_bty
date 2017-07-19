@@ -32,8 +32,8 @@ $this->load->helper('url');
 
 <style>
 
-    .zj_down{border:1px solid #ff3a25; color:#ff3a25}
-    .zj_di{ background:#FFF; margin:10px 10px; border-radius: 10px; padding:10px;  }
+    .zj_down{border:1px solid #ff3a25; color:#ff3a25; text-align:center; font-size:9px;}
+    .zj_di{ background:#FFF; margin:5px 5px; border-radius: 10px; padding:5px;  }
 
     .roll { width: 100%; height: auto; margin: 10px auto 0; position: relative; }
     .roll .wrap { width: 100%; height: 333px; margin: 0 auto; position: relative; overflow: hidden; }

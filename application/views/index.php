@@ -110,18 +110,18 @@ text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).
  	</div>
     
     <div class="row">
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">动作</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">冒险</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">模拟</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">角色</a></div>
+    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
+    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">动作</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">冒险</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">模拟</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">角色</a></div>
     </div>
     <div class="row" style="margin-bottom:20px;">
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">休闲</a></div>
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">沙盒</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">求生</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">益智</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:10px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">其他</a></div>
+    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">休闲</a></div>
+    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">沙盒</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">求生</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">益智</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">其他</a></div>
     </div>
     
 </div>
