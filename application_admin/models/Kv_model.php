@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class User_Model extends CI_Model{
+class Kv_Model extends CI_Model{
 
     function __construct(){
         parent::__construct();
@@ -27,5 +27,14 @@ class User_Model extends CI_Model{
         //var_dump($result);
         //return $result;
         return $query->first_row('array');
+    }
+    public function kv_model()
+    {
+        $sql="select * from kv order by addtime desc limit 0,5";
+        $query=$this->db->query($sql);
+        $result=$query->result_array();
+        //var_dump($result);
+        return $result;
+        //return $query->first_row('array');
     }
 }

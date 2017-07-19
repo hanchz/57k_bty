@@ -1,22 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Index extends CI_Controller {
+class Gifts extends CI_Controller {
 
     public function index()
     {
-        echo "1";
-        //$data = array();
-        //$this->load->view('index',$data);
+        $data = array();
+        $this->load->model('gifts_model');
+        $result=$this->gifts_model->gifts_model();
+        $data['gifts']=$result;
+
+        $this->load->model('kv_model');
+        $result=$this->kv_model->kv_model();
+        $data['kv']=$result;
+
+        $this->load->view('gifts',$data);
         //var_dump($data);
     }
 
-    //页面跳转
-    public function gameinfo()
-    {
-        $data = array();
-        $this->load->view('gameinfo',$data);
-    }
 
     public function check_login()
     {
