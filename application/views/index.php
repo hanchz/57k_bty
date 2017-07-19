@@ -125,7 +125,7 @@ text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).
     </div>
     
 </div>
-<div style="margin-top:80px;">
+<div style="margin-top:100px;">
 <?php
 include ('bottom.php');
 ?>

@@ -14,7 +14,7 @@ include ('top.php');
 .roll ul { position: absolute; top: 0; left: 0; }
 .roll li { float: left; width: 200px; height: 333px; text-align: center; list-style:none; margin:5px; }
 .roll li img{ width:200px; height:333px;}
-    .jindutiao{ width:60%; background: #ccc; height:5px; margin-left: -20px; margin-top: 5px; padding: 0 0;};
+    .jindutiao{ width:60%; background: #ccc; height:5px; margin-left: -10px; margin-top: 5px; padding: 0 0;};
 </style>
 <body>
 <div class="container">
@@ -35,7 +35,7 @@ include ('top.php');
 <div class="col-md-7 col-sm-7 col-xs-7"  style=" margin-left:-10px;"><img src="<?php echo $game['logo']?>" class="img-responsive"></div>
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row" style="margin-top:10px;">
-    	<div class="col-md-7 col-sm-7 col-xs-7"><strong><?php echo $game['name']?></strong></div>
+    	<div class="col-md-12 col-sm-12 col-xs-12"><strong><?php echo $game['name']?></strong></div>
     </div>
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><?php echo $game['gametype'].'|'.$game['size']?>M</small></div>
@@ -135,11 +135,11 @@ include ('top.php');
                                                 <div class="row">
                                                     <div class="col-md-12 col-sm-12 col-xs-12" style="color:red">
 
-                                                        <small  class="col-md-3 col-sm-3 col-xs-3" style="margin-left: -10px;">剩余</small>
+                                                        <small  class="col-md-3 col-sm-3 col-xs-3" style="margin-left: -10px; width:auto;">剩余</small>
                                                         <div class="jindutiao col-md-4 col-sm-4 col-xs-4">
                                                             <div style=" width:<?php echo $giftsnum["count(giftsid)"]/$val['giftsnum']*100?>%; background: red; height:5px;  float:left;"> &nbsp;</div>
                                                         </div>
-                                                        <small  class="col-md-3 col-sm-3 col-xs-3"  style="width:auto;"><?php echo $giftsnum["count(giftsid)"]?>个</small>
+                                                        <small   style="width:auto; float:left; margin-left:10px;"><?php echo $giftsnum["count(giftsid)"]?>个</small>
                                                     </div>
                                                 </div>
 
