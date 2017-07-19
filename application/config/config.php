@@ -527,7 +527,5 @@ $config['proxy_ips'] = '';
  */
 $config['PAY_URL'] = 'https://pay.Heepay.com/Payment/Index.aspx';
 $config['QUERY_URL'] = 'https://query.heepay.com/Payment/Query.aspx';
-
 $config['AGENT_ID'] = '1664502';						//测试账号：1664502						//正式：2105570
 $config['SIGN_KEY'] = '4B05A95416DB4184ACEE4313';		//测试key：4B05A95416DB4184ACEE4313		//正式：2C53EAF2F317499B9B2D3E10
-

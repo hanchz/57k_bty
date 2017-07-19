@@ -1,4 +1,18 @@
 <?php
+function is_weixin(){ 
+
+if ( strpos($_SERVER['HTTP_USER_AGENT'], 
+
+'MicroMessenger') !== false ) {
+
+        return true;
+
+    }  
+
+        return false;
+
+}
+
 //获取用户IP
 $user_ip = "";
 if(isset($_SERVER['HTTP_CLIENT_IP']))
@@ -30,8 +44,18 @@ $goods_name = $_POST['goodsid'];
 $goods_num = "1";
 $goods_note = $_POST['goodsid'];
 $remark = "";
-$wxpay_type = 1;
 $sign_key = "$SIGN_KEY"; //签名密钥，需要商户使用为自己的真实KEY
+
+if(is_weixin()){
+
+$wxpay_type=2;
+
+}else{
+
+$wxpay_type=1;
+
+}
+
 //微信支付类型（扫码支付、WAP支付、公众号支付）
 if($wxpay_type == 1) //WAP支付
 {
@@ -72,64 +96,64 @@ $result=$this->order_model->pay_order_model($params);
 
 
 ?>
-    <!--<textarea name="card_data" id="card_data" rows="10" cols="70"><?php echo '签名原始数据：'.strtolower($sign_str);?></textarea>
+<!--<textarea name="card_data" id="card_data" rows="10" cols="70"><?php echo '签名原始数据：'.strtolower($sign_str);?></textarea>
 <textarea name="sign" id="sign" rows="10" cols="70"><?php echo '签名加密后数据数据：'.$sign;?></textarea>
 -->
-    <form id='frmSubmit' method='post' name='frmSubmit' action='<?php echo $PAY_URL?>'>
-        <input type='hidden' name='version' value='<?php echo $version;?>'  id="version"/>
-        <input type='hidden' name='agent_id' value='<?php echo $agent_id;?>' id="agent_id"/>
-        <input type='hidden' name='agent_bill_id' value='<?php echo $agent_bill_id;?>' id="agent_bill_id"/>
-        <input type='hidden' name='agent_bill_time' value='<?php echo  $agent_bill_time;?>' id="agent_bill_time" />
-        <input type='hidden' name='pay_type' value='<?php echo $pay_type;?>' id="pay_type" />
-        <input type='hidden' name='pay_code' value='<?php echo $pay_code;?>' id="pay_code"/>
-        <input type='hidden' name='pay_amt' value='<?php echo $pay_amt;?>' id="pay_amt" />
-        <input type='hidden' name='notify_url' value='<?php echo $notify_url;?>' id="notify_url"/>
-        <input type='hidden' name='return_url' value='<?php echo $return_url;?>' id="return_url" />
-        <input type='hidden' name='user_ip' value='<?php echo $user_ip;?>' id="user_ip" />
-        <input type='hidden' name='goods_name' value='<?php echo urlencode($goods_name);?>' id="goods_name" />
-        <input type='hidden' name='goods_num' value='<?php echo  urlencode($goods_num);?>'  id="goods_num"/>
-        <input type='hidden' name='goods_note' value='<?php echo urlencode($goods_note);?>' id="goods_note" />
-        <input type='hidden' name='remark' value='<?php echo urlencode($remark);?>' id="remark" />
-        <input type='hidden' name='is_phone' value='<?php echo $is_phone;?>' id="is_phone" />
-        <input type='hidden' name='is_frame' value='<?php echo $is_frame;?>' id="is_frame" />
+<form id='frmSubmit' method='post' name='frmSubmit' action='<?php echo $PAY_URL?>'>
+    <input type='hidden' name='version' value='<?php echo $version;?>'  id="version"/>
+    <input type='hidden' name='agent_id' value='<?php echo $agent_id;?>' id="agent_id"/>
+    <input type='hidden' name='agent_bill_id' value='<?php echo $agent_bill_id;?>' id="agent_bill_id"/>
+    <input type='hidden' name='agent_bill_time' value='<?php echo  $agent_bill_time;?>' id="agent_bill_time" />
+    <input type='hidden' name='pay_type' value='<?php echo $pay_type;?>' id="pay_type" />
+    <input type='hidden' name='pay_code' value='<?php echo $pay_code;?>' id="pay_code"/>
+    <input type='hidden' name='pay_amt' value='<?php echo $pay_amt;?>' id="pay_amt" />
+    <input type='hidden' name='notify_url' value='<?php echo $notify_url;?>' id="notify_url"/>
+    <input type='hidden' name='return_url' value='<?php echo $return_url;?>' id="return_url" />
+    <input type='hidden' name='user_ip' value='<?php echo $user_ip;?>' id="user_ip" />
+    <input type='hidden' name='goods_name' value='<?php echo urlencode($goods_name);?>' id="goods_name" />
+    <input type='hidden' name='goods_num' value='<?php echo  urlencode($goods_num);?>'  id="goods_num"/>
+    <input type='hidden' name='goods_note' value='<?php echo urlencode($goods_note);?>' id="goods_note" />
+    <input type='hidden' name='remark' value='<?php echo urlencode($remark);?>' id="remark" />
+    <input type='hidden' name='is_phone' value='<?php echo $is_phone;?>' id="is_phone" />
+    <input type='hidden' name='is_frame' value='<?php echo $is_frame;?>' id="is_frame" />
+    
+    <input type="hidden" name="meta_option" value="<?php echo $meta_option?>" id="meta_option" />
+    
+    <!--<input type='hidden' name='is_test' value='1' />-->
+    <input type='hidden' name='sign' value='<?php echo $sign;?>'  id="sign1"/>
+    <input type="button" value="提交订单" onclick="gatewayPaySubmit()">
+</form>
 
-        <input type="hidden" name="meta_option" value="<?php echo $meta_option?>" id="meta_option" />
-
-        <!--<input type='hidden' name='is_test' value='1' />-->
-        <input type='hidden' name='sign' value='<?php echo $sign;?>'  id="sign1"/>
-        <input type="button" value="提交订单" onclick="gatewayPaySubmit()">
-    </form>
-
-    <p id="demo"></p>
-    <script language='javascript'>
-        function gatewayPaySubmit(){
-            document.frmSubmit.submit();
-            var version=document.getElementById("version").value;
-            var agent_id=document.getElementById("agent_id").value;
-            var agent_bill_id=document.getElementById("agent_bill_id").value;
-            var agent_bill_time=document.getElementById("agent_bill_time").value;
-            var pay_type=document.getElementById("pay_type").value;
-            var pay_code=document.getElementById("pay_code").value;
-            var pay_amt=document.getElementById("pay_amt").value;
-            var notify_url=document.getElementById("notify_url").value;
-            var return_url=document.getElementById("return_url").value;
-            var user_ip=document.getElementById("user_ip").value;
-            var goods_name=document.getElementById("goods_name").value;
-            var goods_num=document.getElementById("goods_num").value;
-            var goods_note=document.getElementById("goods_note").value;
-            var remark=document.getElementById("remark").value;
-            var is_phone=document.getElementById("is_phone").value;
-            var is_frame=document.getElementById("is_frame").value;
-            var meta_option=document.getElementById("meta_option").value;
-            var sign1=document.getElementById("sign1").value;
-
-            ///var not=htmlspecialchars('&not');
-
-            var str='version='+version+'&agent_id='+agent_id+'&agent_bill_id='+agent_bill_id+'&agent_bill_time='+agent_bill_time+'&pay_type='+pay_type+'&pay_code='+pay_code+'&pay_amt='+pay_amt+'&notify_url='+notify_url+'&return_url='+return_url+'&user_ip='+user_ip+'&goods_name='+goods_name+'&goods_num='+goods_num+'&goods_note='+goods_note+'&remark='+remark+'&is_phone='+is_phone+'&is_frame='+is_frame+'&meta_option='+meta_option+'&sign='+sign1;
-            //alert(id);
-            //document.getElementById("demo").innerHTML=str;
-        }
-    </script>
+<p id="demo"></p>
+<script language='javascript'>
+    function gatewayPaySubmit(){
+			document.frmSubmit.submit();
+			var version=document.getElementById("version").value;
+			var agent_id=document.getElementById("agent_id").value;
+			var agent_bill_id=document.getElementById("agent_bill_id").value;
+			var agent_bill_time=document.getElementById("agent_bill_time").value;
+			var pay_type=document.getElementById("pay_type").value;
+			var pay_code=document.getElementById("pay_code").value;
+			var pay_amt=document.getElementById("pay_amt").value;
+			var notify_url=document.getElementById("notify_url").value;
+			var return_url=document.getElementById("return_url").value;
+			var user_ip=document.getElementById("user_ip").value;
+			var goods_name=document.getElementById("goods_name").value;
+			var goods_num=document.getElementById("goods_num").value;
+			var goods_note=document.getElementById("goods_note").value;
+			var remark=document.getElementById("remark").value;
+			var is_phone=document.getElementById("is_phone").value;
+			var is_frame=document.getElementById("is_frame").value;
+			var meta_option=document.getElementById("meta_option").value;
+			var sign1=document.getElementById("sign1").value;
+			
+			///var not=htmlspecialchars('&not');
+			
+			var str='version='+version+'&agent_id='+agent_id+'&agent_bill_id='+agent_bill_id+'&agent_bill_time='+agent_bill_time+'&pay_type='+pay_type+'&pay_code='+pay_code+'&pay_amt='+pay_amt+'&notify_url='+notify_url+'&return_url='+return_url+'&user_ip='+user_ip+'&goods_name='+goods_name+'&goods_num='+goods_num+'&goods_note='+goods_note+'&remark='+remark+'&is_phone='+is_phone+'&is_frame='+is_frame+'&meta_option='+meta_option+'&sign='+sign1;
+			//alert(id);
+			//document.getElementById("demo").innerHTML=str;
+			}
+</script>
 <?php
 if($result=="ok")
 {

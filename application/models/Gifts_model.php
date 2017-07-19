@@ -13,7 +13,7 @@ class Gifts_Model extends CI_Model{
     public function gifts_model()
     {
         $date=date("Y-m-d");
-        $today=date("Y-m-d", time());
+         $today=date("Y-m-d", time());
         $sql = "select * from gifts  order by addtime desc limit 0,50";
         $query=$this->db->query($sql,array($today));
         //echo $sql;
@@ -68,8 +68,8 @@ class Gifts_Model extends CI_Model{
         return $result;
         //return $query->first_row('array');
     }
-
-    public function gifts_num_model($args)
+	
+	public function gifts_num_model($args)
     {
         $id = $args['id'];
         $sql="select count(giftsid) from gifts_list where giftsid=? and ISNULL(userid)";
@@ -121,28 +121,28 @@ class Gifts_Model extends CI_Model{
         //return $query->first_row('array');
         return $row['key'];
     }
-
-    public function gifts_info_model_one($args)
+	
+	public function gifts_info_model_one($args)
     {
         $id = $args['id'];
         $sql="select * from gifts where gameid=?";
         $query=$this->db->query($sql,array($id));
         //var_dump($this->db->last_query());exit;
         $row = $query->first_row('array');
-        //var_dump($row);
-        return $row["giftsinfo"];
+		//var_dump($row);
+		return $row["giftsinfo"];
     }
-
-    public function uesr_gifts_info_model($args)
+	
+	public function uesr_gifts_info_model($args)
     {
-        $uid = $args['uid'];
-        //exit;
+		$uid = $args['uid'];
+		//exit;
         $sql="select * from gifts_list where userid=?";
         $query=$this->db->query($sql,array($uid));
-        //var_dump($this->db->last_query());exit;
-        $result=$query->result_array();
-        return $result;
-    }
-
+		//var_dump($this->db->last_query());exit;
+		$result=$query->result_array();
+		return $result;
+	}
+	
 
 }

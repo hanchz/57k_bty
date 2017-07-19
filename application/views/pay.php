@@ -76,101 +76,101 @@ if(isset($orderid) && !empty($orderid))
     </div>
 
 
-    <?php }else{ //普通支付页面?>
-        <div class="container-fluid" style="margin-top:10px;" >
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >请选择游戏：
-                </div>
-                <div class="col-md-5 col-sm-5 col-xs-5" style="margin-left:-20px;" >
-                    <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;" id="name" name="name" placeholder="请选择游戏">
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-3" >
-                    <a class="btn btn-danger" style=" width:90px; background:red;" href="#" role="button">选择游戏</a>
-                </div>
+<?php }else{ //普通支付页面?>
+<div class="container-fluid" style="margin-top:10px;" >
+	<div class="row">
+    	 <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >请选择游戏：
+   		 </div>
+    	 <div class="col-md-5 col-sm-5 col-xs-5" style="margin-left:-20px;" >
+   		 <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;" id="name" name="name" placeholder="请选择游戏">
+   		 </div>
+         <div class="col-md-3 col-sm-3 col-xs-3" >
+         <a class="btn btn-danger" style=" width:90px; background:red;" href="#" role="button">选择游戏</a>
+         </div>
+         
+ 	</div>
+    
+    <div class="row" style="margin-top:10px;">
+    	 <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >请选择服务器：
+   		 </div>
+    	 <div class="col-md-5 col-sm-5 col-xs-5" style="margin-left:-20px;" >
+   		 <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;"  id="serverid" name="serverid" placeholder="请选择服务器">
+   		 </div>
+         <div class="col-md-3 col-sm-3 col-xs-3" >
+         <a class="btn btn-danger" style=" width:90px; background:red;" href="#" role="button">选择区服</a>
+         </div>
+         
+ 	</div>
+    
+    <div class="row" style="margin-top:10px;">
+    	 <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >您要充值的账号：
+   		 </div>
+    	 <div class="col-md-5 col-sm-5 col-xs-5" style="margin-left:-20px;" >
+   		 <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;" id="username" name="username" placeholder="">
+   		 </div>
+         
+ 	</div>
+    
+    
+    
+</div>
 
+<?php }?>
+
+<div class="container-fluid" style="margin-bottom:10px;" >
+
+	
+</div>
+
+<div class="container-fluid" style=" height:10px; background:#e7eaf1;" ></div>
+
+
+
+
+<div class="container-fluid">
+<div class="row">
+  	<div class="col-md-4" style="margin-top:5px;"><strong>充值金额：单位（元）</strong></div>
+
+    <?php       //游戏内直接发起支付
+    if(isset($orderid) && !empty($orderid))
+    {
+    ?>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;" >
+                <input type="text" class="form-control input-group-sm zj_input" style="border:1px solid red; text-align:center; color: #0f0f0f;" id="money" name="money" value="<?php echo $money?>" disabled="disabled">
             </div>
-
-            <div class="row" style="margin-top:10px;">
-                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >请选择服务器：
-                </div>
-                <div class="col-md-5 col-sm-5 col-xs-5" style="margin-left:-20px;" >
-                    <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;"  id="serverid" name="serverid" placeholder="请选择服务器">
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-3" >
-                    <a class="btn btn-danger" style=" width:90px; background:red;" href="#" role="button">选择区服</a>
-                </div>
-
-            </div>
-
-            <div class="row" style="margin-top:10px;">
-                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >您要充值的账号：
-                </div>
-                <div class="col-md-5 col-sm-5 col-xs-5" style="margin-left:-20px;" >
-                    <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;" id="username" name="username" placeholder="">
-                </div>
-
-            </div>
-
-
-
         </div>
 
+    <?php }else{?>
+
+  <div class="row" style="margin-left:10%; margin-top:10px;">  
+    <div class="col-md-3 col-sm-3 col-xs-3" >
+         <a class="btn btn-danger" style=" width:90px; background:red; " href="#" role="button">50</a>
+         </div>
+    <div class="col-md-3 col-sm-3 col-xs-3" >
+         <a class="btn btn-danger" style=" width:90px; background:red; " href="#" role="button">100</a>
+         </div>
+         
+    <div class="col-md-3 col-sm-3 col-xs-3" >
+         <a class="btn btn-danger" style=" width:90px; background:red; " href="#" role="button">500</a>
+         </div>  
+  </div>   
+ <div class="row" style="margin-top:10px;">
+ 	     <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;" >
+   		 <input type="text" class="form-control input-group-sm zj_input" style="border:1px solid red; text-align:center; color: #0f0f0f" id="money" name="money" placeholder="自定义金额请输入0-50000之间的整数">
+   		 </div>
+ </div>
     <?php }?>
-
-    <div class="container-fluid" style="margin-bottom:10px;" >
-
-
-    </div>
-
-    <div class="container-fluid" style=" height:10px; background:#e7eaf1;" ></div>
-
-
-
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4" style="margin-top:5px;"><strong>充值金额：单位（元）</strong></div>
-
-            <?php       //游戏内直接发起支付
-            if(isset($orderid) && !empty($orderid))
-            {
-                ?>
-
-                <div class="row" style="margin-top:10px;">
-                    <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;" >
-                        <input type="text" class="form-control input-group-sm zj_input" style="border:1px solid red; text-align:center; color: #0f0f0f;" id="money" name="money" value="<?php echo $money?>" disabled="disabled">
-                    </div>
-                </div>
-
-            <?php }else{?>
-
-                <div class="row" style="margin-left:10%; margin-top:10px;">
-                    <div class="col-md-3 col-sm-3 col-xs-3" >
-                        <a class="btn btn-danger" style=" width:90px; background:red; " href="#" role="button">50</a>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3" >
-                        <a class="btn btn-danger" style=" width:90px; background:red; " href="#" role="button">100</a>
-                    </div>
-
-                    <div class="col-md-3 col-sm-3 col-xs-3" >
-                        <a class="btn btn-danger" style=" width:90px; background:red; " href="#" role="button">500</a>
-                    </div>
-                </div>
-                <div class="row" style="margin-top:10px;">
-                    <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;" >
-                        <input type="text" class="form-control input-group-sm zj_input" style="border:1px solid red; text-align:center; color: #0f0f0f" id="money" name="money" placeholder="自定义金额请输入0-50000之间的整数">
-                    </div>
-                </div>
-            <?php }?>
-
-            <div class="row" style="margin-top:30px;">
-                <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;">
-                    <!--<a class="btn btn-danger" style=" width:100%; background:red; " href="#" role="button">确认充值</a>-->
-                    <input type="submit" class="btn btn-danger" name="submit"  style=" width:100%; background:red; " value="确认充值"><!--onclick="checkreg()"-->
-                </div>
-            </div>
+ 
+  <div class="row" style="margin-top:30px;">
+  <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;">
+         <!--<a class="btn btn-danger" style=" width:100%; background:red; " href="#" role="button">确认充值</a>-->
+      <input type="submit" class="btn btn-danger" name="submit"  style=" width:100%; background:red; " value="确认充值"><!--onclick="checkreg()"-->
+         </div> 
+  </div>
 </form>
-
+              
 </div>
 </div>
 
