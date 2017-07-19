@@ -94,8 +94,8 @@ class Heepay extends CI_Controller {
 		$orderid=$val;
         $this->load->model('order_model');
 		$result=$this->order_model->order_info_model($orderid); //订单全部信息
-		var_dump($result);
-		exit;
+		//var_dump($result);
+		//exit;
 		$uid=$result[0]['uid'];
 		$serverid=$result[0]['serverid'];
 		$gameorderid=$result[0]['gameorderid'];
