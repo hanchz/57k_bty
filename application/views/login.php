@@ -95,7 +95,7 @@ a:hover{color:#FFF;}
         </div>
         
         <div class="col-md-3 col-sm-3 col-xs-3"  style="float:right; ">
-        <a href="reg" style="margin-left:25px;">注册</a>
+        <a href="http://m.57k.com/index.php/reg" style="margin-left:25px;">注册</a>
         </div>
     </div>
     

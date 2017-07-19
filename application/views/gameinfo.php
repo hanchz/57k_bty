@@ -90,27 +90,21 @@ include ('top.php');
     <div class="row">
   	<div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><?php echo $game['about']?></small></div>
  	</div>
-    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="<?php echo $game['url']?>" role="button">进入游戏</a></div>
     
     <?php 
 	
+	include ('gamelogin.php');
+	
+	
 	if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
-	//测试游戏
-	//$uid="111";
-	$serverid=1;
-	$time=time();
-	$key="e2SExYMWng9fMVQS";
-	$gameid="91284";
-	$sign = strtolower(md5($uid.$serverid.$time.$gameid.$key));
 	
-	
-	echo "http://api.egret-labs.org/v2/game/22694/91284?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameid=".$gameid."&sign=".$sign;
 	?>
-    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="http://api.egret-labs.org/v2/game/22694/91284?uid=<?php echo $uid?>&serverid=<?php echo $serverid?>&time=<?php echo $time?>&gameid=<?php echo $gameid?>&sign=<?php echo $sign;?>" role="button">测试游戏</a></div>
+    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="<?php echo gameurl($game["id"],$uid)?>" role="button">进入游戏</a></div>
     
+<?php }else{?>
+
+    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="" onClick="alert('请先登录')" role="button">进入游戏</a></div>
 <?php }?>
-
-
 </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="week">
@@ -186,7 +180,7 @@ include ('top.php');
 
         </div>
 </div>
-<div style="margin-top:80px;">
+<div style="margin-top:100px;">
 <?php
 include ('bottom.php');
 ?>

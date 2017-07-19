@@ -29,6 +29,10 @@ else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
 
 //$user_ip="114.240.93.228";
 
+$gameid = $_POST['gameid'];    //游戏id
+$uid=$_POST['uid'];
+include ('gamelogin.php');
+$return_url=gameurl($gameid,$uid);//
 
 $version = 1;
 $agent_id = $AGENT_ID;
@@ -39,7 +43,7 @@ $pay_type = 30; //微信支付代码,int型
 $pay_code = ""; //char型，空字符串
 $pay_amt = $_POST['money'];
 $notify_url = "http://m.57k.com/Heepay/notify";
-$return_url = "http://"; //微信支付不涉及同步返回，此处可填写任意URL，没有实际使用
+$return_url = $return_url; //微信支付不涉及同步返回，此处可填写任意URL，没有实际使用
 $goods_name = $_POST['goodsid'];
 $goods_num = "1";
 $goods_note = $_POST['goodsid'];
