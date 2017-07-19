@@ -1,4 +1,18 @@
 <?php
+function is_weixin(){ 
+
+if ( strpos($_SERVER['HTTP_USER_AGENT'], 
+
+'MicroMessenger') !== false ) {
+
+        return true;
+
+    }  
+
+        return false;
+
+}
+
 //获取用户IP
 $user_ip = "";
 if(isset($_SERVER['HTTP_CLIENT_IP']))
@@ -42,23 +56,6 @@ $wxpay_type=1;
 
 }
 
- 
-
- 
-
-function is_weixin(){ 
-
-if ( strpos($_SERVER['HTTP_USER_AGENT'], 
-
-'MicroMessenger') !== false ) {
-
-        return true;
-
-    }  
-
-        return false;
-
-}
 //微信支付类型（扫码支付、WAP支付、公众号支付）
 if($wxpay_type == 1) //WAP支付
 {
