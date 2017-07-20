@@ -21,8 +21,18 @@ class Order_Model extends CI_Model{
         $gameid=$data['gameid'];
         $ispay="0";
         $datetime=date("Y-m-d H:i:s",time());
+		//查询是否订单重复
+		$sql = "select count(orderid) as n from orders where gameorderid=?";
+        $query=$this->db->query($sql,array($orderid));
+		$row = $query->first_row('array');
+		//echo $this->db->last_query();
+		//exit;
+		$n=$row['n'];
+		if($n<=0)	
+		{
         $sql="INSERT INTO orders (gameorderid,uid,gameid,serverid,money,goodsid,ispay,addtime) VALUES (?,?,?,?,?,?,?,?)";
         $query=$this->db->query($sql,array($orderid,$uid,$gameid,$serverid,$money,$goodsid,$ispay,$datetime));
+		}
     }
 
 	//拉起支付时候调用，生成我方订单号

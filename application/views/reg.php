@@ -142,16 +142,16 @@ a:hover{color:#FFF;}
     
 	</ul>
     
-    <div class="row" style="margin-top:60px;">
+    <div class="row" style="margin-top:60px; ">
         <input type="submit" class="btn btn-default btn-lg btn-block zj_btn" name="submit" onclick="checkreg()" value="注册">
     </div>
     </form>
     <div class="row" style="margin-top:20px; color:#FFF;">
-    	<div class="col-md-4 col-sm-4 col-xs-4"  style="float:left;">
+    	<div class="col-md-4 col-sm-4 col-xs-4"  style="float:left; width:auto">
         <a href="#">忘记密码</a>
         </div>
         
-        <div class="col-md-3 col-sm-3 col-xs-3"  style="float:right; ">
+        <div class="col-md-3 col-sm-3 col-xs-3"  style="float:right; width:auto">
         <a href="#" style="margin-left:25px;">注册</a>
         </div>
     </div>

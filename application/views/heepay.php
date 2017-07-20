@@ -32,7 +32,7 @@ else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
 $gameid = $_POST['gameid'];    //游戏id
 $uid=$_POST['uid'];
 include ('gamelogin.php');
-$return_url=gameurl($gameid,$uid);//
+$return_url=gameurl($gameid,$uid);//支付成功后，跳转回游戏地址
 
 $version = 1;
 $agent_id = $AGENT_ID;

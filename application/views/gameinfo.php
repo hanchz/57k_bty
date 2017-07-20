@@ -97,9 +97,9 @@ include ('top.php');
 	
 	
 	if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
-	
+	echo gameurl($game["gameid"],$uid);
 	?>
-    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="<?php echo gameurl($game["id"],$uid)?>" role="button">进入游戏</a></div>
+    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="<?php echo gameurl($game["gameid"],$uid)?>" role="button">进入游戏</a></div>
     
 <?php }else{?>
 

@@ -90,12 +90,12 @@ a:hover{color:#FFF;}
 
 </form>
     <div class="row" style="margin-top:20px; color:#FFF;">
-    	<div class="col-md-4 col-sm-4 col-xs-4"  style="float:left;">
+    	<div class="col-md-4 col-sm-4 col-xs-4"  style="float:left; width:auto">
         <a href="#">忘记密码</a>
         </div>
         
-        <div class="col-md-3 col-sm-3 col-xs-3"  style="float:right; ">
-        <a href="http://m.57k.com/index.php/reg" style="margin-left:25px;">注册</a>
+        <div class="col-md-3 col-sm-3 col-xs-3"  style="float:right; width:auto">
+        <a href="http://m.57k.com/reg" style="margin-left:25px;">注册</a>
         </div>
     </div>
     

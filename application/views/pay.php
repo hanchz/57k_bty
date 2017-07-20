@@ -60,9 +60,9 @@ if(isset($orderid) && !empty($orderid))
                 <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;"  id="serverid" name="serverid" value="<?php echo $serverid?>" disabled="disabled" >
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3" >
-            </div>-->
+            </div>
 
-        </div>
+        </div>-->
 
         <div class="row" style="margin-top:10px;">
             <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >请确认账号：
