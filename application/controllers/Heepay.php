@@ -64,10 +64,13 @@ class Heepay extends CI_Controller {
         else{
             echo 'error';
             //商户自行处理，可通过查询接口更新订单状态，也可以通过商户后台自行补发通知，或者反馈运营人工补发
+			$result1 = $this->payresult($agent_bill_id);		//检验充值是否成功
+			
+			
         }
     }
 
-	//更新订单状态，
+	//更新订单状态，更新订单表，把ispay更新成1，已支付状态
     public function ispay($val)
     {
         $params=$val;
@@ -75,7 +78,7 @@ class Heepay extends CI_Controller {
         $result=$this->order_model->ispay_model($params);
     }
 	
-	//给玩家充值，充值成功后，更新订单状态
+	//给玩家充值，充值成功后，更新订单状态，把ispay更新成2，给玩家账号充值成功状态
     public function isgamepay($val)
     {
 		$regamepay = $this->gamepay($val);	
@@ -114,6 +117,56 @@ class Heepay extends CI_Controller {
 		return $result;	
 		////////////////////////返回做判断
 	}
+	
+	//充值结果查询   用于充值验证
+	public function payresult($agent_bill_id)
+	{
+		//$agent_bill_id='4233644858524666464568436356744747773D3D3945';
+	$url = $this->config->config['QUERY_URL'];
+	$version = '1';
+	$agent_id = $this->config->config['AGENT_ID'];
+	$agent_bill_id = $agent_bill_id;
+	$agent_bill_time = date('YmdHis', time());
+	$remark = '';
+	$return_mode = '1';
+	$key = $this->config->config['SIGN_KEY'];;
+	
+	/*************创建签名***************/
+	$sign_str = '';
+	$sign_str  = $sign_str . 'version=' . $version;
+	$sign_str  = $sign_str . '&agent_id=' . $agent_id;
+	$sign_str  = $sign_str . '&agent_bill_id=' . $agent_bill_id;
+	$sign_str  = $sign_str . '&agent_bill_time=' . $agent_bill_time;
+	$sign_str  = $sign_str . '&return_mode=' . $return_mode;
+	$sign_str  = $sign_str . '&key=' . $key;
+
+	//获取签名密钥
+	$sign='';
+	$sign=md5($sign_str);	
+	
+	$str="?version=".$version."&agent_id=".$agent_id."&agent_bill_id=".$agent_bill_id."&agent_bill_time=".$agent_bill_time."&remark=".$remark."&return_mode=".$return_mode."&sign=".$sign;
+		$url=$url.$str;
+		//exit;
+		//echo $result = $this->post_url($url);
+		$result=file_get_contents($url);
+		//echo $result;	agent_id=1664502|agent_bill_id=4233644858524666464568436356744747773D3D3945|jnet_bill_no=H1707208108189AU|pay_type=30|result=1|pay_amt=10.00|pay_message=|remark=|sign=6c69de624d983150f1c257f233a73720
+		$arr=explode('|',$result);
+		//var_dump($arr);
+		//exit;
+		foreach($arr as $k=>$v)
+		{
+			if($v=='result=1'){
+			//支付成功，更新订单号
+			$result1 = $this->ispay($agent_bill_id);	
+			//支付成功，给玩家加金币
+			$result2 = $this->isgamepay($agent_bill_id);
+			exit;
+				}
+		} 
+		//exit;
+	} 
+	
+	
 	
 	//post
 	public function post_url($url)
