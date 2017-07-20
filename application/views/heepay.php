@@ -33,11 +33,13 @@ $gameid = $_POST['gameid'];    //游戏id
 $uid=$_POST['uid'];
 include ('gamelogin.php');
 $return_url=gameurl($gameid,$uid);//支付成功后，跳转回游戏地址
+$return_url="http://m.57k.com/";
 
 $version = 1;
 $agent_id = $AGENT_ID;
 $orderid=$_POST['orderid'];
-$agent_bill_id = $_POST['orderid'].rand(1000,9999);
+
+$agent_bill_id = substr($_POST['orderid'],0,30).date("ymdHis");
 $agent_bill_time = date('YmdHis', time());
 $pay_type = 30; //微信支付代码,int型
 $pay_code = ""; //char型，空字符串

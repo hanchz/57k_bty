@@ -44,7 +44,27 @@ include ('top.php');
 </td></tr>
 </table>
 </div>
-    <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" href="<?php echo $game['url']?>" role="button">进入游戏</a></div>
+<!--    <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" href="<?php echo $game['url']?>" role="button">进入游戏</a></div>
+
+
+-->
+    <?php 
+	
+	include ('gamelogin.php');
+	
+	
+	if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
+	//echo gameurl($game["gameid"],$uid);
+	?>
+
+        <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" href="<?php echo gameurl($game["gameid"],$uid)?>" role="button">进入游戏</a></div>
+    
+<?php }else{?>
+
+
+    
+            <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" onClick="alert('请先登录')" role="button">进入游戏</a></div>
+<?php }?>
 
 
 </div>
@@ -93,11 +113,11 @@ include ('top.php');
     
     <?php 
 	
-	include ('gamelogin.php');
+	//include ('gamelogin.php');
 	
 	
 	if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
-	echo gameurl($game["gameid"],$uid);
+	//echo gameurl($game["gameid"],$uid);
 	?>
     <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="<?php echo gameurl($game["gameid"],$uid)?>" role="button">进入游戏</a></div>
     
@@ -204,7 +224,7 @@ include ('bottom.php');
 <div class="zhezhao" id="zhezhao" style="display:none;"></div>
 
 
-<script type="text/javascript" src="bootstrap-3.3.7-dist/move.js"></script>
+<script type="text/javascript" src="/bootstrap-3.3.7-dist/move.js"></script>
 <script type="text/javascript" src="http://www.webxgame.com/js/jquery.min.js"></script>
 <script language="javascript">
     function tc(id,uid)

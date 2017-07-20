@@ -22,7 +22,7 @@ class Order_Model extends CI_Model{
         $ispay="0";
         $datetime=date("Y-m-d H:i:s",time());
 		//查询是否订单重复
-		$sql = "select count(orderid) as n from orders where gameorderid=?";
+		$sql = "select count(id) as n from orders where gameorderid=?";
         $query=$this->db->query($sql,array($orderid));
 		$row = $query->first_row('array');
 		//echo $this->db->last_query();
