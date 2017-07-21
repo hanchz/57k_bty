@@ -33,9 +33,10 @@ class Pay extends CI_Controller {
         $goodsid="1";
         $gameid="91284";*/
         $key="e2SExYMWng9fMVQS";
-        $sign=strtolower(md5($uid.$serverid.$time.$orderid.$money.$goodsid.$key.$gameid));
+        $sign1=strtolower(md5($uid.$serverid.$time.$orderid.$money.$goodsid.$key.$gameid));
 
-
+		
+		if($sign==$sign1){
         $data['orderid']=$orderid;
         $data['uid']=$uid;
         $data['serverid']=$serverid;
@@ -52,7 +53,7 @@ class Pay extends CI_Controller {
             $result=$this->order_model->game_order_model($params);
 
         }
-
+		}
 
         $this->load->view('pay',$data);
         //var_dump($data);
