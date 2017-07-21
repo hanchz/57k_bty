@@ -1,5 +1,5 @@
 <?php
-
+//分游戏支付接口
 $uid=$_REQUEST['uid'];
 $serverid=$_REQUEST['serverid'];
 $gameorderid=$_REQUEST['gameorderid'];
@@ -14,6 +14,13 @@ if($gameid=='91284')
 		$key="e2SExYMWng9fMVQS";
 		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
 		$url="http://api.egret-labs.org/v2/pay/22694/91284";
+		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
+		$url=$url.$str;
+}elseif($gameid=='1')
+{
+		$key="e2SExYMWng9fMVQS";
+		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
+		$url="http://119.23.104.2/app/sdk/k57/pay.php";
 		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
 		$url=$url.$str;
 }
