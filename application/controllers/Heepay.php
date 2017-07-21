@@ -54,12 +54,13 @@ class Heepay extends CI_Controller {
 		//echo "<br />";
 		//echo $return_sign;
         if($sign==$return_sign){   //比较签名密钥结果是否一致，一致则保证了数据的一致性
-            echo 'ok';
+            //echo 'ok';
             //商户自行处理自己的业务逻辑
             //支付成功，更新订单号
 			$result1 = $this->ispay($agent_bill_id);	
 			//支付成功，给玩家加金币
-			$result2 = $this->isgamepay($agent_bill_id);	
+			$result2 = $this->isgamepay($agent_bill_id);
+			echo $result2;	
         }
         else{
             echo 'error';
@@ -85,8 +86,10 @@ class Heepay extends CI_Controller {
 		if($regamepay=='ok'){				
         $params=$val;
         $result=$this->order_model->isgamepay_model($params);
+		return $result;
 		}else{
 		//游戏没给玩家充值成功	
+		return 'error';
 		}
     }
 	
@@ -95,6 +98,7 @@ class Heepay extends CI_Controller {
 	{
 		//根据订单号查询订单信息
 		$orderid=$val;
+		//$orderid='423364485852466646456842633168170720091836';
         $this->load->model('order_model');
 		$result=$this->order_model->order_info_model($orderid); //订单全部信息
 		//var_dump($result);
@@ -107,11 +111,14 @@ class Heepay extends CI_Controller {
 		$gameid=$result[0]['gameid'];
 		$orderid=$result[0]['orderid'];
 		$time=time();
-		$key="e2SExYMWng9fMVQS";
+		/*$key="e2SExYMWng9fMVQS";
 		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
-		$url="http://api.egret-labs.org/v2/pay/22694/91284";
-		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
+		$url="http://api.egret-labs.org/v2/pay/22694/91284";*/
+		$url="http://m.57k.com/found_gamepay.php";
+		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameorderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&orderid=".$orderid.'&gameid='.$gameid;
 		$url=$url.$str;
+		
+		
 		//exit;
 		$result = $this->post_url($url);
 		return $result;	

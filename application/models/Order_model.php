@@ -45,7 +45,7 @@ class Order_Model extends CI_Model{
         if ($query) {
         return "ok";
         } else {
-        return "eorror";
+        return "error";
         }
     }
 
@@ -59,7 +59,7 @@ class Order_Model extends CI_Model{
 		if ($query) {
         return "ok";
         } else {
-        return "eorror";
+        return "error";
         }
 
     }
@@ -71,7 +71,12 @@ class Order_Model extends CI_Model{
         $ispay="2";
         $sql = "UPDATE orders SET ispay=?  WHERE orderid= ?";
         $query = $this->db->query($sql, array($ispay, $payorderid));
-
+		//echo $this->db->last_query();
+		if ($query) {
+        return "ok";
+        } else {
+        return "error";
+        }
     }
 	
 	//查询订单信息
