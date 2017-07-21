@@ -35,15 +35,15 @@ class Heepay extends CI_Controller {
         $this->order_model->order_return_test_model($params);
 		
 	
-        $result = $this->input->post('result',true);
-        $pay_message = $this->input->post('pay_message',true);
-        $agent_id = $this->input->post('agent_id',true);
-        $jnet_bill_no  = $this->input->post('jnet_bill_no',true);
-        $agent_bill_id = $this->input->post('agent_bill_id',true);
-        $pay_type = $this->input->post('pay_type',true);
-        $pay_amt = $this->input->post('pay_amt',true);;
-        $remark = $this->input->post('remark',true);
-        $return_sign= $this->input->post('sign',true);
+        $result = $this->input->get('result',true);
+        $pay_message = $this->input->get('pay_message',true);
+        $agent_id = $this->input->get('agent_id',true);
+        $jnet_bill_no  = $this->input->get('jnet_bill_no',true);
+        $agent_bill_id = $this->input->get('agent_bill_id',true);
+        $pay_type = $this->input->get('pay_type',true);
+        $pay_amt = $this->input->get('pay_amt',true);;
+        $remark = $this->input->get('remark',true);
+        $return_sign= $this->input->get('sign',true);
 
         $remark = iconv("GB2312","UTF-8//IGNORE",urldecode($remark));//签名验证中的中文采用UTF-8编码;
 
