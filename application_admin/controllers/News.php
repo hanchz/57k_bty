@@ -73,4 +73,40 @@ class News extends CI_Controller {
         $this->db->insert('news',$insert_arr);
         header("location:/admin.php/news/news_list/".$game_id);
     }
+
+    public function news_edit($news_id)
+    {
+        $sql = 'select * from news where id = '.$news_id;
+        $query = $this->db->query($sql);
+        $result = $query->first_row('array');
+
+        $data = $result;
+        $this->load->view('news_edit',$data);
+    }
+
+    public function do_edit()
+    {
+        $params = $this->input->post();
+
+
+
+        $news_id = $params['news_id'];
+        $title = $params['newstitle'];
+        $newstype = $params['newstype'];
+        $content = $params['editor'];
+
+        $sql = 'select * from news where id = '.$news_id;
+        $query = $this->db->query($sql);
+        $result = $query->first_row('array');
+
+        $update_arr = array(
+            'title' => $title,
+            'newstype' => $newstype,
+            'content' => $content,
+        );
+
+        $this->db->update('news',$update_arr,array('id'=>$news_id));
+
+        header("location:/admin.php/news/news_list/".$result['gameid']);
+    }
 }

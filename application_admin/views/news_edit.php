@@ -141,13 +141,13 @@
 							<div class="portlet-body form">
 								<!-- BEGIN FORM-->
 								<h3>创建游戏新闻</h3>
-                                <form action="/admin.php/news/do_create" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
+                                <form action="/admin.php/news/do_edit" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
 
                                 <div class="control-group">
                                     <label class="control-label">新闻标题<span class="required">*</span></label>
                                     <div class="controls">
-                                        <input name="newstitle" type="text" class="span6 m-wrap" />
-                                        <input name="game_id" type="text" value="<?php echo $game_id; ?>" style="display:none;" />
+                                        <input name="newstitle" type="text" value="<?php echo $title; ?>" class="span6 m-wrap" />
+                                        <input name="news_id" type="text" value="<?php echo $id; ?>" style="display:none;" />
                                         <span class="help-inline"></span>
                                     </div>
                                 </div>
@@ -157,8 +157,8 @@
                                         <div class="controls">
                                             <select name = "newstype" class="span6 m-wrap" data-placeholder="Choose a Category" tabindex="1">
                                                 <option value="">Select...</option>
-                                                <option value="1">新闻</option>
-                                                <option value="2">公告</option>
+                                                <option value="1" <?php if($newstype==1){ echo 'selected="selected"';} ?> >新闻</option>
+                                                <option value="2" <?php if($newstype==2){ echo 'selected="selected"';} ?> >公告</option>
                                             </select>
                                         </div>
                                     </div>
@@ -166,7 +166,7 @@
                                     <div class="control-group">
                                         <label class="control-label">新闻内容<span class="required">*</span></label>
                                         <div class="controls">
-                                            <textarea name="editor" id="editor" class="span6 m-wrap" ></textarea>
+                                            <textarea name="editor" id="editor" class="span6 m-wrap" ><?php echo $content; ?></textarea>
                                             <span class="help-inline"></span>
                                         </div>
                                     </div>
