@@ -664,83 +664,131 @@
 
                         <div class="portlet-title">
 
-                            <div class="caption"><i class="icon-globe"></i>游戏列表</div>
-
-                            <div class="tools">
-
-                                <a href="javascript:;" class="collapse"></a>
-
-                                <a href="#portlet-config" data-toggle="modal" class="config"></a>
-
-                                <a href="javascript:;" class="reload"></a>
-
-                                <a href="javascript:;" class="remove"></a>
-
-                            </div>
+                            <div class="caption"><i class="icon-globe"></i>新闻列表</div>
 
                         </div>
+                        <div class="btn-group">
 
-                        <div class="portlet-body">
+                            <a id="sample_editable_1_new" class="btn green" href="/admin.php/news/create_news/<?php echo $game_id;?>">
 
-                            <div class="clearfix">
+                                Add New <i class="icon-plus"></i>
 
-                                <div class="btn-group">
+                            </a>
 
-                                    <a id="sample_editable_1_new" class="btn green" href="/admin.php/games/gift_create/<?php echo $game_id;?>">
+                        </div>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab_1" data-toggle="tab">新闻</a></li>
+                            <li class=""><a href="#tab_2" data-toggle="tab">公告</a></li>
+                        </ul>
 
-                                        Add New <i class="icon-plus"></i>
+                        <div class="tab-content">
+                            <div class="tab-pane row-fluid active" id="tab_1">
 
-                                    </a>
+                                <div class="clearfix">
+
+
+
+                                    <div class="btn-group pull-right">
+
+                                        <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="icon-angle-down"></i>
+
+                                        </button>
+
+                                        <ul class="dropdown-menu pull-right">
+
+                                            <li><a href="#">Print</a></li>
+
+                                            <li><a href="#">Save as PDF</a></li>
+
+                                            <li><a href="#">Export to Excel</a></li>
+
+                                        </ul>
+
+                                    </div>
 
                                 </div>
 
-                                <div class="btn-group pull-right">
+                                <table class="table table-striped table-bordered table-hover" id="sample_1">
 
-                                    <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="icon-angle-down"></i>
+                                    <thead>
 
-                                    </button>
+                                    <tr>
 
-                                    <ul class="dropdown-menu pull-right">
+                                        <!--<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>-->
 
-                                        <li><a href="#">Print</a></li>
+                                        <th>id</th>
 
-                                        <li><a href="#">Save as PDF</a></li>
+                                        <th>title</th>
 
-                                        <li><a href="#">Export to Excel</a></li>
+                                        <th>content</th>
 
-                                    </ul>
 
-                                </div>
+                                        <th >option</th>
+
+                                    </tr>
+
+                                    </thead>
+
+                                    <tbody>
+
+                                    </tbody>
+
+                                </table>
 
                             </div>
 
-                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                            <div class="tab-pane profile-classic row-fluid" id="tab_2">
 
-                                <thead>
+                                <div class="clearfix">
 
-                                <tr>
+                                    <div class="btn-group pull-right">
 
-                                    <!--<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>-->
+                                        <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="icon-angle-down"></i>
 
-                                    <th>id</th>
+                                        </button>
 
-                                    <th>name</th>
+                                        <ul class="dropdown-menu pull-right">
 
-                                    <th>info</th>
+                                            <li><a href="#">Print</a></li>
+
+                                            <li><a href="#">Save as PDF</a></li>
+
+                                            <li><a href="#">Export to Excel</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                                <table class="table table-striped table-bordered table-hover" id="sample_2">
+
+                                    <thead>
+
+                                    <tr>
+
+                                        <!--<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes" /></th>-->
+
+                                        <th>id</th>
+
+                                        <th>title</th>
+
+                                        <th>content</th>
 
 
-                                    <th >option</th>
+                                        <th >option</th>
 
-                                </tr>
+                                    </tr>
 
-                                </thead>
+                                    </thead>
 
-                                <tbody>
+                                    <tbody>
 
-                                </tbody>
+                                    </tbody>
 
-                            </table>
+                                </table>
 
+                            </div>
                         </div>
 
                     </div>
@@ -860,17 +908,58 @@
                     "bProcessing": true, //datatable获取数据时候是否显示正在处理提示信息。
                     "iDisplayLength": 10, //每页显示10条记录
                     'bFilter': true, //是否使用内置的过滤功能
-                    "sAjaxSource": '/admin.php/games/get_gift_list/'+<?php echo $game_id; ?>+'/',
+                    "sAjaxSource": '/admin.php/news/get_news_list/'+<?php echo $game_id; ?>+'/1/',
                     "aaSorting": [
                         [0, "desc"],
                     ],
                     "aoColumns": [
                         {"mData": "id", "bSortable": true, "bSearchable": true, "sWidth": "250px"},
-                        {"mData": "giftsname", "bSortable": true, "bSearchable": true},
-                        {"mData": "giftsinfo", "bSortable": true, "bSearchable": true},
+                        {"mData": "title", "bSortable": true, "bSearchable": true},
+                        {
+                            "mData": "content", "bSortable": true, "mRender": function (data, type, full) {
+                            return data.substring(0,40);
+                        }
+                        },
                         {
                             "mData": "id", "bSortable": true, "mRender": function (data, type, full) {
-                            return "<a href='/admin.php/games/gift_edit/" + data + "' >修改</a>";
+                            return "<a href='/admin.php/news/news_edit/" + data + "' >修改</a>";
+                        }
+                        }
+                        // {"sWidth": "220px", "mData": "storageSize", "bSortable": true, "mRender": function(data, type, full) {
+                        //     return "" + data + "";
+                        // }
+                        // }
+                    ],
+                    "oLanguage": {
+                        'sSearch': '数据筛选:',
+                        "sLengthMenu": "每页显示 _MENU_ 项记录",
+                        "sZeroRecords": "没有符合项件的数据...",
+                        "sInfo": "当前数据为从第 _START_ 到第 _END_ 项数据；总共有 _TOTAL_ 项记录",
+                        "sInfoEmpty": "显示 0 至 0 共 0 项",
+                        "sInfoFiltered": "(_MAX_)"
+                    },
+                });
+                $('#sample_2').dataTable({
+                    "bServerSide": true,
+                    'bPaginate': true, //是否分页
+                    "bProcessing": true, //datatable获取数据时候是否显示正在处理提示信息。
+                    "iDisplayLength": 10, //每页显示10条记录
+                    'bFilter': true, //是否使用内置的过滤功能
+                    "sAjaxSource": '/admin.php/news/get_news_list/'+<?php echo $game_id; ?>+'/2/',
+                    "aaSorting": [
+                        [0, "desc"],
+                    ],
+                    "aoColumns": [
+                        {"mData": "id", "bSortable": true, "bSearchable": true, "sWidth": "250px"},
+                        {"mData": "title", "bSortable": true, "bSearchable": true},
+                        {
+                            "mData": "content", "bSortable": true, "mRender": function (data, type, full) {
+                            return data.substring(0,40);
+                        }
+                        },
+                        {
+                            "mData": "id", "bSortable": true, "mRender": function (data, type, full) {
+                            return "<a href='/admin.php/news/news_edit/" + data + "' >修改</a>";
                         }
                         }
                         // {"sWidth": "220px", "mData": "storageSize", "bSortable": true, "mRender": function(data, type, full) {
