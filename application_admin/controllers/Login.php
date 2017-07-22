@@ -1,104 +1,68 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Login extends MY_Controller{
 
-    function __construct() {
-        $this->is_login = false;
-        parent::__construct ();
-
-        $this->load->model('user_model');
-    }
+class Login extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('login_soft');
+        $data = array();
+        $this->load->model('user_model');
+        $result=$this->user_model->user_info_model('hanzc','123');
+        $data['username']=$result;
+        $this->load->view('index',$data);
+        //var_dump($data);
     }
 
-    public function login()
+    //页面跳转
+    public function gameinfo()
     {
-        $this->load->driver('cache',array('adapter' => 'redis'));
-        $params = $this->input->post();
-
-        if((empty($params['username']) || is_null($params['username']) ) || (empty($params['password']) || is_null($params['password']) ))
-        {
-            $this->Output(array(
-                'code' => '201',
-                'msg' => 'params_err',
-            ));
-        }
-
-        $username = $params['username'];
-        $password = $params['password'];
-
-        //$username = 'admin';
-        //$password = 'qwe123';
-
-        $user = $this->user_model->check_user($username,$password);
-        if(is_null($user))
-        {
-            $this->Output(array(
-                'code' => '201',
-                'msg' => 'username or password is error',
-            ));
-            exit;
-        }
-
-        $mark = uniqid();//防止多次登录
-        //$mark = 0;
-
-
-        $user['login_time'] = time();
-        $user['mark'] = $mark;
-
-        $cache_key = $this->config->config['redis_prefix'].'cp_user_'.$user['id'].'_'.$mark;
-        $cache_value = $user;
-        $this->cache->save($cache_key,$cache_value,$this->config->config['cp_user_cache_min_active']);
-
-        $cp_cookie_value = $this->encryptions(serialize($user));
-
-        $cp_user_cookie_arr = array(
-            'name' => $this->config->config['cp_user_cookie_name'],
-            'value'  => $cp_cookie_value,
-            'expire' => $this->config->config['cp_user_cookie_expire'],
-            'domain' => $this->config->config['cp_user_cookie_domain'],
-            'path'   => $this->config->config['cp_user_cookie_path'],
-            //'prefix' => '',
-            //'secure' => TRUE
-        );
-	//setcookie($this->config->config['cp_user_cookie_name'],$cp_cookie_value,0);
-        $this->input->set_cookie($cp_user_cookie_arr);
-	
-
-        $this->Output(array(
-            'code' => '200',
-            'msg' => 'login success',
-        ));
+        $data = array();
+        $this->load->view('gameinfo',$data);
+    }
+    public function gifts()
+    {
+        $data = array();
+        $this->load->view('gifts',$data);
+    }
+    public function kf()
+    {
+        $data = array();
+        $this->load->view('kf',$data);
+    }
+    public function newslist()
+    {
+        $data = array();
+        $this->load->view('newslist',$data);
+    }
+    public function reg()
+    {
+        $data = array();
+        $this->load->view('reg',$data);
+    }
+    public function login_user()
+    {
+        $data = array();
+        $this->load->view('login',$data);
+    }
+    public function top10()
+    {
+        $data = array();
+        $this->load->view('top10',$data);
     }
 
-    private function encryptions($plain)
+    public function check_login()
     {
-        $this->load->library('encryption');
-        $this->encryption->initialize(
-            array(
-                'cipher' => $this->config->config['cryption_cipher'],
-                'mode' => $this->config->config['cryption_mode'],
-                'key' => $this->config->config['cryption_key']
-            )
-        );
-        return $this->encryption->encrypt($plain);
-    }
-
-    private function decryptions($cipher)
-    {
-        $this->load->library('encryption');
-        $this->encryption->initialize(
-            array(
-                'cipher' => $this->config->config['cryption_cipher'],
-                'mode' => $this->config->config['cryption_mode'],
-                'key' => $this->config->config['cryption_key']
-            )
-        );
-        return $this->encryption->decrypt($cipher);
+        $params = array();
+        $params = $this->input->get('username',true);
+        $this->load->model('user_model');
+        $result = $this->user_model->check_user('hanzc','123');
+        $result1 = $this->user_model->check_user('hanzc','123');
+        $data = array();
+        $data['result'] = $result;
+        $data['result1'] = $result1;
+        $this->load->view('login',$data);
+        //var_dump($result);exit;
     }
 
 }
+

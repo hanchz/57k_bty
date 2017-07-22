@@ -1,237 +1,78 @@
-<!-- BEGIN HEADER -->
-<div class="header navbar navbar-inverse navbar-fixed-top">
-    <!-- BEGIN TOP NAVIGATION BAR -->
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <!-- BEGIN LOGO -->
-            <a class="brand" href="index.html">
-                <img src="media/image/logo.png" alt="logo"/>
-            </a>
-            <!-- END LOGO -->
-            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-            <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                <img src="media/image/menu-toggler.png" alt="" />
-            </a>
-            <!-- END RESPONSIVE MENU TOGGLER -->
-            <!-- BEGIN TOP NAVIGATION MENU -->
-            <ul class="nav pull-right">
-                <!-- BEGIN NOTIFICATION DROPDOWN -->
-                <li class="dropdown" id="header_notification_bar">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-warning-sign"></i>
-                        <span class="badge">6</span>
-                    </a>
-                    <ul class="dropdown-menu extended notification">
-                        <li>
-                            <p>You have 14 new notifications</p>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-success"><i class="icon-plus"></i></span>
-                                New user registered.
-                                <span class="time">Just now</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-important"><i class="icon-bolt"></i></span>
-                                Server #12 overloaded.
-                                <span class="time">15 mins</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-warning"><i class="icon-bell"></i></span>
-                                Server #2 not respoding.
-                                <span class="time">22 mins</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-info"><i class="icon-bullhorn"></i></span>
-                                Application error.
-                                <span class="time">40 mins</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-important"><i class="icon-bolt"></i></span>
-                                Database overloaded 68%.
-                                <span class="time">2 hrs</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-important"><i class="icon-bolt"></i></span>
-                                2 user IP blocked.
-                                <span class="time">5 hrs</span>
-                            </a>
-                        </li>
-                        <li class="external">
-                            <a href="#">See all notifications <i class="m-icon-swapright"></i></a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- END NOTIFICATION DROPDOWN -->
-                <!-- BEGIN INBOX DROPDOWN -->
-                <li class="dropdown" id="header_inbox_bar">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-envelope"></i>
-                        <span class="badge">5</span>
-                    </a>
-                    <ul class="dropdown-menu extended inbox">
-                        <li>
-                            <p>You have 12 new messages</p>
-                        </li>
-                        <li>
-                            <a href="inbox.html?a=view">
-                                <span class="photo"><img src="media/image/avatar2.jpg" alt="" /></span>
-								<span class="subject">
-								<span class="from">Lisa Wong</span>
-								<span class="time">Just Now</span>
-								</span>
-								<span class="message">
-								Vivamus sed auctor nibh congue nibh. auctor nibh
-								auctor nibh...
-								</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="inbox.html?a=view">
-                                <span class="photo"><img src="./media/image/avatar3.jpg" alt="" /></span>
-								<span class="subject">
-								<span class="from">Richard Doe</span>
-								<span class="time">16 mins</span>
-								</span>
-								<span class="message">
-								Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh
-								auctor nibh...
-								</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="inbox.html?a=view">
-                                <span class="photo"><img src="./media/image/avatar1.jpg" alt="" /></span>
-								<span class="subject">
-								<span class="from">Bob Nilson</span>
-								<span class="time">2 hrs</span>
-								</span>
-								<span class="message">
-								Vivamus sed nibh auctor nibh congue nibh. auctor nibh
-								auctor nibh...
-								</span>
-                            </a>
-                        </li>
-                        <li class="external">
-                            <a href="inbox.html">See all messages <i class="m-icon-swapright"></i></a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- END INBOX DROPDOWN -->
-                <!-- BEGIN TODO DROPDOWN -->
-                <li class="dropdown" id="header_task_bar">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-tasks"></i>
-                        <span class="badge">5</span>
-                    </a>
-                    <ul class="dropdown-menu extended tasks">
-                        <li>
-                            <p>You have 12 pending tasks</p>
-                        </li>
-                        <li>
-                            <a href="#">
-								<span class="task">
-								<span class="desc">New release v1.2</span>
-								<span class="percent">30%</span>
-								</span>
-								<span class="progress progress-success ">
-								<span style="width: 30%;" class="bar"></span>
-								</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-								<span class="task">
-								<span class="desc">Application deployment</span>
-								<span class="percent">65%</span>
-								</span>
-								<span class="progress progress-danger progress-striped active">
-								<span style="width: 65%;" class="bar"></span>
-								</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-								<span class="task">
-								<span class="desc">Mobile app release</span>
-								<span class="percent">98%</span>
-								</span>
-								<span class="progress progress-success">
-								<span style="width: 98%;" class="bar"></span>
-								</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-								<span class="task">
-								<span class="desc">Database migration</span>
-								<span class="percent">10%</span>
-								</span>
-								<span class="progress progress-warning progress-striped">
-								<span style="width: 10%;" class="bar"></span>
-								</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-								<span class="task">
-								<span class="desc">Web server upgrade</span>
-								<span class="percent">58%</span>
-								</span>
-								<span class="progress progress-info">
-								<span style="width: 58%;" class="bar"></span>
-								</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-								<span class="task">
-								<span class="desc">Mobile development</span>
-								<span class="percent">85%</span>
-								</span>
-								<span class="progress progress-success">
-								<span style="width: 85%;" class="bar"></span>
-								</span>
-                            </a>
-                        </li>
-                        <li class="external">
-                            <a href="#">See all tasks <i class="m-icon-swapright"></i></a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- END TODO DROPDOWN -->
-                <!-- BEGIN USER LOGIN DROPDOWN -->
-                <li class="dropdown user">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img alt="" src="media/image/avatar1_small.jpg" />
-                        <span class="username">Bob Nilson</span>
-                        <i class="icon-angle-down"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="extra_profile.html"><i class="icon-user"></i> My Profile</a></li>
-                        <li><a href="page_calendar.html"><i class="icon-calendar"></i> My Calendar</a></li>
-                        <li><a href="inbox.html"><i class="icon-envelope"></i> My Inbox(3)</a></li>
-                        <li><a href="#"><i class="icon-tasks"></i> My Tasks</a></li>
-                        <li class="divider"></li>
-                        <li><a href="extra_lock.html"><i class="icon-lock"></i> Lock Screen</a></li>
-                        <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
-                    </ul>
-                </li>
-                <!-- END USER LOGIN DROPDOWN -->
-            </ul>
-            <!-- END TOP NAVIGATION MENU -->
-        </div>
-    </div>
-    <!-- END TOP NAVIGATION BAR -->
-</div>
-<!-- END HEADER -->
+<?php
+session_start();
+//$_SESSION['username'] ='1111';
+//$_SESSION['uid'] ='1111';
+if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+    //echo "登录成功：".$_SESSION['username'];
+    //var_dump($_SESSION['uid']);
+    $uid=$_SESSION['uid'];
+    $username=$_SESSION['username'];
+    //echo "<a href='indexx/logout'>点此退出</a>";
+}else{
+    //echo "你还没有登录，<a href='login.php'>请登录</a>";
+}
+$this->load->helper('url');
+?>
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>57k游戏平台</title>
+</head>
+
+<style>
+
+    .zj_down{border:1px solid #ff3a25; color:#ff3a25}
+    .zj_di{ background:#FFF; margin:10px 10px; border-radius: 10px; padding:10px;  }
+
+    .roll { width: 100%; height: auto; margin: 10px auto 0; position: relative; }
+    .roll .wrap { width: 100%; height: 333px; margin: 0 auto; position: relative; overflow: hidden; }
+    .roll ul { position: absolute; top: 0; left: 0; }
+    .roll li { float: left; width: 200px; height: 333px; text-align: center; list-style:none; margin:5px; }
+    .roll li img{ width:200px; height:333px;}
+
+    .zj_overflow{color:#999;overflow:hidden;text-overflow:ellipsis; width:150px;height:20px;line-height:20px;}
+    .zj_overflow{overflow:hidden;text-overflow:ellipsis; width:70%;height:20px;line-height:20px;vertical-align:middle;}
+
+
+    .zj_nav33{width:33%;text-align:center;}
+
+    .zj_input {  	border:0px;BACKGROUND-COLOR: transparent;COLOR: #ffffff;color:#fff; border:none; }
+    .zj_btn{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 12px;
+        line-height: 1.428571429;
+        border-radius: 15px;
+        color:#F60;
+    }
+	
+	    /*.jindutiao{ width:60%; background: #ccc; height:5px; margin-left: -20px; margin-top: 5px; padding: 0 0;};*/
+
+	
+	.tanchukuang{ width:80%; height:50%; position:absolute; top:25%; left:10%;-webkit-border-radius: 10px; border-radius: 10px; z-index:2;}
+		.tck-top{ width:100%; height:20%; float:left;background: -webkit-linear-gradient(left top, #ff9c72 , #F00);
+  background: -o-linear-gradient(bottom right, #ff9c72, #F00);
+  background: -moz-linear-gradient(bottom right, #ff9c72, #F00);
+  background: linear-gradient(to bottom right, #ff9c72 , #F00);  background-size:100% 100%; border-radius:10px 10px 0 0; text-align:center; line-height:60px; vertical-align:middle; font-size:25px; color:#FFF; font-weight: bold; }
+  		.tck-con{width:100%; height:80%; float:left; padding:5% 5%; background:#FFF;border-radius: 0 0 10px 10px;}
+			.tck-con p{ margin-bottom:10%; float:left;}
+			
+	.zhezhao{ width:100%; height:100%; position:absolute;top:0; left:0;filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5; background:black; z-index:1;}		
+    /*a{ color:#FFF; border-bottom:1px solid #FFF;}
+    a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
+    a:hover{color:#FFF;}*/
+
+</style>

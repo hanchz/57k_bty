@@ -1,5 +1,7 @@
 <?php
 
+
+
 include ('top.php');
 ?>
 <body>
@@ -32,12 +34,13 @@ if(isset($orderid) && !empty($orderid))
 {
 ?>
 <form name="form" method="post" action="Heepay" id="form">
-    <input type="text" name="orderid" id="orderid" value="<?php echo $orderid;?>" />
-    <input type="text" name="money" id="money" value="<?php echo $money;?>" />
-    <input type="text" name="goodsid" id="goodsid" value="<?php echo $goodsid;?>" />
-    <input type="text" name="money" id="money" value="<?php echo $money;?>" />
+    <input type="hidden" name="orderid" id="orderid" value="<?php echo $orderid;?>" />
+    <input type="hidden" name="money" id="money" value="<?php echo $money;?>" />
+    <input type="hidden" name="goodsid" id="goodsid" value="<?php echo $goodsid;?>" />
+    <input type="hidden" name="gameid" id="gameid" value="<?php echo $gameid;?>" />
+    <input type="hidden" name="uid" id="uid" value="<?php echo $uid;?>" />
 
-
+<input type="hidden" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;"  id="serverid" name="serverid" value="<?php echo $serverid?>" disabled="disabled" >
 
     <div class="container-fluid" style="margin-top:10px;" >
         <div class="row">
@@ -52,7 +55,7 @@ if(isset($orderid) && !empty($orderid))
 
         </div>
 
-        <div class="row" style="margin-top:10px;">
+       <!-- <div class="row" style="margin-top:10px;">
             <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >请确认服务器：
             </div>
             <div class="col-md-5 col-sm-5 col-xs-5" style="margin-left:-20px;" >
@@ -61,7 +64,7 @@ if(isset($orderid) && !empty($orderid))
             <div class="col-md-3 col-sm-3 col-xs-3" >
             </div>
 
-        </div>
+        </div>-->
 
         <div class="row" style="margin-top:10px;">
             <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >请确认账号：

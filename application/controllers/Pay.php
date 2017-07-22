@@ -10,32 +10,33 @@ class Pay extends CI_Controller {
         $orderid=array();
         $orderid = $this->input->get('orderid',true);
         $uid=array();
-        $uid = $this->input->post('uid',true);
+        $uid = $this->input->get('uid',true);
         $serverid=array();
-        $serverid = $this->input->post('serverid',true);
+        $serverid = $this->input->get('serverid',true);
         $time=array();
-        $time = $this->input->post('time',true);
+        $time = $this->input->get('time',true);
         $sign=array();
-        $sign = $this->input->post('sign',true);
+        $sign = $this->input->get('sign',true);
         $sign=array();
-        $sign = $this->input->post('sign',true);
+        $sign = $this->input->get('sign',true);
         $money=array();
-        $money = $this->input->post('money',true);
+        $money = $this->input->get('money',true);
         $goodsid=array();
-        $goodsid = $this->input->post('goodsid',true);
+        $goodsid = $this->input->get('goodsid',true);
         $gameid=array();
-        $gameid = $this->input->post('gameid',true);
+        $gameid = $this->input->get('gameid',true);
 
-//        $uid="1";
-//        $serverid="1";
-//        $time=time();
-//        $money="1";
-//        $goodsid="1";
-//        $gameid="91284";
-//        $key="e2SExYMWng9fMVQS";
-//        $sign=strtolower(md5($uid.$serverid.$time.$orderid.$money.$goodsid.$key.$gameid));
+        /*$uid="1111";
+        $serverid="1";
+        $time=time();
+        $money="1";
+        $goodsid="1";
+        $gameid="91284";*/
+        $key="e2SExYMWng9fMVQS";
+        $sign1=strtolower(md5($uid.$serverid.$time.$orderid.$money.$goodsid.$key.$gameid));
 
-
+		
+		if($sign==$sign1){
         $data['orderid']=$orderid;
         $data['uid']=$uid;
         $data['serverid']=$serverid;
@@ -52,7 +53,7 @@ class Pay extends CI_Controller {
             $result=$this->order_model->game_order_model($params);
 
         }
-
+		}
 
         $this->load->view('pay',$data);
         //var_dump($data);
