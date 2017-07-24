@@ -24,7 +24,7 @@
 
         }else{
             ?>
-            <div class="col-md-2 col-sm-2 col-xs-2"><a href="login_user"><img src="/images/user.jpg" class="img-responsive" style="margin-left:-10px;"></a></div>
+            <div class="col-md-2 col-sm-2 col-xs-2"><a href="login_user"><img src="<?php //echo base_url()?>/images/user.jpg" class="img-responsive" style="margin-left:-10px;"></a></div>
             <?php
         }
         ?>

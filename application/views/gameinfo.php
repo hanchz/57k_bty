@@ -46,7 +46,7 @@ include ('top.php');
 		//var_dump($result);
 		//exit;
 	?>
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><?php echo $result['gametype'].'|'.$game['size']?>M</small></div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><?php echo $result['gametype']?></small></div>
     </div>
 </div>
 </td></tr>
