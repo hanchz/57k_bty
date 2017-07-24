@@ -26,8 +26,10 @@ $result=$this->gifts_model->uesr_gifts_info_model($params);
 if (count($result)>0){
     foreach ($result as $val)
     {
+		//var_dump($val);
+		//exit;
         $params = array();
-        $params['id'] = $val['gameid'];
+        $params['id'] = $val['giftsid'];
         $this->load->model('gifts_model');
         $gameinfo=$this->gifts_model->game_info($params);
 		

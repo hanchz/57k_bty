@@ -39,9 +39,9 @@ if (count($gifts)>0){
     </div>
     
     <?php if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {?>
-    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;" href="#" role="button"  onClick="tc(<?php echo $val["gameid"].','.$uid?>)">领取</a></div>
+    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;" role="button"  onClick="tc(<?php echo $val["gameid"].','.$uid?>)">领取</a></div>
     <?php }else{?>
-    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;" href="#" role="button" onClick="alert('请先登录')">领取</a></div>
+    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;"  role="button" onClick="alert('请先登录');window.location.href='http://m.57k.com/login_user';">领取</a></div>
     <?php }?>
     </td></tr>
 		
@@ -65,7 +65,7 @@ if (count($gifts)>0){
         
     	<p style="margin-top:20px; width:200px; margin-left:-55px; color:red;">请长按礼包码复制</p>
         
-        <div style="margin-top:10px; width:100px; height:100px;"><a class="btn btn-danger" style="margin-top:20px; width:80px; background:red; margin-left:100px;" href="#" role="button" onClick="tc_cls()" >关闭</a></div>
+        <div style="margin-top:10px; width:100px; height:100px;"><a class="btn btn-danger" style="margin-top:20px; width:80px; background:red; margin-left:100px;"  role="button" onClick="tc_cls()" >关闭</a></div>
     </div>
     
     

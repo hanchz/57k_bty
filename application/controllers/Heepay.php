@@ -22,6 +22,25 @@ class Heepay extends CI_Controller {
         $this->load->view('heepay',$data);
 
     }
+	
+		//post方法
+	public function post_url($url)
+    {
+        //初始化
+        $ch = curl_init();
+        //$url="http://my.57k.com/api/login.php";
+        //设置选项，包括URL
+        curl_setopt($ch, CURLOPT_URL, "$url");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        //执行并获取HTML文档内容
+        $output = curl_exec($ch);
+        //释放curl句柄
+        curl_close($ch);
+        //打印获得的数据
+        //print_r($output);
+        return $output;
+    }
 
     //接收支付回调通知
     public function notify()
@@ -114,15 +133,18 @@ class Heepay extends CI_Controller {
 		/*$key="e2SExYMWng9fMVQS";
 		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
 		$url="http://api.egret-labs.org/v2/pay/22694/91284";*/
-		$url="http://m.57k.com/found_gamepay.php";
-		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameorderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&orderid=".$orderid.'&gameid='.$gameid;
-		$url=$url.$str;
+		//$url="http://m.57k.com/found_gamepay.php";
+		//$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameorderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&orderid=".$orderid.'&gameid='.$gameid;
+		//$url=$url.$str;
 		
 		
 		//exit;
-		$result = $this->post_url($url);
-		return $result;	
+		//$result = $this->post_url($url);
+		//return $result;	
 		////////////////////////返回做判断
+		
+		$result=call_user_func(array($this,'gamepay_id_'.$gameid),$gameid,$uid,$serverid,$gameorderid,$money,$goodsid,$orderid,$time);
+		return $result;
 	}
 	
 	//充值结果查询   用于充值验证
@@ -175,25 +197,30 @@ class Heepay extends CI_Controller {
 	
 	
 	
-	//post
-	public function post_url($url)
-    {
-        //初始化
-        $ch = curl_init();
-        //$url="http://my.57k.com/api/login.php";
-        //设置选项，包括URL
-        curl_setopt($ch, CURLOPT_URL, "$url");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        //执行并获取HTML文档内容
-        $output = curl_exec($ch);
-        //释放curl句柄
-        curl_close($ch);
-        //打印获得的数据
-        //print_r($output);
-        return $output;
-    }
 
+	//三生三世游戏充值接口
+	private function gamepay_id_91284($gameid,$uid,$serverid,$gameorderid,$money,$goodsid,$orderid,$time)
+	{
+		$key="e2SExYMWng9fMVQS";
+		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
+		$url="http://api.egret-labs.org/v2/pay/22694/91284";
+		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
+		$url=$url.$str;
+		$result = $this->post_url($url);
+		return $result;
+	}
+	
+	//大圣伏魔游戏充值接口
+	private function gamepay_id_1($gameid,$uid,$serverid,$gameorderid,$money,$goodsid,$orderid,$time)
+	{
+		$key="NvDgEAGoH99CFVPi";
+		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
+		$url="http://119.23.104.2/app/sdk/k57/pay.php";
+		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
+		$url=$url.$str;
+		$result = $this->post_url($url);
+		return $result;
+	}
 
 
 

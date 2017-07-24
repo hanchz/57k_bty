@@ -32,9 +32,15 @@ class Pay extends CI_Controller {
         $money="1";
         $goodsid="1";
         $gameid="91284";*/
-        $key="e2SExYMWng9fMVQS";
+		if($gameid=='91284'){			
+        $key="e2SExYMWng9fMVQS";			//三生三世
+		}elseif($gameid=='1'){
+		$key="NvDgEAGoH99CFVPi";			//大圣伏魔
+		}
         $sign1=strtolower(md5($uid.$serverid.$time.$orderid.$money.$goodsid.$key.$gameid));
-
+/*echo $sign;
+echo "<hr>";
+echo $sign1;*/
 		
 		if($sign==$sign1){
         $data['orderid']=$orderid;
@@ -54,7 +60,7 @@ class Pay extends CI_Controller {
 
         }
 		}
-
+		$this->load->model('game_model');
         $this->load->view('pay',$data);
         //var_dump($data);
     }

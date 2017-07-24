@@ -14,13 +14,13 @@ class Game_Model extends CI_Model{
         $num = $args['num'];
         if ($type == 0)
         {
-            $sql = "select * from game_info order by addtime desc limit 0,?";
+            $sql = "select * from game_info where display=1 order by addtime desc limit 0,?";
         }elseif($num==0)
         {
-            $sql = "select * from game_info order by addtime desc";
+            $sql = "select * from game_info where display=1 order by addtime desc";
         }
         else{
-            $sql = "select * from game_info where type=? order by addtime desc limit 0,?";
+            $sql = "select * from game_info where type=? and display=1 order by addtime desc limit 0,?";
         }
         $query=$this->db->query($sql,array($type,$num));
         //return $sql;
@@ -47,10 +47,11 @@ class Game_Model extends CI_Model{
 //        return $result;
 //        //return $query->first_row('array');
 //    }
+	//通过gameid找到游戏详细信息
     public function game_info($args)
     {
         $id = $args['id'];
-        $sql="select * from game_info where id=?";
+        $sql="select * from game_info where gameid=? and display=1";
         $query=$this->db->query($sql,array($id));
         //return $sql;
         $result=$query->result_array();
@@ -58,5 +59,28 @@ class Game_Model extends CI_Model{
         //return $result;
         return $query->first_row('array');
     }
+	
+	//通过gamename找到游戏详细信息
+    public function game_name_info($args)
+    {
+        $gamename = $args['gamename'];
+        $sql="select * from game_info where name = ? and display=1";
+        $query=$this->db->query($sql,array($gamename));
+        //return $sql;
+        $result=$query->result_array();
+        //var_dump($result);
+        return $result;
+        //return $query->first_row('array');
+    }
+	
+	//通过gametype找到游戏的类型
+	public function game_type($args)
+	{
+		$gametype = $args['gametype'];
+        $sql="select * from game_type where id=?";
+        $query=$this->db->query($sql,array($gametype));
+        //return $sql;
+		return $query->first_row('array');
+	}
 
 }

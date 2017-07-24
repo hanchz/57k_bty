@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Top10 extends CI_Controller {
+class Usergame extends CI_Controller {
 
     public function index()
     {
@@ -13,11 +13,21 @@ class Top10 extends CI_Controller {
         $this->load->model('kv_model');
         $result=$this->kv_model->kv_model();
         $data['kv']=$result;
-
-		$this->load->model('game_model');
-        $this->load->view('top10',$data);
+		
+		//$params = array();
+		//$params['uid']=$_SESSION['uid'];
+		//$this->load->model('Gamelogin_model');
+        //$result=$this->Gamelogin_model->Usergame_model($params);
+        //$data['usergame']=$result;
+		
+		$this->load->model('Gamelogin_model');
+		$this->load->model('Game_model');
+		
+        $this->load->view('usergame',$data);
         //var_dump($data);
     }
+
+
 
 
 

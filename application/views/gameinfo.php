@@ -38,7 +38,15 @@ include ('top.php');
     	<div class="col-md-12 col-sm-12 col-xs-12"><strong><?php echo $game['name']?></strong></div>
     </div>
     <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><?php echo $game['gametype'].'|'.$game['size']?>M</small></div>
+    <?php 
+		//通过gametype找到typename
+		$params=array();
+		$params['gametype']=$game['gametype'];
+		$result = $this->game_model->game_type($params);
+		//var_dump($result);
+		//exit;
+	?>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small><?php echo $result['gametype'].'|'.$game['size']?>M</small></div>
     </div>
 </div>
 </td></tr>
@@ -50,20 +58,21 @@ include ('top.php');
 -->
     <?php 
 	
-	include ('gamelogin.php');
+	//include ('gamelogin.php');
 	
 	
 	if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
 	//echo gameurl($game["gameid"],$uid);
+	$game_url='gamelogin/index/'.$game["gameid"];
 	?>
 
-        <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" href="<?php echo gameurl($game["gameid"],$uid)?>" role="button">进入游戏</a></div>
+        <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" href="<?php echo $game_url?>" role="button">进入游戏</a></div>
     
 <?php }else{?>
 
 
     
-            <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" onClick="alert('请先登录')" role="button">进入游戏</a></div>
+            <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" onClick="alert('请先登录');window.location.href='http://m.57k.com/login_user';" role="button">进入游戏</a></div>
 <?php }?>
 
 
@@ -119,11 +128,11 @@ include ('top.php');
 	if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
 	//echo gameurl($game["gameid"],$uid);
 	?>
-    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="<?php echo gameurl($game["gameid"],$uid)?>" role="button">进入游戏</a></div>
+    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="<?php echo $game_url?>" role="button">进入游戏</a></div>
     
 <?php }else{?>
 
-    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="" onClick="alert('请先登录')" role="button">进入游戏</a></div>
+    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;"onClick="alert('请先登录');window.location.href='http://m.57k.com/login_user';" role="button">进入游戏</a></div>
 <?php }?>
 </div>
         </div>
@@ -177,7 +186,7 @@ include ('top.php');
                                                 <?php
                                             }else{
                                                 ?>
-                                                <div class="col-md-2 col-sm-2 col-xs-2"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;" href="#" onClick="alert(' 请先登录')" role="button">领取</a></div>
+                                                <div class="col-md-2 col-sm-2 col-xs-2"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;"  onClick="alert('请先登录');window.location.href='http://m.57k.com/login_user';" role="button">领取</a></div>
 
                                                 <?php
                                             }?>
@@ -215,7 +224,7 @@ include ('bottom.php');
         
     	<p style="margin-top:20px; width:200px; margin-left:-55px; color:red;">请长按礼包码复制</p>
         
-        <div style="margin-top:10px; width:100px; height:100px;"><a class="btn btn-danger" style="margin-top:20px; width:80px; background:red; margin-left:100px;" href="#" role="button" onClick="tc_cls()" >关闭</a></div>
+        <div style="margin-top:10px; width:100px; height:100px;"><a class="btn btn-danger" style="margin-top:20px; width:80px; background:red; margin-left:100px;"  role="button" onClick="tc_cls()" >关闭</a></div>
     </div>
     
     

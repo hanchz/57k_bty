@@ -24,11 +24,16 @@ include ('sou.php');
         <?php
         foreach ($game_jp as $key=>$v)
         {
+		//通过gametype找到typename
+		$params=array();
+		$params['gametype']=$v['gametype'];
+		$result = $this->game_model->game_type($params);
+			
             echo '<div class="col-md-3 col-sm-3 col-xs-3">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">开始</a></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$result['gametype'].$v['size'].'M</small></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['gameid'].'" role="button">开始</a></div></div>
     	</div>';
         }
 
@@ -49,12 +54,16 @@ include ('sou.php');
         foreach ($game_rq as $key=>$v)
         {
 
+		//通过gametype找到typename
+		$params=array();
+		$params['gametype']=$v['gametype'];
+		$result = $this->game_model->game_type($params);
 
             echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:20px">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$v['gametype'].$v['size'].'M</small></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['id'].'" role="button">开始</a></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$result['gametype'].$v['size'].'M</small></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['gameid'].'" role="button">开始</a></div></div>
     	</div>';
         }
 
@@ -73,6 +82,11 @@ include ('sou.php');
     <?php
     foreach ($game as $key=>$v)
     {
+		
+		//通过gametype找到typename
+		$params=array();
+		$params['gametype']=$v['gametype'];
+		$result = $this->game_model->game_type($params);
         echo '<tr><td style=" padding:5px 2px;">
 <div class="col-md-3 col-sm-3 col-xs-3"><img src="'.$v['logo'].'" class="img-responsive"></div>
 <div class="col-md-6 col-sm-6 col-xs-6">
@@ -81,7 +95,7 @@ include ('sou.php');
         <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
     </div>
     <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$v['gametype'].'|'.$v['downnum'].'次开始</small></div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$result['gametype'].'|'.$v['downnum'].'次开始</small></div>
     </div>
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;overflow: hidden;
@@ -89,7 +103,7 @@ white-space: nowrap;
 text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).'</nobr></small></div>
     </div>
 </div>
-<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$v['id'].'" role="button">开始</a></div>
+<div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$v['gameid'].'" role="button">开始</a></div>
 </td></tr>';
     }
     ?>

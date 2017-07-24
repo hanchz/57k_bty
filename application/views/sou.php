@@ -2,14 +2,15 @@
     <div class="row" style="padding:10px 0px;">
         <div class="col-md-2 col-sm-2 col-xs-2"><a href="indexx"><img src="/images/57klogo.jpg" class="img-responsive" style="margin-left:10px;" ></a></div>
         <div class="col-md-8 col-sm-8 col-xs-8">
-            <form action="" method="get">
+            <form action="sou" method="get">
                 <div class="input-group">
                      <span class="input-group-btn">
 
-      			     <img src="/images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">
+      			     <!--<img src="/images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">-->
+                     <input type="image" src="/images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;" />
 
                      </span>
-                    <input type="text" class="form-control" id="name" placeholder="" style="background:#e8e8e8; border-bottom-right-radius:75px; border-top-right-radius:75px;">
+                    <input type="text" class="form-control" id="name" name="gamename" placeholder="" style="background:#e8e8e8; border-bottom-right-radius:75px; border-top-right-radius:75px;">
 
                 </div>
             </form>

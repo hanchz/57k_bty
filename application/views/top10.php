@@ -25,6 +25,12 @@ if(count($top)>0){
         $params = array();
         $params['id'] = $val['gameid'];
         $result = $this->top_model->game_info($params);
+		
+		
+		$params=array();
+		$params['gametype']=$result['gametype'];
+		$r = $this->game_model->game_type($params);
+		
         //var_dump($result);
         echo '<tr><td style=" padding:5px 2px;">
 <div class="col-md-1 col-sm-1 col-xs-1" style="line-height:60px; vertical-align:middle; color:'.$color.';">'.$val['id'].'</div>
@@ -36,7 +42,7 @@ if(count($top)>0){
     </div>
     <div class="row">
 
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$result['gametype'].'|'.$result['downnum'].'次开始</small></div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$r['gametype'].'|'.$result['downnum'].'次开始</small></div>
     </div>
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow" style="color:#999;overflow: hidden;

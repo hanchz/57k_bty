@@ -7,18 +7,6 @@ include ('top.php');
 <body>
 
 
-<?php
-
-
-
-
-if(isset($orderid) && !empty($orderid))
-{
-
-
-}
-
-?>
 
 <div class="container">
     <div class="row" style="padding:10px 0px; height:60px; border-bottom:1px solid #999;">
@@ -32,6 +20,11 @@ if(isset($orderid) && !empty($orderid))
 <?php       //游戏内直接发起支付
 if(isset($orderid) && !empty($orderid))
 {
+	$params=array();
+	$params['id']=$gameid;
+	$result=$this->game_model->game_info($params);
+	//var_dump($result);
+	//exit;
 ?>
 <form name="form" method="post" action="Heepay" id="form">
     <input type="hidden" name="orderid" id="orderid" value="<?php echo $orderid;?>" />
@@ -47,7 +40,7 @@ if(isset($orderid) && !empty($orderid))
             <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >请确认游戏：
             </div>
             <div class="col-md-5 col-sm-5 col-xs-5" style="margin-left:-20px;" >
-                <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;" id="name" name="name"  value="<?php echo $gameid?>" disabled="disabled" >
+                <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;" id="name" name="name"  value="<?php echo $result['name']?>" disabled="disabled" >
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3" >
 

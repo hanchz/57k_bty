@@ -60,7 +60,7 @@ class Kf_Model extends CI_Model{
     public function game_info($args)
     {
         $id = $args['id'];
-        $sql="select * from game_info where id=?";
+        $sql="select * from game_info where id=? and display=1";
         $query=$this->db->query($sql,array($id));
         //return $sql;
         $result=$query->result_array();

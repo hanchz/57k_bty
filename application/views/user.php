@@ -95,7 +95,7 @@ if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 
 
 <div>
-    <a href="pay" ><img src="/images/cz.jpg" style=" width: 50%; float:left;" ></a>
+    <a href="usergame" ><img src="/images/cz.jpg" style=" width: 50%; float:left;" ></a>
     <a href="user_info"><img src="/images/gr.jpg"  style=" width: 50%; float:left;"></a>
     <a href="user_safe"> <img src="/images/aq.jpg" style=" width: 50%; float:left;" ></a>
     <a href="user_gifts"> <img src="/images/lb.jpg"  style=" width: 50%; float:left;"></a>

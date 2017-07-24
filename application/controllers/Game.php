@@ -12,7 +12,7 @@ class Game extends CI_Controller {
         $result = $this->game_model->game_info($params);
         $data['game']=$result;
 
-        /////测试
+        
         $this->load->model('gifts_model');
 
         $this->load->view('gameinfo',$data);
