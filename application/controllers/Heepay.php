@@ -221,6 +221,30 @@ class Heepay extends CI_Controller {
 		$result = $this->post_url($url);
 		return $result;
 	}
+	
+	//荣耀与远征游戏充值接口
+	private function gamepay_id_2($gameid,$uid,$serverid,$gameorderid,$money,$goodsid,$orderid,$time)
+	{
+		$key="c8z6J7J5JyOvZQSf";
+		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
+		$url="http://pulsdk.7724.com/c57k/paynotify/game/lmybl";
+		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
+		$url=$url.$str;
+		$result = $this->post_url($url);
+		return $result;
+	}
+	
+	//极品三国游戏充值接口
+	private function gamepay_id_3($gameid,$uid,$serverid,$gameorderid,$money,$goodsid,$orderid,$time)
+	{
+		$key="H9kNJF8vxt1rtJK8";
+		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
+		$url="http://pulsdk.7724.com/c57k/paynotify/game/jpsg";
+		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
+		$url=$url.$str;
+		$result = $this->post_url($url);
+		return $result;
+	}
 
 
 
