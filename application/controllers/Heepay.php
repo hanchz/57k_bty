@@ -245,6 +245,18 @@ class Heepay extends CI_Controller {
 		$result = $this->post_url($url);
 		return $result;
 	}
+	
+	//蛮荒纪游戏充值接口
+	private function gamepay_id_4($gameid,$uid,$serverid,$gameorderid,$money,$goodsid,$orderid,$time)
+	{
+		$key="2cPFgNm4KVpfxKEZ";
+		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
+		$url="http://api.egret-labs.org/v2/pay/22694/90488";
+		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
+		$url=$url.$str;
+		$result = $this->post_url($url);
+		return $result;
+	}
 
 
 

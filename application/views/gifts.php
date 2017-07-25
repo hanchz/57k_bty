@@ -15,7 +15,7 @@ include ('sou.php');
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
 <?php
-if (count($gifts)>0){
+if(isset($gifts) && !empty($gifts)){	
     foreach ($gifts as $val)
     {
         $params = array();

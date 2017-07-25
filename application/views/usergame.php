@@ -7,11 +7,7 @@ include ('top.php');
 
 include ('sou.php');
 ?>
-<?php var_dump($usergame);
-		$params = array();
-		$params['uid']=$uid;
-		
-        $usergame=$this->Gamelogin_model->Usergame_model($params);
+<?php 
         //var_dump($usergame);
 ?>
 <div class="container-fluid">
@@ -19,7 +15,13 @@ include ('sou.php');
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table">
 <?php 
-if(count($usergame)>0){
+
+if(isset($usergame) && !empty($usergame)){
+	//var_dump($usergame);
+		$params = array();
+		$params['uid']=$uid;
+		
+        $usergame=$this->Gamelogin_model->Usergame_model($params);
     foreach ($usergame as $val)
     {
 		$paramsgame=array();
@@ -52,7 +54,7 @@ text-overflow: ellipsis; width:200px;"><small><nobr><?php echo $gameinfo['about'
 
 <div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-20px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid=<?php echo $gameinfo['id']?>" role="button">开始</a></div>
 </td></tr>
-<?php }}?>
+<?php }}else{echo "暂无游戏";}?>
 </table>
 </div>
 </div>

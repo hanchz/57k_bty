@@ -12,7 +12,7 @@ include ('sou.php');
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table">
 <?php 
-if(count($gamename)>0){
+if(isset($gamename) && !empty($gamename)){			
 	foreach($gamename as $val){
 /*	//echo $gamename['gameid'];
 		

@@ -68,7 +68,7 @@ $new_arr = json_decode($kf, true);
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
 
     <?php
-    if(count($new_arr[0][0])>0) {
+	if(isset($new_arr[0][0]) && !empty($new_arr[0][0])){		
         foreach ($new_arr[0][0] as $v1) {
             //var_dump($v1);
             //先调用Model
@@ -123,7 +123,7 @@ $new_arr = json_decode($kf, true);
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
     <?php
-    if(count($new_arr[1][1])>0) {
+	if(isset($new_arr[1][1]) && !empty($new_arr[1][1])){		
         foreach ($new_arr[1][1] as $v1) {
             //var_dump($v1);
             //exit;
@@ -180,7 +180,7 @@ $new_arr = json_decode($kf, true);
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
     <?php
-    if(count($new_arr[2][2])>0) {
+    if(isset($new_arr[2][2]) && !empty($new_arr[2][2])){	
         foreach ($new_arr[2][2] as $v1) {
             //var_dump($v1);
             //exit;

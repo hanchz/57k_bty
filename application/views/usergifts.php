@@ -23,7 +23,7 @@ $params['uid']=$uid;
 $result=$this->gifts_model->uesr_gifts_info_model($params);
 //var_dump($result);
 //exit;
-if (count($result)>0){
+if(isset($result) && !empty($result)){		
     foreach ($result as $val)
     {
 		//var_dump($val);

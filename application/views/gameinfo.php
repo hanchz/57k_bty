@@ -150,7 +150,7 @@ include ('top.php');
 							$giftsnum=$this->gifts_model->gifts_num_model($params);
                             //var_dump($giftsnum);
                             //exit;
-                            if (count($giftsinfo)>0){
+							if(isset($giftsinfo) && !empty($giftsinfo)){	
                                 foreach ($giftsinfo as $val)
                                 {
 ?>

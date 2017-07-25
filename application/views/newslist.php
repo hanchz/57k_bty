@@ -17,7 +17,7 @@ include ('sou.php');
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
 
 <?php
-if(count($news)>0){
+if(isset($news) && !empty($news)){		
     foreach ($news as $val)
     {
         $params = array();

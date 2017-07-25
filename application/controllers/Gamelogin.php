@@ -33,6 +33,10 @@ class Gamelogin extends CI_Controller {
 	{
 	$key="H9kNJF8vxt1rtJK8";
 	$url="http://pulsdk.7724.com/c57k/loginback/game/jpsg";
+	}elseif($gameid=='4')
+	{
+	$key="2cPFgNm4KVpfxKEZ";
+	$url="http://api.egret-labs.org/v2/game/22694/90488";
 	}
 	else
 	{
