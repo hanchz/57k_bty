@@ -15,6 +15,7 @@ class Gamelogin extends CI_Controller {
 		$params = array();
 		$params['uid']=$uid;
 		$params['gameid']=$gameid;
+		//记录玩家登陆
 		$this->load->model('gamelogin_model');
         $result=$this->gamelogin_model->gamelogin_model($params);
 	if($gameid=='91284')
@@ -48,8 +49,6 @@ class Gamelogin extends CI_Controller {
 	if($url!=''){
 	$url=$url."?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameid=".$gameid."&sign=".$sign;	
 	}
-	   
-	   
 	   
 echo '<script language="javascript">window.location.href="'.$url.'";</script>';
     }

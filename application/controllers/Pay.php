@@ -17,8 +17,6 @@ class Pay extends CI_Controller {
         $time = $this->input->get('time',true);
         $sign=array();
         $sign = $this->input->get('sign',true);
-        $sign=array();
-        $sign = $this->input->get('sign',true);
         $money=array();
         $money = $this->input->get('money',true);
         $goodsid=array();
@@ -44,9 +42,9 @@ class Pay extends CI_Controller {
 		$key="2cPFgNm4KVpfxKEZ";			//蛮荒纪
 		}
         $sign1=strtolower(md5($uid.$serverid.$time.$orderid.$money.$goodsid.$key.$gameid));
-/*echo $sign;
-echo "<hr>";
-echo $sign1;*/
+//echo $sign;
+//echo "<hr>";
+//echo $sign1;
 		
 		if($sign==$sign1){
         $data['orderid']=$orderid;

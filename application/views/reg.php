@@ -26,7 +26,7 @@ if(isset($error) && $error == 1)
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
 
-<link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php //echo base_url();?>/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -44,6 +44,15 @@ if(isset($error) && $error == 1)
   border-radius: 15px;
   color:#F60;
 }
+	
+	.zj_yzm_btn
+	{
+		text-align: center;
+  padding: 6px 0;
+  line-height: 1.428571429;
+  border-radius: 5px;
+  color:#F60;
+	}	
 
 a{ color:#FFF; border-bottom:1px solid #FFF;}
 a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
@@ -59,10 +68,12 @@ a:hover{color:#FFF;}
         var username=document.getElementById("username").value;
         var password=document.getElementById("password").value;
         var password1=document.getElementById("password1").value;
-        //alert(username);
+		var tel=document.getElementById("tel").value;
+		var telcode=document.getElementById("telcode").value;
+        //alert(telcode);
         if (username=="")
         {
-            alert("请输入您的用户名!");
+            alert("请输入您的用户名!"); 
             //form.username.focus();
             return false;
         }
@@ -90,9 +101,43 @@ a:hover{color:#FFF;}
             //form.password.focus();
             return false;
         }
-        document.form.action="reg/reg_user";
-        document.form.submit();
+		
+		
+		if(validatemobile(tel))
+		{
+			//alert(telcode);
+			//exit;
+			var url='get_code/reg_code';
+		$.get(
+            url,
+            {tel:tel,code:telcode},
+            function(data){
+				if(data=='error')
+				{
+					alert("请确认手机号");
+					return false;
+				}else if(data=='codeerror')
+				{
+					alert("验证码错误");
+					return false;
+				}else if(data=='timeout')
+				{
+					alert("验证码已超时");
+					return false;
+				}else if(data=="ok"){
+					document.getElementById("form").action="reg/reg_user";
+					document.getElementById("form").submit();
+					//document.form.action="reg/reg_user";
+					 //document.form.submit();
+				}
+			});
+			
+		}
+		
+       
     }
+	
+
 
 </script>
 <div class="container" >
@@ -100,7 +145,7 @@ a:hover{color:#FFF;}
 <div class="row" style="text-align:center; margin-top:40px;">
 	<img src="/images/57klogo.png">
 </div>
-    <form action="<?php //echo site_url('/reg/reg_user'); ?>" onsubmit="//return checkreg()"  method="post" name="form"> <!--http://localhost:8080/test/index.php/reg/reg_user-->
+    <form action="" onsubmit="//return checkreg()"  method="post" name="form" id="form"> <!--http://localhost:8080/test/index.php/reg/reg_user-->
 	<div class="row" style="margin-top:50px; padding:0 50px; ">
 
     <ul class="list-unstyled" >
@@ -113,14 +158,6 @@ a:hover{color:#FFF;}
     </div>
     </li>
     
-    <li style="height:35px;border-bottom:1px solid #FFF;margin-top:20px;">
-    <div class="col-md-1 col-sm-1 col-xs-1" >
-    <span class="glyphicon glyphicon-phone" style="color:#fff; margin-top:10px;"></span>
-    </div>
-    <div class="col-md-10 col-sm-10 col-xs-10" >
-    <input type="number" class="form-control input-group-sm zj_input" id="tel" name="tel" placeholder="输入手机号">
-    </div>
-    </li>
     
     <li style="height:35px;border-bottom:1px solid #FFF; 	margin-top:20px;">
     <div class="col-md-1 col-sm-1 col-xs-1" >
@@ -139,11 +176,45 @@ a:hover{color:#FFF;}
                 <input type="password" class="form-control input-group-sm zj_input" id="password1" name="password1" placeholder="确认密码">
             </div>
         </li>
+        
+            <li style="height:35px;border-bottom:1px solid #FFF;margin-top:20px;">
+    <div class="col-md-1 col-sm-1 col-xs-1" >
+    <span class="glyphicon glyphicon-phone" style="color:#fff; margin-top:10px;"></span>
+    </div>
+    <div class="col-md-10 col-sm-10 col-xs-10" >
+    <input type="number" class="form-control input-group-sm zj_input" id="tel" name="tel" placeholder="输入手机号">
+    </div>
+    
+	
+    </li>
+    
+    
+    
+    <li style="height:35px;border-bottom:1px solid #FFF;margin-top:20px;">
+    <div class="col-md-1 col-sm-1 col-xs-1" >
+    <span class="glyphicon glyphicon-barcode" style="color:#fff; margin-top:10px;"></span>
+    </div>
+    <!--<div class="row">
+    <input type="number" class="form-control input-group-sm zj_input" id="telcode" name="telcode" placeholder="输入验证码">
+    
+    <input type="submit" class="btn" name="submit" onclick="alert('ok')" value="获取验证码">
+		</div>-->
+   
+   		 <div class="col-md-10 col-sm-10 col-xs-10" >
+                <div class="input-group">
+                    <input type="text" class="form-control  zj_input" style=" width: 100%" id="telcode" name="telcode" placeholder="输入验证码" value="">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" onclick="getcode()" id="btn_code">获取验证码</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+   
+    </li>
     
 	</ul>
     
     <div class="row" style="margin-top:60px; ">
-        <input type="submit" class="btn btn-default btn-lg btn-block zj_btn" name="submit" onclick="checkreg()" value="注册">
+        <input  class="btn btn-default btn-lg btn-block zj_btn"   onclick="checkreg()" value="注册">
     </div>
     </form>
     <div class="row" style="margin-top:20px; color:#FFF;">
@@ -160,7 +231,67 @@ a:hover{color:#FFF;}
   </div>  
   <div class="row" style="margin-top:100%;"></div>
 </div>
+<script language="javascript">
+	//获取验证码
+function getcode()
+	{
+		var tel=document.getElementById("tel").value;
+		var btn_code=document.getElementById("btn_code");
+		//alert(tel);
+		if(validatemobile(tel))
+		{
+			
+			var url='get_code';
+		$.get(
+            url,
+            {tel:tel},
+            function(data){
+				var wait=60;
+				function time(o) {
+				  if (wait == 0) {
+				   o.removeAttribute("disabled");   
+				   btn_code.innerHTML="获取验证码";
+				   wait = 60;
+				  } else { 
 
+				   o.setAttribute("disabled", true);
+				   btn_code.innerHTML="重新发送(" + wait + ")";
+				   wait--;
+				   setTimeout(function() {
+					time(o)
+				   },
+				   1000)
+				  }
+				 }
+				document.getElementById("btn_code").onclick=function(){time(this);}
+            });
+			
+			
+		}
+	}
+	
+//验证手机号是否正确	
+function validatemobile(mobile) 
+   { 
+       if(mobile.length==0) 
+       { 
+          alert('请输入手机号码！'); 
+          return false; 
+       }     
+       if(mobile.length!=11) 
+       { 
+           alert('请输入有效的手机号码！'); 
+           return false; 
+       } 
+        
+       var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+       if(!myreg.test(mobile)) 
+       { 
+           alert('请输入有效的手机号码！'); 
+           return false; 
+       }else{return true;} 
+   } 
+</script>
 
 </body>
 </html>
