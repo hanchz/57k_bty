@@ -159,6 +159,19 @@ if(isset($orderid) && !empty($orderid))
    		 </div>
  </div>
     <?php }?>
+    
+  <div class="row" style="margin-top: 20px;">
+  	<div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%; border-bottom: 1px solid #ccc;" >
+	  <strong>请选择充值方式</strong>
+	  </div>
+  </div>  
+  
+  <div class="row" style=" padding-top: 20px;">
+ 	 <div class="col-md-1 col-sm-1 col-xs-1">
+	  </div>
+ 	 <div class="col-md-10 col-sm-10 col-xs-10">
+  	<img src="/images/wxpay_icon.jpg" class="img-responsive" ></div>
+	</div>
  
   <div class="row" style="margin-top:30px;">
   <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;">
@@ -172,7 +185,7 @@ if(isset($orderid) && !empty($orderid))
 </div>
 
 
-
+	</div>
 
 <?php
 include ('bottom.php');
