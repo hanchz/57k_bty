@@ -25,7 +25,7 @@ class Gamelogin_model extends CI_Model{
 	public function Usergame_model($args)
 	{
 		$uid = $args['uid'];
-		$sql="select * from user_game where uid = ? order by time desc limit 0,50";
+		$sql="select distinct(gameid) from user_game where uid = ? order by time desc limit 0,50";
         $query=$this->db->query($sql,array($uid));
         $result=$query->result_array();
         //var_dump($result);

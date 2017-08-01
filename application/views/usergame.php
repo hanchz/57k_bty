@@ -8,7 +8,13 @@ include ('top.php');
 include ('sou.php');
 ?>
 <?php 
-        //var_dump($usergame);
+       
+	$params = array();
+	$params['uid']=$uid;
+		
+    $usergame=$this->Gamelogin_model->Usergame_model($params);
+	 //var_dump($usergame);
+	//exit;
 ?>
 <div class="container-fluid">
 <div class="row">
@@ -18,21 +24,22 @@ include ('sou.php');
 
 if(isset($usergame) && !empty($usergame)){
 	//var_dump($usergame);
-		$params = array();
-		$params['uid']=$uid;
 		
-        $usergame=$this->Gamelogin_model->Usergame_model($params);
     foreach ($usergame as $val)
     {
 		$paramsgame=array();
 		$paramsgame['id']=$val['gameid'];
 		$gameinfo=$this->Game_model->game_info($paramsgame);
 		
+		//var_dump($gameinfo);
+		//exit;
 		
 		$params=array();
 		$params['gametype']=$gameinfo['gametype'];
-		$result = $this->game_model->game_type($params);
-		//var_dump($gameinfo);
+		//exit;
+		$result = $this->Game_model->game_type($params);
+		//var_dump($result);
+		//exit;
 ?>
 <tr><td style=" padding:5px 2px;">
 <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="<?php echo $gameinfo['logo']?>" class="img-responsive"></div>
