@@ -12,7 +12,7 @@ if(isset($username) && !empty($username))
 $this->load->helper('url');
 if(isset($error) && $error == 1)
 {
-    echo '<script language="JavaScript">alert("账号密码错误，或没有次账号")</script>';
+    echo '<script language="JavaScript">alert("账号密码错误，或没有此账号")</script>';
 }
 ?>
 

@@ -110,7 +110,7 @@ $new_arr = json_decode($kf, true);
             </tr>
             <?php
         }
-    }
+    }else{echo "暂无开服计划";}
 ?>
 </table>
 </div>
@@ -166,7 +166,7 @@ $new_arr = json_decode($kf, true);
             </tr>
             <?php
         }
-    }
+    }else{echo "暂无开服计划";}
     ?>
 </table>
 </div>
@@ -223,7 +223,7 @@ $new_arr = json_decode($kf, true);
             </tr>
             <?php
         }
-    }
+    }else{echo "暂无开服";}
     ?>
 </table>
 </div>

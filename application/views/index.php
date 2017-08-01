@@ -91,7 +91,7 @@ include ('sou.php');
 <div class="col-md-3 col-sm-3 col-xs-3"><img src="'.$v['logo'].'" class="img-responsive"></div>
 <div class="col-md-6 col-sm-6 col-xs-6">
 	<div class="row">
-    	<div class="col-md-6 col-sm-6 col-xs-6"><strong>'.$v['name'].'</strong></div>
+    	<div class="col-md-7 col-sm-7 col-xs-7" ><strong>'.$v['name'].'</strong></div>
         <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
     </div>
     <div class="row">

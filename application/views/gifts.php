@@ -25,7 +25,7 @@ if(isset($gifts) && !empty($gifts)){
         //var_dump($gameinfo);
         ?>
 		 <tr><td style=" padding:5px 2px;">
-    <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="'.$gameinfo['logo'].'" class="img-responsive"></div>
+    <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="<?php echo $gameinfo['logo']?>" class="img-responsive"></div>
     <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12"><strong><?php echo $gameinfo['name'].':'.$val['giftsname']?></strong></div>

@@ -232,44 +232,47 @@ a:hover{color:#FFF;}
   <div class="row" style="margin-top:100%;"></div>
 </div>
 <script language="javascript">
-	//获取验证码
-function getcode()
+		var wait=60;
+function time(o) {
+	//alert("ok");
+	var btn_code=document.getElementById("btn_code");
+        if (wait == 0) {
+            o.removeAttribute("disabled");            
+            btn_code.innerHTML="获取验证码";
+            wait = 60;
+        } else {
+            o.setAttribute("disabled", true);
+            btn_code.innerHTML="重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function() {
+                time(o)
+            },
+            1000)
+        }
+    }
+	
+	document.getElementById("btn_code").onclick=function()
 	{
+
 		var tel=document.getElementById("tel").value;
 		var btn_code=document.getElementById("btn_code");
 		//alert(tel);
 		if(validatemobile(tel))
 		{
-			
+			time(this);
 			var url='get_code';
 		$.get(
             url,
             {tel:tel},
             function(data){
-				var wait=60;
-				function time(o) {
-				  if (wait == 0) {
-				   o.removeAttribute("disabled");   
-				   btn_code.innerHTML="获取验证码";
-				   wait = 60;
-				  } else { 
 
-				   o.setAttribute("disabled", true);
-				   btn_code.innerHTML="重新发送(" + wait + ")";
-				   wait--;
-				   setTimeout(function() {
-					time(o)
-				   },
-				   1000)
-				  }
-				 }
-				document.getElementById("btn_code").onclick=function(){time(this);}
             });
 			
 			
 		}
 	}
 	
+		
 //验证手机号是否正确	
 function validatemobile(mobile) 
    { 
