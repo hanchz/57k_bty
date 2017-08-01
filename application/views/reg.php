@@ -143,7 +143,7 @@ a:hover{color:#FFF;}
 <div class="container" >
 
 <div class="row" style="text-align:center; margin-top:40px;">
-	<img src="/images/57klogo.png">
+	<img src="<?php //echo base_url()?>/images/57kcom.png">
 </div>
     <form action="" onsubmit="//return checkreg()"  method="post" name="form" id="form"> <!--http://localhost:8080/test/index.php/reg/reg_user-->
 	<div class="row" style="margin-top:50px; padding:0 50px; ">

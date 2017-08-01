@@ -59,7 +59,7 @@ a:hover{color:#FFF;}
   background: linear-gradient(to bottom right, #ff9c72 , #ff6529);  background-size:100% 100%; ">
 <div class="container" >
 <div class="row" style="text-align:center; margin-top:40px;">
-	<img src="http://m.57k.com/images/57klogo.png">
+		<img src="<?php //echo base_url()?>/images/57kcom.png">
 </div>
 
     <form action="<?php echo site_url('/login_user/check_login'); ?>"  method="post"><!--http://localhost:8080/test/index.php/login_user/check_login-->
