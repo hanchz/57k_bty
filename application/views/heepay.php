@@ -54,6 +54,9 @@ $return_url = $return_url; //微信支付不涉及同步返回，此处可填写
 $goods_name = $_POST['goodsid'];
 $goods_num = "1";
 $goods_note = $_POST['goodsid'];
+if($_POST["goodsid"]==""){
+	$goods_name='1';
+}
 $remark = "";
 $sign_key = "$SIGN_KEY"; //签名密钥，需要商户使用为自己的真实KEY
 
