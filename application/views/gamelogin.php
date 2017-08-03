@@ -6,24 +6,32 @@ function gameurl($gameid,$uid)
 	//return $gameid;
 	if($gameid=='91284')
 	{
-	$serverid=1;
-	$time=time();
 	$key="e2SExYMWng9fMVQS";
-	$sign = strtolower(md5($uid.$serverid.$time.$gameid.$key));
 	$url="http://api.egret-labs.org/v2/game/22694/91284";
-	$url=$url."?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameid=".$gameid."&sign=".$sign;	
-	
 	}elseif($gameid=='1')
 	{
+	$key="NvDgEAGoH99CFVPi";
+	$url="http://119.23.104.2/app/vs4/";
+	}elseif($gameid=='2')
+	{
+	$key="c8z6J7J5JyOvZQSf";
+	$url="http://pulsdk.7724.com/c57k/loginback/game/lmybl";
+	}elseif($gameid=='3')
+	{
+	$key="H9kNJF8vxt1rtJK8";
+	$url="http://pulsdk.7724.com/c57k/loginback/game/jpsg";
+	}elseif($gameid=='4')
+	{
+	$key="2cPFgNm4KVpfxKEZ";
+	$url="http://api.egret-labs.org/v2/game/22694/90488";
+	}	
+	else{$url="";}
 	$serverid=1;
 	$time=time();
-	$key="NvDgEAGoH99CFVPi";
 	$sign = strtolower(md5($uid.$serverid.$time.$gameid.$key));
-	$url="http://119.23.104.2/app/vs4/";
+	if($url!=''){
 	$url=$url."?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameid=".$gameid."&sign=".$sign;	
-	
-	}else{$url="";}
-	
+	}
 	return $url;
 	
 }

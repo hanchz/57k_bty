@@ -34,11 +34,11 @@ else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
 $gameid = $_POST['gameid'];    //游戏id
 $uid=$_POST['uid'];
 
-/*include ('gamelogin.php');
+include ('gamelogin.php');
 $return_url=gameurl($gameid,$uid);//支付成功后，跳转回游戏地址
-$return_url="http://m.57k.com/";*/
 
-$return_url='http://m.57k.com/gamelogin/index/'.$gameid;
+
+//$return_url='http://m.57k.com/gamelogin/index/'.$gameid;
 
 $version = 1;
 $agent_id = $AGENT_ID;
@@ -135,14 +135,12 @@ $result=$this->order_model->pay_order_model($params);
     
     <!--<input type='hidden' name='is_test' value='1' />-->
     <input type='hidden' name='sign' value='<?php echo $sign;?>'  id="sign1"/>
-    <input type="button" value="提交订单" onclick="gatewayPaySubmit()">
+    <input type="button" value="" onclick="gatewayPaySubmit()">
 </form>
 
 <p id="demo"></p>
 <script language='javascript'>
-    function gatewayPaySubmit(){
-			document.frmSubmit.submit();
-			var version=document.getElementById("version").value;
+	var version=document.getElementById("version").value;
 			var agent_id=document.getElementById("agent_id").value;
 			var agent_bill_id=document.getElementById("agent_bill_id").value;
 			var agent_bill_time=document.getElementById("agent_bill_time").value;
@@ -166,6 +164,9 @@ $result=$this->order_model->pay_order_model($params);
 			var str='version='+version+'&agent_id='+agent_id+'&agent_bill_id='+agent_bill_id+'&agent_bill_time='+agent_bill_time+'&pay_type='+pay_type+'&pay_code='+pay_code+'&pay_amt='+pay_amt+'&notify_url='+notify_url+'&return_url='+return_url+'&user_ip='+user_ip+'&goods_name='+goods_name+'&goods_num='+goods_num+'&goods_note='+goods_note+'&remark='+remark+'&is_phone='+is_phone+'&is_frame='+is_frame+'&meta_option='+meta_option+'&sign='+sign1;
 			//alert(id);
 			//document.getElementById("demo").innerHTML=str;
+    function gatewayPaySubmit(){
+			document.frmSubmit.submit();
+			
 			}
 </script>
 <?php
