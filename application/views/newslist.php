@@ -11,7 +11,7 @@ include ('sou.php');
 //var_dump($news);
 //exit;
 ?>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 50px;">
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12" >
 <table class="table" style="border-bottom:1px solid #e7eaf1;">

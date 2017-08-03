@@ -11,7 +11,7 @@ include ('sou_old.php');
 //var_dump($newscon);
 //exit;
 ?>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 50px;">
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12">
     <h3 style="width: 100%; text-align: center;"><?php echo $newscon['title'];?></h3>

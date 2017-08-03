@@ -8,7 +8,7 @@ include ('top.php');
 include ('sou.php');
 ?>
 <?php //var_dump($top)?>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 50px;">
 <div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <table class="table">

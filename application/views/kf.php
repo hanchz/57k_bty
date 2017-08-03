@@ -21,7 +21,7 @@ $this->load->helper('url');
 
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 
-<link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php //secho base_url();?>/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -52,7 +52,7 @@ $new_arr = json_decode($kf, true);
 //var_dump($new_arr[0][0][0]);
 //echo $new_arr[0][0][0]['id'];
 ?>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 50px;">
 
 <ul class="nav nav-tabs" role="tablist" >
     <li role="presentation" class="active zj_nav33"  id="tab1"><a href="#today" aria-controls="today" role="tab" data-toggle="tab">今日</a></li>
@@ -110,7 +110,7 @@ $new_arr = json_decode($kf, true);
             </tr>
             <?php
         }
-    }else{echo "暂无开服计划";}
+    }else{echo '<div class="row" style="text-align: center; line-height: 100px; vertical-align: middle">暂无开服计划</div>';}
 ?>
 </table>
 </div>
@@ -166,8 +166,9 @@ $new_arr = json_decode($kf, true);
             </tr>
             <?php
         }
-    }else{echo "暂无开服计划";}
+    }else{echo '<div class="row" style="text-align: center; line-height: 100px; vertical-align: middle">暂无开服计划</div>';}
     ?>
+    
 </table>
 </div>
 </div>
@@ -223,7 +224,7 @@ $new_arr = json_decode($kf, true);
             </tr>
             <?php
         }
-    }else{echo "暂无开服";}
+    }else{echo '<div class="row" style="text-align: center; line-height: 100px; vertical-align: middle">暂无开服</div>';}
     ?>
 </table>
 </div>
