@@ -27,7 +27,8 @@ class Reg extends CI_Controller {
         $url="http://my.57k.com/api/register.php?username=".$username."&tel=".$tel."&pwd=".$password."&sign=".$sign."&time=".$time;
         $result = $this->login($url);
         //echo $result;
-        if($result>0)
+        //exit;
+		if(count($result)>0)
         {
             //header('Location: http://m.57k.com/');
             $_SESSION['username'] = $username;
@@ -36,7 +37,7 @@ class Reg extends CI_Controller {
             $data['username']=$username;
             $data['uid']=$result;
             $this->load->view('login',$data);
-            header('Location: http://m.57k.com/');
+            header('Location: http://m.57k.com/login_user');
         }else
         {
             $data = array();

@@ -32,9 +32,9 @@ if (isset($resultcpw) && !empty($resultcpw)) {
 
 
         <tr><td style=" padding:5px 2px; ">
-                <div class="col-md-2 col-sm-2 col-xs-2" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">账号 </div>
-                <div class="col-md-7 col-sm-7 col-xs-7 " ></div>
-                <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; height: 50px; line-height: 50px; vertical-align: middle; margin-left: 10px;">
+                <div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">账号 </div>
+                <div class="col-md-3 col-sm-3 col-xs-3" ></div>
+                <div class="col-md-4 col-sm-4 col-xs-4" style="color:#999; height: 50px; line-height: 50px; vertical-align: middle; margin-left: 10px;">
                     <?php echo $username;?>
                 </div>
         </td></tr>

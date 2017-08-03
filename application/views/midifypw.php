@@ -46,7 +46,7 @@ if (isset($resultcpw) && !empty($resultcpw)) {
         </td></tr>
 
     <tr><td style=" padding:5px 2px; ">
-             <div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">确认新密码 </div>
+             <div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">确认密码 </div>
                 <div class="col-md-8 col-sm-8 col-xs-8" >
     <input type="text" class="form-control input-group-sm zj_input" id="newpw1" name="newpw1" placeholder="确认密码" style=" color:#333;">
     </div>

@@ -15,7 +15,7 @@ class Get_code extends CI_Controller {
 		if($result)
 		{
 			//短信验证码接口
-			$url='http://localhost/test/aldy/fileTest.php?tel='.$params['tel'].'&code='.$code;
+			$url='http://http://m.57k.com/aldy/fileTest.php?tel='.$params['tel'].'&code='.$code;
 			$html = file_get_contents($url);
 
 		}

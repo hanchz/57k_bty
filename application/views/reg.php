@@ -62,84 +62,7 @@ a:hover{color:#FFF;}
   background: -o-linear-gradient(bottom right, #ff9c72, #ff6529);
   background: -moz-linear-gradient(bottom right, #ff9c72, #ff6529);
   background: linear-gradient(to bottom right, #ff9c72 , #ff6529);  background-size:100% 100%; ">
-<script language="JavaScript">
-    function checkreg()
-    {
-        var username=document.getElementById("username").value;
-        var password=document.getElementById("password").value;
-        var password1=document.getElementById("password1").value;
-		var tel=document.getElementById("tel").value;
-		var telcode=document.getElementById("telcode").value;
-        //alert(telcode);
-        if (username=="")
-        {
-            alert("请输入您的用户名!"); 
-            //form.username.focus();
-            return false;
-        }
-        if (username.length<4 || username.length>15)
-        {
-            alert("用户名长度限制在4-15位!");
-            //form.username.focus();
-            return false;
-        }
-        if (password=="")
-        {
-            alert("请输入密码!");
-            //form.password.focus();
-            return false;
-        }
-        if (password.length<6 || password.length>15)
-        {
-            alert("密码长度限制在6-15位!");
-            //form.password.focus();
-            return false;
-        }
-        if(password!=password1)
-        {
-            alert("两次输入的密码不同!")
-            //form.password.focus();
-            return false;
-        }
-		
-		
-		if(validatemobile(tel))
-		{
-			//alert(telcode);
-			//exit;
-			var url='get_code/reg_code';
-		$.get(
-            url,
-            {tel:tel,code:telcode},
-            function(data){
-				if(data=='error')
-				{
-					alert("请确认手机号");
-					return false;
-				}else if(data=='codeerror')
-				{
-					alert("验证码错误");
-					return false;
-				}else if(data=='timeout')
-				{
-					alert("验证码已超时");
-					return false;
-				}else if(data=="ok"){
-					document.getElementById("form").action="reg/reg_user";
-					document.getElementById("form").submit();
-					//document.form.action="reg/reg_user";
-					 //document.form.submit();
-				}
-			});
-			
-		}
-		
-       
-    }
-	
 
-
-</script>
 <div class="container" >
 
 <div class="row" style="text-align:center; margin-top:40px;">
@@ -295,6 +218,83 @@ function validatemobile(mobile)
        }else{return true;} 
    } 
 </script>
+<script language="JavaScript">
+    function checkreg()
+    {
+        var username=document.getElementById("username").value;
+        var password=document.getElementById("password").value;
+        var password1=document.getElementById("password1").value;
+		var tel=document.getElementById("tel").value;
+		var telcode=document.getElementById("telcode").value;
+        //alert(telcode);
+        if (username=="")
+        {
+            alert("请输入您的用户名!"); 
+            //form.username.focus();
+            return false;
+        }
+        if (username.length<4 || username.length>15)
+        {
+            alert("用户名长度限制在4-15位!");
+            //form.username.focus();
+            return false;
+        }
+        if (password=="")
+        {
+            alert("请输入密码!");
+            //form.password.focus();
+            return false;
+        }
+        if (password.length<6 || password.length>15)
+        {
+            alert("密码长度限制在6-15位!");
+            //form.password.focus();
+            return false;
+        }
+        if(password!=password1)
+        {
+            alert("两次输入的密码不同!")
+            //form.password.focus();
+            return false;
+        }
+		
+		
+		if(validatemobile(tel))
+		{
+			//alert(telcode);
+			//exit;
+			var url='get_code/reg_code';
+		$.get(
+            url,
+            {tel:tel,code:telcode},
+            function(data){
+				if(data=='error')
+				{
+					alert("请确认手机号");
+					return false;
+				}else if(data=='codeerror')
+				{
+					alert("验证码错误");
+					return false;
+				}else if(data=='timeout')
+				{
+					alert("验证码已超时");
+					return false;
+				}else if(data=="ok"){
+					document.getElementById("form").action="reg/reg_user";
+					document.getElementById("form").submit();
+					//document.form.action="reg/reg_user";
+					 //document.form.submit();
+				}
+			});
+			
+		}
+		
+       
+    }
+	
 
+
+</script>
 </body>
 </html>

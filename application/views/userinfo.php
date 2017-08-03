@@ -19,9 +19,9 @@ include ('top.php');
 <table class="table" style="border-bottom:1px solid #e7eaf1;">
 
 <tr><td style=" padding:5px 2px; ">
-<div class="col-md-2 col-sm-2 col-xs-2" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">头像 </div>
-<div class="col-md-7 col-sm-7 col-xs-7 " ></div>
-<div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-top: 0px;">
+<div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">头像 </div>
+<div class="col-md-3 col-sm-3 col-xs-3" ></div>
+<div class="col-md-4 col-sm-4 col-xs-4" style="color:#999; margin-top: 0px;">
     <div style="width:20%; ">
         <figure style="width: 50px;height: 50px; padding:0 35%; padding-top:-10%">
             <figcaption></figcaption>
@@ -30,17 +30,17 @@ include ('top.php');
     </div></div>
 </td></tr>
         <tr><td style=" padding:5px 2px; ">
-                <div class="col-md-2 col-sm-2 col-xs-2" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">昵称 </div>
-                <div class="col-md-7 col-sm-7 col-xs-7 " ></div>
-                <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; height: 50px; line-height: 50px; vertical-align: middle; margin-left: 10px;">
+                <div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">昵称 </div>
+                <div class="col-md-3 col-sm-3 col-xs-3" ></div>
+                <div class="col-md-4 col-sm-4 col-xs-4" style="color:#999; height: 50px; line-height: 50px; vertical-align: middle; margin-left: 10px;">
                     <?php echo $username;?>
                 </div>
         </td></tr>
 
     <tr><td style=" padding:5px 2px; ">
-            <div class="col-md-2 col-sm-2 col-xs-2" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">账号 </div>
-            <div class="col-md-7 col-sm-7 col-xs-7 " ></div>
-            <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; height: 50px; line-height: 50px; vertical-align: middle; margin-left: 10px;">
+            <div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">账号 </div>
+            <div class="col-md-3 col-sm-3 col-xs-3" ></div>
+            <div class="col-md-4 col-sm-4 col-xs-4" style="color:#999; height: 50px; line-height: 50px; vertical-align: middle; margin-left: 10px;">
                 <?php echo $username;?>
             </div>
         </td></tr>
