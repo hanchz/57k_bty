@@ -145,10 +145,11 @@ include ('top.php');
                             $params = array();
                             $params['id'] = $game['id'];
                             //var_dump($game);
-                            // $this->load->model('news_model');
+                            //exit;
+							// $this->load->model('news_model');
                             $giftsinfo=$this->gifts_model->gifts_info_model($params);
 							$giftsnum=$this->gifts_model->gifts_num_model($params);
-                            //var_dump($giftsnum);
+                            //var_dump($giftsinfo);
                             //exit;
 							if(isset($giftsinfo) && !empty($giftsinfo)){	
                                 foreach ($giftsinfo as $val)
