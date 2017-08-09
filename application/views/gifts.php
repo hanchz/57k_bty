@@ -8,7 +8,7 @@ include ('top.php');
 include ('sou.php');
 ?>
 <?php
-//var_dump($gifts);
+var_dump($gifts);
 ?>
 <div class="container-fluid" style="margin-bottom: 50px;">
 <div class="row">
@@ -23,6 +23,10 @@ if(isset($gifts) && !empty($gifts)){
         $this->load->model('gifts_model');
         $gameinfo=$this->gifts_model->game_info($params);
         //var_dump($gameinfo);
+		$params2 = array();
+		$params2['id'] = $val['id'];
+        $giftsnum=$this->gifts_model->gifts_num_model($params2);
+		//var_dump($giftsnum);
         ?>
 		 <tr><td style=" padding:5px 2px;">
     <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="<?php echo $gameinfo['logo']?>" class="img-responsive"></div>
@@ -34,7 +38,7 @@ if(isset($gifts) && !empty($gifts)){
         <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow"><small><nobr><?php echo $val['giftsinfo']?></nobr></small></div>
         </div>
         <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12" style="color:red"><small>剩余<?php echo $val['giftsnum']?>个</small></div>
+        <div class="col-md-12 col-sm-12 col-xs-12" style="color:red"><small>剩余<?php echo $giftsnum['count(giftsid)']?>个</small></div>
         </div>
     </div>
     

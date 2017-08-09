@@ -62,7 +62,7 @@ $this->load->helper('url');
 	    /*.jindutiao{ width:60%; background: #ccc; height:5px; margin-left: -20px; margin-top: 5px; padding: 0 0;};*/
 
 	
-	.tanchukuang{ width:80%; height:50%; position:absolute; top:25%; left:10%;-webkit-border-radius: 10px; border-radius: 10px; z-index:2;}
+	.tanchukuang{ width:80%; height:50%; position:absolute; top:25%; left:10%;-webkit-border-radius: 10px; border-radius: 10px; z-index:999999999999999999;}
 		.tck-top{ width:100%; height:20%; float:left;background: -webkit-linear-gradient(left top, #ff9c72 , #F00);
   background: -o-linear-gradient(bottom right, #ff9c72, #F00);
   background: -moz-linear-gradient(bottom right, #ff9c72, #F00);

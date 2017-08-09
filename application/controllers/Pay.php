@@ -21,6 +21,8 @@ class Pay extends CI_Controller {
         $money = $this->input->get('money',true);
         $goodsid=array();
         $goodsid = $this->input->get('goodsid',true);
+        $goodsname=array();
+        $goodsname = $this->input->get('goodsname',true);
         $gameid=array();
         $gameid = $this->input->get('gameid',true);
 
@@ -54,6 +56,7 @@ class Pay extends CI_Controller {
         $data['sign']=$sign;
         $data['money']=$money;
         $data['goodsid']=$goodsid;
+        $data['goodsname']=$goodsname;
         $data['gameid']=$gameid;
         if(isset($orderid) && !empty($orderid))     //游戏内发起支付，记录订单信息
         {

@@ -32,6 +32,7 @@ if(isset($orderid) && !empty($orderid))
     <input type="hidden" name="goodsid" id="goodsid" value="<?php echo $goodsid;?>" />
     <input type="hidden" name="gameid" id="gameid" value="<?php echo $gameid;?>" />
     <input type="hidden" name="uid" id="uid" value="<?php echo $uid;?>" />
+    <input type="hidden" name="goodsname" id="goodsname" value="<?php echo $goodsname;?>" />
 
 <input type="hidden" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;"  id="serverid" name="serverid" value="<?php echo $serverid?>" disabled="disabled" >
 
