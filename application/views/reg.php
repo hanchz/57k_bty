@@ -192,7 +192,7 @@ function time(o) {
             });
 			
 			
-		}
+		}else{alert("请检查手机号");}
 	}
 	
 		

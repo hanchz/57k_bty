@@ -17,8 +17,8 @@ $this->load->helper('url');
 <html lang="zh-CN"><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->   <!--原-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  <!--禁用缩放-->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
