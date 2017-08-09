@@ -78,6 +78,7 @@ class Gifts_Model extends CI_Model{
         $result=$query->result_array();
         //var_dump($result);
         //return $result;
+		//var_dump($this->db->last_query());exit;
         return $query->first_row('array');
     }
 
@@ -125,7 +126,7 @@ class Gifts_Model extends CI_Model{
 	public function gifts_info_model_one($args)
     {
         $id = $args['id'];
-        $sql="select * from gifts where gameid=?";
+        $sql="select * from gifts where id=?";
         $query=$this->db->query($sql,array($id));
         //var_dump($this->db->last_query());exit;
         $row = $query->first_row('array');

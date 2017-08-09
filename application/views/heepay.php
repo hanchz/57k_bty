@@ -53,7 +53,7 @@ $notify_url = "http://m.57k.com/Heepay/notify";
 $return_url = $return_url; //微信支付不涉及同步返回，此处可填写任意URL，没有实际使用
 $goods_name = $_POST['goodsgame'];
 $goods_num = "1";
-$goods_note = $_POST['goodsid'];
+$goods_note = $_POST['goodsgame'];
 if($_POST["goodsid"]==""){
 	$goods_name='游戏道具';
 }
