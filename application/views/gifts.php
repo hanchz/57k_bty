@@ -82,7 +82,7 @@ text-overflow: ellipsis; width:200px;"><small><nobr><?php echo substr($val['gift
 <?php
 include ('bottom.php');
 ?>
-<script type="text/javascript" src="http://www.webxgame.com/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <script language="javascript">
     function tc(id,uid)
     {

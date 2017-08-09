@@ -148,12 +148,16 @@ include ('top.php');
                             //exit;
 							// $this->load->model('news_model');
                             $giftsinfo=$this->gifts_model->gifts_info_model($params);
-							$giftsnum=$this->gifts_model->gifts_num_model($params);
+							
                             //var_dump($giftsinfo);
                             //exit;
 							if(isset($giftsinfo) && !empty($giftsinfo)){	
                                 foreach ($giftsinfo as $val)
-                                {
+                                { 
+							$params2=array();
+						    $params2['id']=$val['id'];
+							$giftsnum=$this->gifts_model->gifts_num_model($params2);
+								//echo 	"=======================".$giftsnum["count(giftsid)"];
 ?>
                                     <tr><td style=" padding:5px 2px;">
 
@@ -181,7 +185,7 @@ include ('top.php');
                                             <?php
                                             if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
                                                 ?>
-                                                <div class="col-md-2 col-sm-2 col-xs-2"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;"  onClick="tc(<?php echo $val["gameid"].','.$uid?>)" role="button">领取</a></div>  <!--href="get_gifts?id=<?php echo $val["gameid"]?>&uid=<?php echo $uid?>"--> 
+                                                <div class="col-md-2 col-sm-2 col-xs-2"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;"  onClick="tc(<?php echo $val['id'].','.$uid?>)" role="button">领取</a></div>  <!--href="get_gifts?id=<?php echo $val["gameid"]?>&uid=<?php echo $uid?>"--> 
 
 
                                                 <?php
@@ -235,7 +239,7 @@ include ('bottom.php');
 
 
 <script type="text/javascript" src="/bootstrap-3.3.7-dist/move.js"></script>
-<script type="text/javascript" src="http://www.webxgame.com/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <script language="javascript">
     function tc(id,uid)
     {
