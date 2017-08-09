@@ -63,10 +63,12 @@ if(isset($result) && !empty($result)){
 </div>
 </div>
 
+
+<div style="margin-top: 50px;">
 <?php
 include ('bottom.php');
 ?>
-
+</div>
 
 
 </body>

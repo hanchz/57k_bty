@@ -180,7 +180,6 @@ if(isset($orderid) && !empty($orderid))
       <input type="submit" class="btn btn-danger" name="submit"  style=" width:100%; background:red; " value="确认充值"><!--onclick="checkreg()"-->
          </div> 
   </div>
-</form>
               
 </div>
 </div>
@@ -188,6 +187,7 @@ if(isset($orderid) && !empty($orderid))
 
 	</div>
 
+</form>
 <?php
 include ('bottom.php');
 ?>

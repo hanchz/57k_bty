@@ -60,7 +60,7 @@ class Gifts_Model extends CI_Model{
     public function gifts_info_model($args)
     {
         $id = $args['id'];
-        $sql="select * from gifts where gameid=?";
+        $sql="select * from gifts where id=?";
         $query=$this->db->query($sql,array($id));
         //return $sql;
         $result=$query->result_array();
