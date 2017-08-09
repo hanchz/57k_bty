@@ -47,7 +47,7 @@ if(isset($top) && !empty($top)){
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow" style="color:#999;overflow: hidden;
 white-space: nowrap;
-text-overflow: ellipsis; width:200px;"><small><nobr>'.$result['about'].'</nobr></small></div>
+text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($result['about'],0,70).'</nobr></small></div>
     </div>
 </div>
 

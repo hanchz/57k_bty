@@ -35,7 +35,9 @@ if(isset($gifts) && !empty($gifts)){
             <div class="col-md-12 col-sm-12 col-xs-12"><strong><?php echo $gameinfo['name'].':'.$val['giftsname']?></strong></div>
         </div>
         <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow"><small><nobr><?php echo $val['giftsinfo']?></nobr></small></div>
+        <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow" style="color:#999;overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis; width:200px;"><small><nobr><?php echo substr($val['giftsinfo'],0,50);?></nobr></small></div>
         </div>
         <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12" style="color:red"><small>剩余<?php echo $giftsnum['count(giftsid)']?>个</small></div>

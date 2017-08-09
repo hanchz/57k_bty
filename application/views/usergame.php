@@ -46,7 +46,7 @@ if(isset($usergame) && !empty($usergame)){
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row">
     	<div class="col-md-6 col-sm-6 col-xs-6"><strong><?php echo $gameinfo['name']?></strong></div>
-        <div class="col-md-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button> </a>       </div>
     </div>
     <div class="row">
 
@@ -55,7 +55,7 @@ if(isset($usergame) && !empty($usergame)){
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow" style="color:#999;overflow: hidden;
 white-space: nowrap;
-text-overflow: ellipsis; width:200px;"><small><nobr><?php echo $gameinfo['about']?></nobr></small></div>
+text-overflow: ellipsis; width:200px;"><small><nobr><?php echo substr($gameinfo['about'],0,70);?></nobr></small></div>
     </div>
 </div>
 

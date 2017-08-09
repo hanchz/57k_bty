@@ -92,7 +92,7 @@ include ('sou.php');
 <div class="col-md-6 col-sm-6 col-xs-6">
 	<div class="row">
     	<div class="col-md-7 col-sm-7 col-xs-7" ><strong>'.$v['name'].'</strong></div>
-        <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a>        </div>
     </div>
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$result['gametype'].'|'.$v['downnum'].'次开始</small></div>
