@@ -87,9 +87,9 @@
     <div class="row">
 
 
-        <div class="col-md-3 col-sm-3 col-xs-3"><a href="top10"><img src="/images/rebang.jpg" class="img-responsive" ></a></div>
-        <div class="col-md-3 col-sm-3 col-xs-3"><a href="kf"><img src="/images/kaifubiao.jpg" class="img-responsive" ></a></div>
-        <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><img src="/images/libao.jpg" class="img-responsive" ></a></div>
-        <div class="col-md-3 col-sm-3 col-xs-3"><a href="newslist"><img src="/images/zixun.jpg" class="img-responsive" ></a></div>
+        <div class="col-md-3 col-sm-3 col-xs-3"><a href="top10"><img src="<?php //echo base_url();?>/images/rebang.jpg" class="img-responsive" ></a></div>
+        <div class="col-md-3 col-sm-3 col-xs-3"><a href="kf"><img src="<?php //echo base_url();?>/images/kaifubiao.jpg" class="img-responsive" ></a></div>
+        <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><img src="<?php //echo base_url();?>/images/libao.jpg" class="img-responsive" ></a></div>
+        <div class="col-md-3 col-sm-3 col-xs-3"><a href="newslist"><img src="<?php //echo base_url();?>/images/zixun.jpg" class="img-responsive" ></a></div>
     </div>
 </div>
