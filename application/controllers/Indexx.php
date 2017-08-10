@@ -31,7 +31,9 @@ class Indexx extends CI_Controller {
         $params['num']=3;
         $result=$this->game_model->game_model($params);
         $data['game_rq']=$result;
-
+		
+		$result1=$this->game_model->gametypelist_model();
+		$data['gametypelist']=$result1;
         //$username=$this->getsession();
         //$data['username']=$username;
         $this->load->view('index',$data);
@@ -72,6 +74,8 @@ class Indexx extends CI_Controller {
         session_destroy (); // 最后彻底销毁session.
         header('Location: http://m.57k.com/');
     }
+	
+
 
 }
 

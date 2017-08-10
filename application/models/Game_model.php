@@ -82,5 +82,27 @@ class Game_Model extends CI_Model{
         //return $sql;
 		return $query->first_row('array');
 	}
+	
+		//通过游戏类型找到游戏的详细信息
+	public function game_type_info($args)
+	{
+		$gametype = $args['gametype'];
+        $sql="select * from game_info where gametype=?";
+        $query=$this->db->query($sql,array($gametype));
+        //return $sql;
+		$result=$query->result_array();
+        //var_dump($result);
+        return $result;
+	}
+	
+	public function gametypelist_model()
+	{
+		$sql="select * from game_type";
+        $query=$this->db->query($sql,array());
+        //return $sql;
+		$result=$query->result_array();
+        //var_dump($result);
+        return $result;
+	}
 
 }

@@ -15,6 +15,12 @@ class Gamelogin_model extends CI_Model{
 		$time=date("Y-m-d H:i:s",time());
         $sql="INSERT INTO user_game (uid,gameid,time) VALUES (?,?,?)";
         $query=$this->db->query($sql,array($uid,$gameid,$time));
+		
+		//增加游戏d的下载次数
+		$sql="UPDATE game_info SET downnum=downnum+1  WHERE gameid = ?";
+        $query=$this->db->query($sql,array($gameid));
+		
+		
         //return $sql;
         //$result=$query->result_array();
         //var_dump($result);

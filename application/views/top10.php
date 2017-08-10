@@ -38,7 +38,7 @@ if(isset($top) && !empty($top)){
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row">
     	<div class="col-md-6 col-sm-6 col-xs-6"><strong>'.$result['name'].'</strong></div>
-        <div class="col-md-3 col-sm-3 col-xs-3"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button>        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a></div>
     </div>
     <div class="row">
 
@@ -51,7 +51,7 @@ text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($result['about'],0,
     </div>
 </div>
 
-<div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-20px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$result['id'].'" role="button">开始</a></div>
+<div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-20px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$result['gameid'].'" role="button">开始</a></div>
 </td></tr>';
     }
 

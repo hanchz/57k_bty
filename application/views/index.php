@@ -92,7 +92,7 @@ include ('sou.php');
 <div class="col-md-6 col-sm-6 col-xs-6">
 	<div class="row">
     	<div class="col-md-7 col-sm-7 col-xs-7" ><strong>'.$v['name'].'</strong></div>
-        <div class="col-md-6 col-sm-6 col-xs-6"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a>        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6" style=" float:left; margin-left:-20px;"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a>        </div>
     </div>
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$result['gametype'].'|'.$v['downnum'].'次开始</small></div>
@@ -124,18 +124,13 @@ text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).
  	</div>
     
     <div class="row">
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">卡牌</a></div>
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">动作</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">冒险</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">模拟</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">角色</a></div>
-    </div>
-    <div class="row" style="margin-bottom:20px;">
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">休闲</a></div>
-    <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">沙盒</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">求生</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">益智</a></div>
-        <div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="#" role="button">其他</a></div>
+    <?php 
+		//var_dump($gametypelist);
+		foreach($gametypelist as $gtl){?>
+		<div class="col-md-2 col-sm-2 col-xs-2" style="color:#999; margin-right:8px;" ><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="sou?gametype=<?php echo $gtl['id']?>" role="button"><?php echo $gtl['gametype']?></a></div>
+		<?php
+		}
+		?>
     </div>
     
 </div>
@@ -144,7 +139,6 @@ text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).
 include ('bottom.php');
 ?>
 </div>
-
 
 </body>
 </html>
