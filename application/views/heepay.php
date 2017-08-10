@@ -51,12 +51,14 @@ $pay_code = ""; //char型，空字符串
 $pay_amt = $_POST['money'];
 $notify_url = "http://m.57k.com/Heepay/notify";
 $return_url = $return_url; //微信支付不涉及同步返回，此处可填写任意URL，没有实际使用
-$goods_name = $_POST['goodsgame'];
+$goods_name = $_POST['goodsname'];
 $goods_num = "1";
-$goods_note = $_POST['goodsgame'];
+$goods_note = $_POST['goodsname'];
 if($_POST["goodsid"]==""){
 	$goods_name='游戏道具';
+	$goods_note='游戏道具';
 }
+if($goods_name==''){$goods_name='游戏道具'; $goods_note='游戏道具';}
 $remark = "";
 $sign_key = "$SIGN_KEY"; //签名密钥，需要商户使用为自己的真实KEY
 

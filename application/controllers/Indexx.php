@@ -36,6 +36,8 @@ class Indexx extends CI_Controller {
 		$data['gametypelist']=$result1;
         //$username=$this->getsession();
         //$data['username']=$username;
+		
+        $this->load->model('gifts_model');
         $this->load->view('index',$data);
         //var_dump($data);
     }

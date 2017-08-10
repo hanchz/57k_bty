@@ -145,5 +145,19 @@ class Gifts_Model extends CI_Model{
 		return $result;
 	}
 	
+	//通过游戏id找到该游戏的礼包种类
+	public function giftsidnum_model($args)
+	{
+		$gameid=$args['id'];
+		$sql="select count(gameid) as num from gifts where gameid=?";
+        $query=$this->db->query($sql,array($gameid));
+        //return $sql;
+        $result=$query->result_array();
+        //var_dump($result);
+        //return $result;
+		//var_dump($this->db->last_query());exit;
+        return $query->first_row('array');
+	}
+	
 
 }

@@ -48,6 +48,7 @@ document.getElementById("app").innerHTML='<a href="http://wap.57k.com/">57k游�
 }	
 if(browser.versions.ios){ 
 document.getElementById("app").innerHTML='<a href="http://le890.com/">57k游戏APP</a>';
-}	
+}
+
 	
 </script>
