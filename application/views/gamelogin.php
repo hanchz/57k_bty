@@ -24,7 +24,11 @@ function gameurl($gameid,$uid)
 	{
 	$key="2cPFgNm4KVpfxKEZ";
 	$url="http://api.egret-labs.org/v2/game/22694/90488";
-	}	
+	}elseif($gameid=='5')
+	{
+	$key="jT6PNgo8Xlq7XbNS";
+	$url="http://d.dev.d.hgame.com/hdpt/x57k/appid/101308/gameid/100005";
+	}
 	else{$url="";}
 	$serverid=1;
 	$time=time();

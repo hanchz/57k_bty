@@ -42,6 +42,8 @@ class Pay extends CI_Controller {
 		$key="H9kNJF8vxt1rtJK8";			//极品三国
 		}elseif($gameid=='4'){
 		$key="2cPFgNm4KVpfxKEZ";			//蛮荒纪
+		}elseif($gameid=='5'){
+		$key="jT6PNgo8Xlq7XbNS";			//蛮荒纪
 		}
         $sign1=strtolower(md5($uid.$serverid.$time.$orderid.$money.$goodsid.$key.$gameid));
 //echo $sign;

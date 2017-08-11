@@ -257,6 +257,18 @@ class Heepay extends CI_Controller {
 		$result = $this->post_url($url);
 		return $result;
 	}
+	
+	//传奇世界游戏充值接口
+	private function gamepay_id_5($gameid,$uid,$serverid,$gameorderid,$money,$goodsid,$orderid,$time)
+	{
+		$key="jT6PNgo8Xlq7XbNS";
+		$sign=strtolower(md5($uid.$serverid.$time.$gameorderid.$money.$goodsid.$key.$gameid.$orderid));
+		$url="http://d.dev.d.hgame.com/pay/x57k/notify";
+		$str="?uid=".$uid."&serverid=".$serverid."&time=".$time."&orderid=".$gameorderid."&money=".$money."&goodsid=".$goodsid."&order=".$orderid."&sign=".$sign;
+		$url=$url.$str;
+		$result = $this->post_url($url);
+		return $result;
+	}
 
 
 
