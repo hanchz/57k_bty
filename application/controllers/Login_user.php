@@ -6,9 +6,8 @@ class Login_user extends CI_Controller {
     public function index()
     {
         $data = array();
-        //$this->load->model('Kv_model');
-        //$result=$this->Kv_model->kv_model();
-        //$data['kv']=$result;
+        $geturl = $this->input->get('geturl',true);
+		$data['geturl']=$geturl;
         $this->load->view('login',$data);
         //var_dump($data);
     }
@@ -22,6 +21,8 @@ class Login_user extends CI_Controller {
         $password = array();
         $username = $this->input->post('username',true);
         $password = $this->input->post('password',true);
+		
+        $geturl = $this->input->post('geturl',true);
         //var_dump($username);
         //echo $username;
         //var_dump($password);
@@ -54,8 +55,18 @@ class Login_user extends CI_Controller {
             $data['username']=$username;
             $data['uid']=$output;
             $this->load->view('login',$data);
-
-            header('Location: http://m.57k.com/user');
+			
+			//redirect('user');
+			if($geturl!=''){
+			?>
+           <script language="javascript">
+			   window.location.href="<?php echo $geturl;?>";
+			</script>
+           <?php
+			}else{
+				redirect('user');
+			}
+            //header('Location: http://m.57k.com/user');
                 //$this->setsession($username);
             //$this->session->set_userdata('username','zj');
         }else{
@@ -65,6 +76,7 @@ class Login_user extends CI_Controller {
 
             $error = '1';
             $data['error']=$error;
+			$data['geturl']=$geturl;
         $this->load->view('login',$data);
         }
         //var_dump($result);exit;

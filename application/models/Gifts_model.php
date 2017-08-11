@@ -159,5 +159,19 @@ class Gifts_Model extends CI_Model{
         return $query->first_row('array');
 	}
 	
+	
+	//通过游戏ID找到礼包的详细信息
+	public function gifts_info_gameid_model($args)
+    {
+        $id = $args['id'];
+        $sql="select * from gifts where gameid=?";
+        $query=$this->db->query($sql,array($id));
+        //return $sql;
+        $result=$query->result_array();
+        //var_dump($result);
+        return $result;
+        //return $query->first_row('array');
+    }
+	
 
 }

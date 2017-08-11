@@ -74,6 +74,7 @@ class Indexx extends CI_Controller {
         session_start();
         //$data=array();
         session_destroy (); // 最后彻底销毁session.
+		//redirect('user');
         header('Location: http://m.57k.com/');
     }
 	

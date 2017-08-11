@@ -14,6 +14,8 @@ if(isset($error) && $error == 1)
 {
     echo '<script language="JavaScript">alert("账号密码错误，或没有此账号")</script>';
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -87,6 +89,15 @@ a:hover{color:#FFF;}
     <div class="row" style="margin-top:60px;">
       <input type="submit" class="btn btn-default btn-lg btn-block zj_btn" value="登陆">
     </div>
+
+<?php 
+if(isset($_REQUEST['geturl']) && !empty($_REQUEST['geturl']))
+{
+	$geturl=$_REQUEST['geturl'];
+	echo '<input type="hidden" name="geturl" value="'.$geturl.'">';
+}		
+		
+?>
 
 </form>
     <div class="row" style="margin-top:20px; color:#FFF;">

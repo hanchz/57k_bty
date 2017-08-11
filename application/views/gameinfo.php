@@ -35,7 +35,7 @@ include ('top.php');
 <div class="col-md-7 col-sm-7 col-xs-7"  style=" margin-left:-10px;"><img src="<?php echo $game['logo']?>" class="img-responsive"></div>
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row" style="margin-top:10px;">
-    	<div class="col-md-12 col-sm-12 col-xs-12"><strong><?php echo $game['name']?></strong></div>
+    	<div class="col-md-12 col-sm-12 col-xs-12" style="width: 150px"><strong><?php echo $game['name']?></strong></div>
     </div>
     <div class="row">
     <?php 
@@ -72,7 +72,7 @@ include ('top.php');
 
 
     
-            <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" onClick="alert('请先登录');window.location.href='http://m.57k.com/login_user';" role="button">进入游戏</a></div>
+            <div class="col-md-5 col-sm-5 col-xs-5"><a class="btn btn-danger" style=" width:90px; background:red; margin-left:20px; margin-top: 20px;" onClick="loginurl()" role="button">进入游戏</a></div>
 <?php }?>
 
 
@@ -132,7 +132,7 @@ include ('top.php');
     
 <?php }else{?>
 
-    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;"onClick="alert('请先登录');window.location.href='http://m.57k.com/login_user';" role="button">进入游戏</a></div>
+    <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;"onClick="loginurl()" role="button">进入游戏</a></div>
 <?php }?>
 </div>
         </div>
@@ -147,7 +147,7 @@ include ('top.php');
                             //var_dump($game);
                             //exit;
 							// $this->load->model('news_model');
-                            $giftsinfo=$this->gifts_model->gifts_info_model($params);
+                            $giftsinfo=$this->gifts_model->gifts_info_gameid_model($params);
 							
                             //var_dump($giftsinfo);
                             //exit;
@@ -178,20 +178,20 @@ include ('top.php');
                                                 </div>
 
                                                 <div class="row">
-                                                    <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow"><small><nobr><?php echo substr($val['giftsinfo'],0,70)?></nobr></small></div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 zj_of" style="width: 100%; color: #8A8A8A;"><small><nobr><?php echo substr($val['giftsinfo'],0,50)?></nobr></small></div>
                                                 </div>
                                             </div>
 
                                             <?php
                                             if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
                                                 ?>
-                                                <div class="col-md-2 col-sm-2 col-xs-2"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;"  onClick="tc(<?php echo $val['id'].','.$uid?>)" role="button">领取</a></div>  <!--href="get_gifts?id=<?php echo $val["gameid"]?>&uid=<?php echo $uid?>"--> 
+                                                <div class="col-md-2 col-sm-2 col-xs-2" style="margin-left: -30px;"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;"  onClick="tc(<?php echo $val['id'].','.$uid?>)" role="button">领取</a></div>  <!--href="get_gifts?id=<?php echo $val["gameid"]?>&uid=<?php echo $uid?>"--> 
 
 
                                                 <?php
                                             }else{
                                                 ?>
-                                                <div class="col-md-2 col-sm-2 col-xs-2"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;"  onClick="alert('请先登录');window.location.href='http://m.57k.com/login_user';" role="button">领取</a></div>
+                                                <div class="col-md-2 col-sm-2 col-xs-2"  style="margin-left: -30px;"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;"  onClick="loginurl()" role="button">领取</a></div>
 
                                                 <?php
                                             }?>
@@ -200,7 +200,10 @@ include ('top.php');
 
 
                                 }
-                            }
+                            }else{
+								echo '<div class="row" style="text-align: center; line-height: 100px; vertical-align: middle">暂无礼包，尽请期待</div>';
+								
+							}
                             ?>
 
 
@@ -229,7 +232,8 @@ include ('bottom.php');
         
     	<p style="margin-top:20px; width:200px; margin-left:-55px; color:red;">请长按礼包码复制</p>
         
-        <div style="margin-top:10px; width:100px; height:100px;"><a class="btn btn-danger" style="margin-top:20px; width:80px; background:red; margin-left:100px;"  role="button" onClick="tc_cls()" >关闭</a></div>
+        
+        <div style="margin-top:30px; width:100%; height:100px; float: left; text-align: center;"><a class="btn btn-danger" style="margin-top:20px; width:80px; background:red;"  role="button" onClick="tc_cls()" >关闭</a></div>
     </div>
     
     
@@ -271,6 +275,11 @@ document.getElementById("tck").style.display="none";
 document.getElementById("zhezhao").style.display="none";
 	}
 
+var get_url=window.location.href;
+function loginurl()
+	{
+		alert('请先登录');window.location.href='login_user?geturl='+get_url;
+	}
 
 </script>
 

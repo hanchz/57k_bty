@@ -31,7 +31,7 @@ include ('sou.php');
 			
             echo '<div class="col-md-3 col-sm-3 col-xs-3">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12 zj_of" style=" width:100px;">'.$v['name'].'</div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$result['gametype'].'</small></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['gameid'].'" role="button">开始</a></div></div>
     	</div>';
@@ -61,7 +61,7 @@ include ('sou.php');
 
             echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:20px">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><img src="'.$v['logo'].'" class="img-responsive"></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">'.$v['name'].'</div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12 zj_of" style=" width:100px;">'.$v['name'].'</div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$result['gametype'].'</small></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['gameid'].'" role="button">开始</a></div></div>
     	</div>';
@@ -96,16 +96,16 @@ include ('sou.php');
 <div class="col-md-3 col-sm-3 col-xs-3"><img src="'.$v['logo'].'" class="img-responsive"></div>
 <div class="col-md-6 col-sm-6 col-xs-6">
 	<div class="row">
-    	<div class="col-md-7 col-sm-7 col-xs-7" ><strong>'.$v['name'].'</strong></div>
+    	<div class="col-md-7 col-sm-7 col-xs-7 zj_of" style=" width:100px; margin-left:-10px;" ><strong>'.$v['name'].'</strong></div>
         <div class="col-md-6 col-sm-6 col-xs-6" style=" float:left; margin-left:-20px;"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X '.$giftsnum['num'].'</button></a>        </div>
     </div>
     <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999"><small>'.$result['gametype'].'|'.$v['downnum'].'次开始</small></div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;margin-left:-10px;"><small>'.$result['gametype'].'|'.$v['downnum'].'次开始</small></div>
     </div>
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12" style="color:#999;overflow: hidden;
 white-space: nowrap;
-text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($v['about'],0,154).'</nobr></small></div>
+text-overflow: ellipsis; width:200px;margin-left:-10px;"><small><nobr>'.substr($v['about'],0,50).'</nobr></small></div>
     </div>
 </div>
 <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$v['gameid'].'" role="button">开始</a></div>

@@ -9,7 +9,7 @@ if (isset($resultcpw) && !empty($resultcpw)) {
 	if($resultcpw=="1")
 	{
 	echo '<script language="javascript">alert("修改成功");
-     window.location.href="http://m.57k.com/user";
+     window.location.href="user";
     </script>';	
 	}
 }

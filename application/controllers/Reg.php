@@ -37,14 +37,17 @@ class Reg extends CI_Controller {
             $data['username']=$username;
             $data['uid']=$result;
             $this->load->view('login',$data);
-            header('Location: http://m.57k.com/user');
+			redirect('user');	
+			
+            //header('Location: http://m.57k.com/user');
         }else
         {
             $data = array();
             $error = '1';
             $data['error']=$error;
             $this->load->view('reg',$data);
-            header('Location: http://m.57k.com/reg/');
+			redirect('reg');
+            //header('Location: http://m.57k.com/reg/');
         }
     }
 

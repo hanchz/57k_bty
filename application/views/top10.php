@@ -37,8 +37,8 @@ if(isset($top) && !empty($top)){
 <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="'.$result['logo'].'" class="img-responsive"></div>
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row">
-    	<div class="col-md-6 col-sm-6 col-xs-6"><strong>'.$result['name'].'</strong></div>
-        <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a></div>
+    	<div class="col-md-6 col-sm-6 col-xs-6 zj_of" style="width:100px;"><strong>'.$result['name'].'</strong></div>
+        <div class="col-md-3 col-sm-3 col-xs-3" style=" float:left; margin-left:-25px;"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a></div>
     </div>
     <div class="row">
 
@@ -47,7 +47,7 @@ if(isset($top) && !empty($top)){
     <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow" style="color:#999;overflow: hidden;
 white-space: nowrap;
-text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($result['about'],0,70).'</nobr></small></div>
+text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($result['about'],0,50).'</nobr></small></div>
     </div>
 </div>
 

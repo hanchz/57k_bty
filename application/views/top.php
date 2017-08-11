@@ -67,12 +67,12 @@ $this->load->helper('url');
   background: -o-linear-gradient(bottom right, #ff9c72, #F00);
   background: -moz-linear-gradient(bottom right, #ff9c72, #F00);
   background: linear-gradient(to bottom right, #ff9c72 , #F00);  background-size:100% 100%; border-radius:10px 10px 0 0; text-align:center; line-height:60px; vertical-align:middle; font-size:25px; color:#FFF; font-weight: bold; }
-  		.tck-con{width:100%; height:80%; float:left; padding:5% 5%; background:#FFF;border-radius: 0 0 10px 10px;}
+  		.tck-con{width:100%; height:auto; float:left; padding:5% 5%; background:#FFF;border-radius: 0 0 10px 10px;}
 			.tck-con p{ margin-bottom:10%; float:left;}
 			
 	.zhezhao{ width:100%; height:100%; position:absolute;top:0; left:0;filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5; background:black; z-index:1;}		
     /*a{ color:#FFF; border-bottom:1px solid #FFF;}
     a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
     a:hover{color:#FFF;}*/
-
+	.zj_of{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;  }
 </style>
