@@ -34,7 +34,7 @@ if(isset($top) && !empty($top)){
         //var_dump($result);
         echo '<tr><td style=" padding:5px 2px;">
 <div class="col-md-1 col-sm-1 col-xs-1" style="line-height:60px; vertical-align:middle; color:'.$color.';">'.$val['id'].'</div>
-<div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="'.$result['logo'].'" class="img-responsive"></div>
+<div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><a href="game?gameid='.$result['gameid'].'"><img src="'.$result['logo'].'" class="img-responsive"></a></div>
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row">
     	<div class="col-md-6 col-sm-6 col-xs-6 zj_of" style="width:100px;"><strong>'.$result['name'].'</strong></div>

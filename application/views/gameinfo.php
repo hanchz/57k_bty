@@ -178,7 +178,7 @@ include ('top.php');
                                                 </div>
 
                                                 <div class="row">
-                                                    <div class="col-md-12 col-sm-12 col-xs-12 zj_of" style="width: 100%; color: #8A8A8A;"><small><nobr><?php echo substr($val['giftsinfo'],0,50)?></nobr></small></div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 zj_of" style="width: 100%; color: #8A8A8A;"><small><nobr><?php echo substr($val['giftsinfo'],0,70)?></nobr></small></div>
                                                 </div>
                                             </div>
 

@@ -47,7 +47,7 @@ if(isset($result) && !empty($result)){
         <div class="col-md-12 col-sm-12 col-xs-12" style="color:red"><small>兑换码：'.$val["key"].'</small></div>
         </div>
         <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 zj_overflow"><small><nobr>'.$giftsinfo[0]['giftsinfo'].'</nobr></small></div>
+        <div class="col-md-12 col-sm-12 col-xs-12 zj_of" style=" width:200px; color:#999;"><small><nobr>'.$giftsinfo[0]['giftsinfo'].'</nobr></small></div>
         </div>
     </div>
     <div class="col-md-3 col-sm-3 col-xs-3" style="font-size:8px;">长按礼包码进行复制</div>

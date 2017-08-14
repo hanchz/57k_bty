@@ -76,7 +76,7 @@ if(isset($gametypeinfo) && !empty($gametypeinfo)){
 <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="<?php echo $val1['logo']?>" class="img-responsive"></div>
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row">
-    	<div class="col-md-6 col-sm-6 col-xs-6"><strong><?php echo $val1['name']?></strong></div>
+    	<div class="col-md-6 col-sm-6 col-xs-6 zj_of" style=" width: 100px;"><strong><?php echo $val1['name']?></strong></div>
         <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a>        </div>
     </div>
     <div class="row">
@@ -90,7 +90,7 @@ text-overflow: ellipsis; width:200px;"><small><nobr><?php echo substr($val1['abo
     </div>
 </div>
 
-<div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-20px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid=<?php echo $val1['gameid']?>" role="button">开始</a></div>
+<div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:0px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid=<?php echo $val1['gameid']?>" role="button">开始</a></div>
 </td></tr>
 <?php }}?>
 </table>

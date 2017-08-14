@@ -55,6 +55,7 @@ class Game_Model extends CI_Model{
         $query=$this->db->query($sql,array($id));
         //return $sql;
         $result=$query->result_array();
+		//var_dump($this->db->last_query());exit;
         //var_dump($result);
         //return $result;
         return $query->first_row('array');
