@@ -31,7 +31,7 @@ include ('sou.php');
 			
             echo '<div class="col-md-3 col-sm-3 col-xs-3">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a href="game?gameid='.$v['gameid'].'"><img src="'.$v['logo'].'" class="img-responsive"></a></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12 zj_of" style=" width:100px;">'.$v['name'].'</div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12 zj_fs" style=" width:100%;">'.$v['name'].'</div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><small style="color:#929191">'.$result['gametype'].'</small></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['gameid'].'" role="button">开始</a></div></div>
     	</div>';

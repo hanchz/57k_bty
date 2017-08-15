@@ -134,10 +134,10 @@ if(isset($orderid) && !empty($orderid))
     {
     ?>
 
-        <div class="row" style="margin-top:10px;">
-            <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;" >
+     
+            <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%; margin-top: 10px;" >
                 <input type="text" class="form-control input-group-sm zj_input" style="border:1px solid red; text-align:center; color: #0f0f0f;" id="money" name="money" value="<?php echo $money?>" disabled="disabled">
-            </div>
+
         </div>
 
     <?php }else{?>
@@ -155,31 +155,30 @@ if(isset($orderid) && !empty($orderid))
          </div>  
   </div>   
  <div class="row" style="margin-top:10px;">
- 	     <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;" >
+ 	     <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%; margin-top: 20px;"  >
    		 <input type="text" class="form-control input-group-sm zj_input" style="border:1px solid red; text-align:center; color: #0f0f0f" id="money" name="money" placeholder="自定义金额请输入0-50000之间的整数">
    		 </div>
  </div>
     <?php }?>
     
-  <div class="row" style="margin-top: 20px;">
-  	<div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%; border-bottom: 1px solid #ccc;" >
+  	<div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%; border-bottom: 1px solid #ccc; margin-top: 20px;" >
 	  <strong>请选择充值方式</strong>
 	  </div>
-  </div>  
+
   
-  <div class="row" style=" padding-top: 20px;">
+
  	 <div class="col-md-1 col-sm-1 col-xs-1">
 	  </div>
- 	 <div class="col-md-10 col-sm-10 col-xs-10">
-  	<img src="/images/wxpay_icon.jpg" class="img-responsive" ></div>
-	</div>
+ 	 <div class="col-md-10 col-sm-10 col-xs-10" style="margin-top: 20px;">
+  	<img src="<?php echo base_url()?>/images/wxpay_icon.jpg" class="img-responsive" ></div>
+
  
-  <div class="row" style="margin-top:30px;">
-  <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%;">
+
+  <div class="col-md-10 col-sm-10 col-xs-10" style=" margin-left:8%; margin-top: 20px;">
          <!--<a class="btn btn-danger" style=" width:100%; background:red; " href="#" role="button">确认充值</a>-->
       <input type="submit" class="btn btn-danger" name="submit"  style=" width:100%; background:red; " value="确认充值"><!--onclick="checkreg()"-->
          </div> 
-  </div>
+
               
 </div>
 </div>

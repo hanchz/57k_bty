@@ -41,7 +41,7 @@ $this->load->helper('url');
     .roll li { float: left; width: 200px; height: 333px; text-align: center; list-style:none; margin:5px; }
     .roll li img{ width:200px; height:333px;}
 
-    .zj_overflow{color:#999;overflow:hidden;text-overflow:ellipsis; width:150px;height:20px;line-height:20px;}
+    .zj_overflow1{color:#999;overflow:hidden;text-overflow:ellipsis; width:150px;height:20px;line-height:20px;}
     .zj_overflow{overflow:hidden;text-overflow:ellipsis; width:70%;height:20px;line-height:20px;vertical-align:middle;}
 
 
@@ -75,4 +75,5 @@ $this->load->helper('url');
     a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
     a:hover{color:#FFF;}*/
 	.zj_of{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;  }
+	.zj_fs{font-size: 0.13rem;}
 </style>
