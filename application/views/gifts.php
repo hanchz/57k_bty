@@ -74,7 +74,7 @@ text-overflow: ellipsis; width:200px;"><small><nobr><?php echo substr($val['gift
     	<p style="margin-top:20px; width:200px; margin-left:-55px; color:red;">请长按礼包码复制</p>
         
         
-        <div style="margin-top:30px; width:100%; height:100px; float: left; text-align: center;"><a class="btn btn-danger" style="margin-top:20px; width:80px; background:red;"  role="button" onClick="tc_cls()" >关闭</a></div>
+        <div style="margin-top:0px; width:100%; height:80px; float: left; text-align: center;"><a class="btn btn-danger" style="margin-top:20px; width:80px; background:red;"  role="button" onClick="tc_cls()" >关闭</a></div>
     </div>
     
     

@@ -31,23 +31,29 @@ if(isset($result) && !empty($result)){
         $params = array();
         $params['id'] = $val['giftsid'];
         $this->load->model('gifts_model');
-        $gameinfo=$this->gifts_model->game_info($params);
 		
-		$giftsinfo=$this->gifts_model->gifts_info_model($params);
+		
+		
+		$giftsinfo=$this->gifts_model->giftsid_gameinfo_model($params);
         //var_dump($giftsinfo);
         //exit;
+ 		$gameid=$giftsinfo['gameid'];
+		$params1['id']=$gameid;
+        $gameinfo=$this->gifts_model->game_info($params1);
+		//var_dump($gameinfo);
+		//exit;
 		echo '
         <tr><td style=" padding:5px 2px;">
     <div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="'.$gameinfo['logo'].'" class="img-responsive"></div>
     <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12"><strong>'.$gameinfo['name'].':'.$giftsinfo[0]['giftsname'].'</strong></div>
+            <div class="col-md-12 col-sm-12 col-xs-12"><strong>'.$gameinfo['name'].':'.$giftsinfo['giftsname'].'</strong></div>
         </div>
         <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12" style="color:red"><small>兑换码：'.$val["key"].'</small></div>
         </div>
         <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 zj_of" style=" width:200px; color:#999;"><small><nobr>'.$giftsinfo[0]['giftsinfo'].'</nobr></small></div>
+        <div class="col-md-12 col-sm-12 col-xs-12 zj_of" style=" width:200px; color:#999;"><small><nobr>'.$giftsinfo['giftsinfo'].'</nobr></small></div>
         </div>
     </div>
     <div class="col-md-3 col-sm-3 col-xs-3" style="font-size:8px;">长按礼包码进行复制</div>

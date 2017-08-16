@@ -170,7 +170,7 @@ if(isset($orderid) && !empty($orderid))
  	 <div class="col-md-1 col-sm-1 col-xs-1">
 	  </div>
  	 <div class="col-md-10 col-sm-10 col-xs-10" style="margin-top: 20px;">
-  	<img src="<?php echo base_url()?>/images/wxpay_icon.jpg" class="img-responsive" ></div>
+  	<img src="<?php // echo base_url()?>/images/wxpay_icon.jpg" class="img-responsive" ></div>
 
  
 

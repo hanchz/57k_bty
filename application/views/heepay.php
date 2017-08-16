@@ -37,9 +37,11 @@ $uid=$_POST['uid'];
 include ('gamelogin.php');
 $return_url=gameurl($gameid,$uid);//支付成功后，跳转回游戏地址
 
-
-//$return_url='http://m.57k.com/gamelogin/index/'.$gameid;
-
+//echo $return_url;
+//exit;
+$return_url='http://m.57k.com/gamelogin/index/'.$gameid;
+//echo $return_url;
+//exit;
 $version = 1;
 $agent_id = $AGENT_ID;
 $orderid=$_POST['orderid'];
@@ -50,7 +52,7 @@ $pay_type = 30; //微信支付代码,int型
 $pay_code = ""; //char型，空字符串
 $pay_amt = $_POST['money'];
 $notify_url = "http://m.57k.com/Heepay/notify";
-$return_url = $return_url; //微信支付不涉及同步返回，此处可填写任意URL，没有实际使用
+$return_url = '$return_url'; //微信支付不涉及同步返回，此处可填写任意URL，没有实际使用
 $goods_name = $_POST['goodsname'];
 $goods_num = "1";
 $goods_note = $_POST['goodsname'];

@@ -70,7 +70,7 @@ $this->load->helper('url');
   		.tck-con{width:100%; height:auto; float:left; padding:5% 5%; background:#FFF;border-radius: 0 0 10px 10px;}
 			.tck-con p{ margin-bottom:10%; float:left;}
 			
-	.zhezhao{ width:100%; height:100%; position:absolute;top:0; left:0;filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5; background:black; z-index:1;}		
+	.zhezhao{ width:100%; height:150%; position:absolute;top:0; left:0;filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5; background:black; z-index:99999999;}		
     /*a{ color:#FFF; border-bottom:1px solid #FFF;}
     a:link,.listmain a:visited{color:#FFF; text-decoration:none;}
     a:hover{color:#FFF;}*/
