@@ -15,6 +15,7 @@ class Sou extends CI_Controller {
 		$params['gamename'] = $this->input->get('gamename',true);
 		$params['gametype'] = $this->input->get('gametype',true);
         $this->load->model('game_model');
+        $this->load->model('gifts_model');
         $result=$this->game_model->game_name_info($params);
 		$result1=$this->game_model->game_type_info($params);
         $data['gamename']=$result;

@@ -15,6 +15,7 @@ class Top10 extends CI_Controller {
         $data['kv']=$result;
 
 		$this->load->model('game_model');
+        $this->load->model('gifts_model');
         $this->load->view('top10',$data);
         //var_dump($data);
     }

@@ -30,13 +30,16 @@ if(isset($gamename) && !empty($gamename)){
 		$params=array();
 		$params['gametype']=$val['gametype'];
 		$result = $this->game_model->game_type($params);
+		
+		$params['id']=$val['id'];
+		$giftsnum= $this->gifts_model->giftsidnum_model($params);
 ?>
 <tr><td style=" padding:5px 2px;">
-<div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="<?php echo $val['logo']?>" class="img-responsive"></div>
+<div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><a  href="game?gameid=<?php echo $val['gameid']?>"><img src="<?php echo $val['logo']?>" class="img-responsive"></a></div>
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row">
     	<div class="col-md-6 col-sm-6 col-xs-6"><strong><?php echo $val['name']?></strong></div>
-        <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a>        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X <?php echo $giftsnum['num']?></button></a>        </div>
     </div>
     <div class="row">
 
@@ -71,13 +74,17 @@ if(isset($gametypeinfo) && !empty($gametypeinfo)){
 		$params=array();
 		$params['gametype']=$val1['gametype'];
 		$result = $this->game_model->game_type($params);
+		
+		
+		$params['id']=$val1['id'];
+		$giftsnum= $this->gifts_model->giftsidnum_model($params);
 ?>
 <tr><td style=" padding:5px 2px;">
-<div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><img src="<?php echo $val1['logo']?>" class="img-responsive"></div>
+<div class="col-md-3 col-sm-3 col-xs-3"  style=" margin-left:-10px;"><a  href="game?gameid=<?php echo $val1['gameid']?>"><img src="<?php echo $val1['logo']?>" class="img-responsive"></a></div>
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row">
     	<div class="col-md-6 col-sm-6 col-xs-6 zj_of" style=" width: 100px;"><strong><?php echo $val1['name']?></strong></div>
-        <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a>        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X <?php echo $giftsnum['num']?></button></a>        </div>
     </div>
     <div class="row">
 

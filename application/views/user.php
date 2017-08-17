@@ -8,6 +8,8 @@ if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
     //echo "<a href='indexx/logout'>点此退出</a>";
 }else{
     //echo "你还没有登录，<a href='login.php'>请登录</a>";
+	echo '<script language="javascript">window.location.href="login_user";</script>';
+
 }
 $this->load->helper('url');
 ?>

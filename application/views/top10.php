@@ -31,6 +31,9 @@ if(isset($top) && !empty($top)){
 		$params['gametype']=$result['gametype'];
 		$r = $this->game_model->game_type($params);
 		
+		$params['id']=$val['id'];
+		$giftsnum= $this->gifts_model->giftsidnum_model($params);
+		
         //var_dump($result);
         echo '<tr><td style=" padding:5px 2px;">
 <div class="col-md-1 col-sm-1 col-xs-1" style="line-height:60px; vertical-align:middle; color:'.$color.';">'.$val['id'].'</div>
@@ -38,7 +41,7 @@ if(isset($top) && !empty($top)){
 <div class="col-md-6 col-sm-6 col-xs-6"  style=" margin-left:-20px;">
 	<div class="row">
     	<div class="col-md-6 col-sm-6 col-xs-6 zj_of" style="width:100px;"><strong>'.$result['name'].'</strong></div>
-        <div class="col-md-3 col-sm-3 col-xs-3" style=" float:left; margin-left:-25px;"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X 3</button></a></div>
+        <div class="col-md-3 col-sm-3 col-xs-3" style=" float:left; margin-left:-25px;"><a href="gifts"><button type="button" class="btn btn-default btn-xs disabled" style="color:#0CF; border:2px solid #0CF">礼包 X '.$giftsnum['num'].'</button></a></div>
     </div>
     <div class="row">
 

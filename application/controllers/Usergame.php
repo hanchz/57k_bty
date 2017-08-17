@@ -22,6 +22,7 @@ class Usergame extends CI_Controller {
 		
 		$this->load->model('Gamelogin_model');
 		$this->load->model('Game_model');
+        $this->load->model('gifts_model');
 		
         $this->load->view('usergame',$data);
         //var_dump($data);

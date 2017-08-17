@@ -27,11 +27,11 @@ if(isset($error) && $error == 1)
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
 
-<link rel="stylesheet" href="<?php echo base_url();?>/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php //echo base_url();?>/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	  <script src="<?php echo base_url();?>/bootstrap-3.3.7-dist/gVerify.js"></script>
+	  <script src="<?php //echo base_url();?>/bootstrap-3.3.7-dist/gVerify.js"></script>
 <title>注册</title>
 </head>
 <style>
@@ -79,7 +79,7 @@ a:hover{color:#FFF;}
 
 
 <div class="row" style="text-align:center; margin-top:40px;">
-	<img src="<?php //echo base_url()?>/images/57kcom.png" class="img-responsive">
+	<img src="<?php //echo base_url()?>/images/57kcom.png" class="img-responsive center-block">
 </div>
     <form action="" onsubmit="//return checkreg()"  method="post" name="form" id="form"> <!--http://localhost:8080/test/index.php/reg/reg_user-->
 	<div class="row" style="margin-top:50px; padding:0 50px; ">
@@ -159,7 +159,7 @@ a:hover{color:#FFF;}
 		<div role="tabpanel" class="tab-pane" id="week"><!--tab222222222-->
 		
 		<div class="row" style="text-align:center; margin-top:40px;">
-	<img src="<?php //echo base_url()?>/images/57kcom.png" class="img-responsive">
+	<img src="<?php //echo base_url()?>/images/57kcom.png" class="img-responsive center-block">
 </div>
     <form action="" onsubmit="//return checkreg()"  method="post" name="form1" id="form1"> <!--http://localhost:8080/test/index.php/reg/reg_user-->
 	<div class="row" style="margin-top:50px; padding:0 50px; ">

@@ -86,8 +86,7 @@ $new_arr = json_decode($kf, true);
             ?>
             <tr>
                 <td style=" padding:5px 2px;">
-                    <div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-10px;"><img
-                                src="<?php echo $result['logo'] ?>" class="img-responsive"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-10px;"><a href="game?gameid=<?php echo $v1['gameid'] ?>"><img src="<?php echo $result['logo'] ?>" class="img-responsive"></a></div>
                     <div class="col-md-4 col-sm-4 col-xs-4" style=" margin-left:-20px;">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12"><strong><?php echo $result['name']; ?></strong>
@@ -142,8 +141,7 @@ $new_arr = json_decode($kf, true);
             ?>
             <tr>
                 <td style=" padding:5px 2px;">
-                    <div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-10px;"><img
-                                src="<?php echo $result['logo'] ?>" class="img-responsive"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-10px;"><a  href="game?gameid=<?php echo $v1['gameid'] ?>"><img src="<?php echo $result['logo'] ?>" class="img-responsive"></a></div>
                     <div class="col-md-4 col-sm-4 col-xs-4" style=" margin-left:-20px;">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12"><strong><?php echo $result['name']; ?></strong>
@@ -200,8 +198,7 @@ $new_arr = json_decode($kf, true);
             ?>
             <tr>
                 <td style=" padding:5px 2px;">
-                    <div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-10px;"><img
-                                src="<?php echo $result['logo'] ?>" class="img-responsive"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-10px;"><a  href="game?gameid=<?php echo $v1['gameid'] ?>"><img src="<?php echo $result['logo'] ?>" class="img-responsive"></a></div>
                     <div class="col-md-4 col-sm-4 col-xs-4" style=" margin-left:-20px;">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12"><strong><?php echo $result['name']; ?></strong>
