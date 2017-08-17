@@ -102,7 +102,7 @@ if(isset($_REQUEST['geturl']) && !empty($_REQUEST['geturl']))
 </form>
     <div class="row" style="margin-top:20px; color:#FFF;">
     	<div class="col-md-4 col-sm-4 col-xs-4"  style="float:left; width:auto">
-        <a href="#">忘记密码</a>
+        <a href="fpwd">忘记密码</a>
         </div>
         
         <div class="col-md-3 col-sm-3 col-xs-3"  style="float:right; width:auto">

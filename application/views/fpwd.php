@@ -12,7 +12,7 @@ include ('top.php');
     <div class="row" style="padding:10px 0px; height:60px; border-bottom:1px solid #999;">
         <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left:15px;"><a href="user"><div class="glyphicon glyphicon-menu-left btn-lg"></div></a></div>
         <div class="col-md-8 col-sm-8 col-xs-8" style="line-height:40px; vertical-align:middle;padding-left:40px;">
-            绑定手机
+            找回密码
         </div>
     </div>
 </div>
@@ -22,7 +22,7 @@ include ('top.php');
 <div class="container">
 <div class="row">
 
-
+<form action="spwd"  name="form" method="post" id="form">
         
     <ul class="list-unstyled" >
     
@@ -63,7 +63,7 @@ include ('top.php');
     
 	</ul>
         
-
+</form>
 	</div>
 <div class="row" style="margin-top: 30px;">
  <div class="col-md-1 col-sm-1 col-xs-1"></div>
@@ -124,7 +124,9 @@ function fpwd()
 					//返回手机号是否正确，
 					
 					//通过后，跳转x下一个页面
-					window.location.href="spwd";
+					//window.location.href="spwd";
+					document.getElementById("form").action="spwd";
+					document.getElementById("form").submit();
 				}
 			});
 			
