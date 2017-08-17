@@ -20,7 +20,7 @@ include ('top.php');
 <div class="row" style="margin-top: 20%;">
 	<div class="col-md-3 col-sm-3 col-xs-3"></div>
 <div class="col-md-6 col-sm-6 col-xs-6">
-	<img src="<?php echo base_url()?>/images/bindokicon.png" class="img-responsive">
+	<img src="<?php //echo base_url()?>/images/bindokicon.png" class="img-responsive">
 </div>
 	<div class="col-md-3 col-sm-3 col-xs-3"></div>
 	</div>
