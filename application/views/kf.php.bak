@@ -98,8 +98,8 @@ $new_arr = json_decode($kf, true);
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2" style=" margin-top:20px; color:#999;"><small>
-                      S<?php echo $v1['serverid']; ?>服</small>
+                    <div class="col-md-2 col-sm-2 col-xs-2" style=" margin-top:20px; color:#999;">
+                        S<?php echo $v1['serverid']; ?>服
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger"
                                                                style="margin-top:10px; width:80px; background:red;"

@@ -1,7 +1,7 @@
 <?php
 session_start();
-$_SESSION['username'] ='jian03j1';
-$_SESSION['uid'] ='2986257';
+$_SESSION['username'] ='2986257';
+$_SESSION['uid'] ='jian03j1';
 if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
     //echo "登录成功：".$_SESSION['username'];
     //var_dump($_SESSION['uid']);
