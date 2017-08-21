@@ -21,14 +21,19 @@ class Reg extends CI_Controller {
         $username = $this->input->post('username',true);
         $tel = $this->input->post('tel',true);
         $password = $this->input->post('password',true);
+		if(empty($password)){$password=$this->input->post('password2',true);}
+		//echo $password;
+		//exit;
         $key = 'hsregister';
         $time=time();
         $sign=md5($username.$password.$time.$key);
-        $url="http://my.57k.com/api/register.php?username=".$username."&tel=".$tel."&pwd=".$password."&sign=".$sign."&time=".$time;
+        //$url="http://my.57k.com/api/register.php?username=".$username."&tel=".$tel."&pwd=".$password."&sign=".$sign."&time=".$time;
+		$url="http://www.hs.com/index.php/Apps/index.html?username=".$username."&tel=".$tel."&password=".$password."&sign=".$sign."&time=".$time;
+		
         $result = $this->login($url);
-        //echo $result;
+        //echo $url;
         //exit;
-		if(count($result)>0)
+		if($result>0)
         {
             //header('Location: http://m.57k.com/');
             $_SESSION['username'] = $username;
@@ -42,9 +47,24 @@ class Reg extends CI_Controller {
             //header('Location: http://m.57k.com/user');
         }else
         {
+			if($result==-1){
+				echo '<script language="javascript">alert("用户名不合法");</script>';
+			}else if($result==-2)
+			{
+				echo '<script language="javascript">alert("包含不允许注册的词语");</script>';
+
+			}else if($result==-3)
+			{
+				echo '<script language="javascript">alert("用户名已经存在");</script>';
+			}else{echo '<script language="JavaScript">
+		alert("注册失败");
+		window.location.href="http://m.57k.com/reg";</script>';}
+
+			exit;
             $data = array();
             $error = '1';
             $data['error']=$error;
+            $data['errorid']=$result;
             $this->load->view('reg',$data);
 			redirect('reg');
             //header('Location: http://m.57k.com/reg/');

@@ -21,7 +21,7 @@ class Login_user extends CI_Controller {
         $password = array();
         $username = $this->input->post('username',true);
         $password = $this->input->post('password',true);
-		
+		//exit;
         $geturl = $this->input->post('geturl',true);
         //var_dump($username);
         //echo $username;
@@ -29,7 +29,7 @@ class Login_user extends CI_Controller {
         $key = 'hslogin';
         $time=time();
         $sign=md5($username.$password.$time.$key);
-        $url="http://my.57k.com/api/login.php?username=".$username."&pwd=".$password."&sign=".$sign."&time=".$time;
+        $url="http://www.hs.com/index.php/Apps/login.html?username=".$username."&password=".$password."&sign=".$sign."&time=".$time;
         //echo $url;
         //exit;
 

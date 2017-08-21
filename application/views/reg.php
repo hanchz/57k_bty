@@ -11,7 +11,20 @@ if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 $this->load->helper('url');
 if(isset($error) && $error == 1)
 {
-    echo '<script language="JavaScript">alert("注册失败")</script>';
+    //echo '<script language="JavaScript">alert("注册失败")</script>';
+	
+			if($errorid==-1){
+				echo '<script language="javascript">alert("用户名不合法");</script>';
+			}else if($errorid==-2)
+			{
+				echo '<script language="javascript">alert("包含不允许注册的词语");</script>';
+
+			}else if($errorid==-3)
+			{
+				echo '<script language="javascript">alert("用户名已经存在");</script>';
+			}else{echo '<script language="javascript">alert($result);</script>';}
+	//echo $error;
+			
 }
 
 ?>
@@ -316,7 +329,7 @@ function validatemobile(mobile)
         var password1=document.getElementById("password1").value;
 		var tel=document.getElementById("tel").value;
 		var telcode=document.getElementById("telcode").value;
-        //alert(telcode);
+        //alert(password1);
         if (password=="")
         {
             alert("请输入密码!");
@@ -385,7 +398,7 @@ function validatemobile(mobile)
 				var username=document.getElementById("username").value;
 				var password2=document.getElementById("password2").value;
 				var password3=document.getElementById("password3").value;
-				
+				//alert(username);
 		if (username=="")
         {
             alert("请输入您的用户名!"); 
