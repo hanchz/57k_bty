@@ -30,6 +30,7 @@ class Login_user extends CI_Controller {
         $time=time();
         $sign=md5($username.$password.$time.$key);
         $url="http://mtg.57k.com/index.php/Apps/login.html?username=".$username."&password=".$password."&sign=".$sign."&time=".$time;
+
         //echo $url;
         //exit;
 

@@ -29,6 +29,7 @@ class Reg extends CI_Controller {
         $sign=md5($username.$password.$time.$key);
         //$url="http://my.57k.com/api/register.php?username=".$username."&tel=".$tel."&pwd=".$password."&sign=".$sign."&time=".$time;
 		$url="http://mtg.57k.com/index.php/Apps/index.html?username=".$username."&tel=".$tel."&password=".$password."&sign=".$sign."&time=".$time;
+
 		
         $result = $this->login($url);
         //echo $url;
