@@ -75,6 +75,8 @@ include ('top.php');
 </div>
 <?php
 include ('bottom.php');
+	
+
 ?>
 
 <script language="javascript">
@@ -99,7 +101,7 @@ function bind()
 		if(validatemobile(tel))
 		{
 			//检查验证码是否正确，
-		  var url='get_code/reg_code';
+		  var url='http://www.h5.com/index.php/get_code/reg_code';
 	    	$.get(
             url,
             {tel:tel,code:telcode},
@@ -184,8 +186,36 @@ function time(o) {
 		//alert(tel);
 		if(validatemobile(tel))
 		{
+			
+			//验证手机号是否被绑定
+			
+			var url1="checkmobile";
+			$.get(
+            url,
+            {mobile:tel},
+            function(data){
+				if(data==0)
+					{
+						time(this);
+						var url='http://www.h5.com/index.php/get_code';
+						//http://www.h5.com/index.php/get_code
+					$.get(
+						url,
+						{tel:tel},
+						function(data){
+
+						});
+					}else{
+						
+						alert("此手机号已绑定");
+					}
+				
+            });
+			
+		/*	
 			time(this);
-			var url='get_code';
+			var url='http://www.h5.com/index.php/get_code';
+			//http://www.h5.com/index.php/get_code
 		$.get(
             url,
             {tel:tel},
@@ -193,7 +223,7 @@ function time(o) {
 
             });
 			
-			
+			*/
 		}/*else{alert("请检查手机号");}*/
 	}
 	

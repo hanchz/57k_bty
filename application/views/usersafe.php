@@ -13,6 +13,15 @@ if (isset($resultcpw) && !empty($resultcpw)) {
     </script>';	
 	}
 }
+
+if (isset($error) && !empty($error)) {
+	if($error=="1")
+	{
+	echo '<script language="javascript">alert("已绑定手机号");
+     window.history.back();
+    </script>';	
+	}
+}
 ?>
 <body>
 
@@ -45,7 +54,12 @@ if (isset($resultcpw) && !empty($resultcpw)) {
         </td></tr>
         
        <tr><td style=" padding:5px 2px; ">
+          
+          
+           <a href="user_safe/is_bindphone?uid=<?php echo $uid;?>"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">绑定手机 </div></a>
+           <!--
             <a href="bind_mobile"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">绑定手机 </div></a>
+         -->
             <div class="col-md-7 col-sm-7 col-xs-7 " ></div>
        </td></tr> 
 

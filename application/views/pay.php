@@ -64,7 +64,8 @@ if(isset($orderid) && !empty($orderid))
             <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top:5px;" >请确认账号：
             </div>
             <div class="col-md-5 col-sm-5 col-xs-5" style="margin-left:-20px;" >
-                <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;" id="username" name="username" value="<?php echo $uid?>" disabled="disabled" >
+                <input type="text" class="form-control input-group-sm zj_input" style=" border:1px; color: #0f0f0f;" id="username" name="username" value="<?php if(isset($_SESSION['username']) && !empty($_SESSION['username'])){echo $username;}else{echo $uid;}
+				?>" disabled="disabled" >
             </div>
 
         </div>

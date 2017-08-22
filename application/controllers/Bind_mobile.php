@@ -13,6 +13,17 @@ class Bind_mobile extends CI_Controller {
         $this->load->view('bindmobile',$data);
         //var_dump($data);
     }
+	
+	
+	public function checkmobile()
+	{
+			
+		   $mobile= $this->input->get('mobile',true);
+		   $url="http://www.hs.com/index.php/Apps/checkmobile?mobile=".$mobile;
+		   //echo $url;
+		   //exit;
+		   echo $result=file_get_contents($url);
+	}
 
 
 
