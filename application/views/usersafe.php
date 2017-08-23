@@ -58,7 +58,7 @@ if (isset($error) && !empty($error)) {
        <tr><td style=" padding:5px 2px; ">
           
           
-           <a href="http://www.h5.com/index.php/user_safe/is_bindphone?username=<?php echo $username;?>"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;" >绑定手机</div></a>
+           <a href="/index.php/user_safe/is_bindphone?username=<?php echo $username;?>"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;" >绑定手机</div></a>
            
             <!--<a href="bind_mobile"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">绑定手机 </div></a>-->
          
