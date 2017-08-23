@@ -6,7 +6,6 @@ if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
     //echo "登录成功：".$_SESSION['username'];
     //var_dump($_SESSION['uid']);
     $uid=$_SESSION['uid'];
-	$uid_zj=$_SESSION['uid_zj'];
     $username=$_SESSION['username'];
     //echo "<a href='indexx/logout'>点此退出</a>";
 }else{

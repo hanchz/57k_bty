@@ -6,7 +6,6 @@ if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 
     //echo "<a href='indexx/logout'>点此退出</a>";
 	$uid=$_SESSION['uid'];
-	$uid_zj=$_SESSION['uid_zj'];
     $username=$_SESSION['username'];
 }else{
     //echo "你还没有登录，<a href='login.php'>请登录</a>";

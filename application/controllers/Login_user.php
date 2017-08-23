@@ -52,11 +52,11 @@ class Login_user extends CI_Controller {
         {
             $_SESSION['username'] = $username;
             $_SESSION['uid'] = $output;
-            $_SESSION['uid_zj'] = $output;
+            $_SESSION['uid'] = $output;
             $data = array();
             $data['username']=$username;
             $data['uid']=$output;
-            $data['uid_zj']=$output;
+            $data['uid']=$output;
             $this->load->view('login',$data);
 			
 			//redirect('user');

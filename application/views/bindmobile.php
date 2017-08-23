@@ -84,7 +84,7 @@ include ('bottom.php');
 function bind()
 	{
 		var username='<?php echo $username;?>';
-		var uid='<?php echo $uid_zj;?>';
+		var uid='<?php echo $uid;?>';
 		var tel=document.getElementById('tel').value;
 		var telcode=document.getElementById('telcode').value;
 		var password=document.getElementById("password").value;
