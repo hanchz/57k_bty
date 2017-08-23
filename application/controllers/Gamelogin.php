@@ -44,6 +44,10 @@ class Gamelogin extends CI_Controller {
 	{
 	$key="jT6PNgo8Xlq7XbNS";
 	$url="http://d.dev.d.hgame.com/hdpt/x57k/appid/101308/gameid/100005";
+	}elseif($gameid=='6')
+	{
+	$key="jT6PNgo8Xlq7XbNS";
+	$url="http://d.dev.d.hgame.com/hdpt/x57k/appid/101308/gameid/100005";
 	}
 	else
 	{
