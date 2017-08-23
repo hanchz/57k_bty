@@ -1,11 +1,12 @@
 <?php
 session_start();
 //$_SESSION['username'] ='jian03j1';
-//$_SESSION['uid'] ='142453';
+//$_SESSION['uid'] ='2986257';
 if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
     //echo "登录成功：".$_SESSION['username'];
     //var_dump($_SESSION['uid']);
     $uid=$_SESSION['uid'];
+	$uid_zj=$_SESSION['uid_zj'];
     $username=$_SESSION['username'];
     //echo "<a href='indexx/logout'>点此退出</a>";
 }else{
@@ -76,4 +77,5 @@ $this->load->helper('url');
     a:hover{color:#FFF;}*/
 	.zj_of{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;  }
 	.zj_fs{font-size: 0.13rem;}
+	.zj_fz{font-size: 0.2rem;}
 </style>

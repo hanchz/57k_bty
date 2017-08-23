@@ -10,7 +10,7 @@ include ('top.php');
 
 <div class="container">
     <div class="row" style="padding:10px 0px; height:60px; border-bottom:1px solid #999;">
-        <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left:15px;"><a href="user"><div class="glyphicon glyphicon-menu-left btn-lg"></div></a></div>
+        <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left:15px;"><a href="/index.php/user"><div class="glyphicon glyphicon-menu-left btn-lg"></div></a></div>
         <div class="col-md-8 col-sm-8 col-xs-8" style="line-height:40px; vertical-align:middle;padding-left:40px;">
             绑定手机
         </div>
@@ -78,12 +78,13 @@ include ('bottom.php');
 	
 
 ?>
-
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script language="javascript">
 function bind()
 	{
 		var username='<?php echo $username;?>';
-		var uid='<?php echo $uid?>';
+		var uid='<?php echo $uid_zj;?>';
 		var tel=document.getElementById('tel').value;
 		var telcode=document.getElementById('telcode').value;
 		var password=document.getElementById("password").value;
@@ -100,8 +101,22 @@ function bind()
 		}
 		if(validatemobile(tel))
 		{
-			//检查验证码是否正确，
-		  var url='http://www.h5.com/index.php/get_code/reg_code';
+			
+			
+			
+			//验证手机号是否被绑定
+			var url1="checkmobile";
+			$.get(
+            url1,
+            {mobile:tel},
+            function(data1){
+				//alert(data);
+				
+				if(data1==0)
+					{
+						
+									//检查验证码是否正确，
+		  var url='/index.php/get_code/reg_code';
 	    	$.get(
             url,
             {tel:tel,code:telcode},
@@ -124,17 +139,106 @@ function bind()
 					//document.form.action="reg/reg_user";
 					 //document.form.submit();
 					//正确以后提交绑定申请
-					alert(data);
 					
+					//alert(data);
+					var url2="bindmobile";
+					
+					$.get(
+            url2,
+            {username:username,mobile:tel},
+            function(data2){
+				//alert(data2);
+				//var str=data2.substr(0, 1);
+				//alert(str);
+				if(data2=='1')
+				{
+					//
+					alert("修改成功");
 					//通过后，跳转x下一个页面
-					window.location.href="bindok?tel="+tel;
+					window.location.href="/index.php/bindok?tel="+tel;
+				}else{
+					alert("绑定失败");
 				}
 			});
+					
+					
+					
+					
+					
+				}
+			});
+
+					}else{
+						
+						alert("此手机号已绑定");
+					}
+				
+            });
+			
+			
+
 			
 		}
 		
 		
 	}
+
+	
+
+	
+</script>
+
+<script language="javascript">
+
+		var wait=60;
+function time(o) {
+	//alert("ok");
+	var btn_code=document.getElementById("btn_code");
+        if (wait == 0) {
+            o.removeAttribute("disabled");            
+            btn_code.innerHTML="获取验证码";
+            wait = 60;
+        } else {
+            o.setAttribute("disabled", true);
+            btn_code.innerHTML="重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function() {
+                time(o)
+            },
+            1000)
+        }
+    }
+	
+	
+	
+		document.getElementById("btn_code").onclick=function()
+	{
+
+		var tel=document.getElementById("tel").value;
+		var btn_code=document.getElementById("btn_code");
+		//alert(tel);
+		if(validatemobile(tel))
+		{
+			
+									//如果手机号没被绑定，则去发送验证码
+						time(this);
+						var url='/index.php/get_code';
+						//http://www.h5.com/index.php/get_code
+					$.get(
+						url,
+						{tel:tel},
+						function(data){
+
+						});
+			
+
+		}/*else{alert("请检查手机号");}*/
+	}
+	
+
+
+
+		
 //验证手机号是否正确	
 function validatemobile(mobile) 
    { 
@@ -155,56 +259,23 @@ function validatemobile(mobile)
            alert('请输入有效的手机号码！'); 
            return false; 
        }else{return true;} 
-   } 	
+   } 
 	
 	
-//获取手机验证码
-var wait=60;
-function time(o) {
-	//alert("ok");
-	var btn_code=document.getElementById("btn_code");
-        if (wait == 0) {
-            o.removeAttribute("disabled");            
-            btn_code.innerHTML="获取验证码";
-            wait = 60;
-        } else {
-            o.setAttribute("disabled", true);
-            btn_code.innerHTML="重新发送(" + wait + ")";
-            wait--;
-            setTimeout(function() {
-                time(o)
-            },
-            1000)
-        }
-    }
 	
-	document.getElementById("btn_code").onclick=function()
-	{
-
-		var tel=document.getElementById("tel").value;
-		var btn_code=document.getElementById("btn_code");
-		//alert(tel);
-		if(validatemobile(tel))
-		{
-			
-			//验证手机号是否被绑定
+	/*
+				//验证手机号是否被绑定
 			
 			var url1="checkmobile";
 			$.get(
-            url,
+            url1,
             {mobile:tel},
             function(data){
+				//alert(data);
+				
 				if(data==0)
 					{
-						time(this);
-						var url='http://www.h5.com/index.php/get_code';
-						//http://www.h5.com/index.php/get_code
-					$.get(
-						url,
-						{tel:tel},
-						function(data){
 
-						});
 					}else{
 						
 						alert("此手机号已绑定");
@@ -212,20 +283,8 @@ function time(o) {
 				
             });
 			
-		/*	
-			time(this);
-			var url='http://www.h5.com/index.php/get_code';
-			//http://www.h5.com/index.php/get_code
-		$.get(
-            url,
-            {tel:tel},
-            function(data){
-
-            });
-			
-			*/
-		}/*else{alert("请检查手机号");}*/
-	}
+	
+	*/
 	
 </script>
 

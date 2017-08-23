@@ -30,8 +30,8 @@ include ('sou.php');
 			
             echo '<div class="col-md-3 col-sm-3 col-xs-3">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a href="game?gameid='.$v['gameid'].'"><img src="'.$v['logo'].'" class="img-responsive"></a></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12 zj_fs" style=" width:100%; text-align:center;">'.$v['name'].'</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12" style=" width:100px;text-align:center;"><small style="color:#929191;text-align:center;">'.$result['gametype'].'</small></div></div>
+    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12 zj_fz" style=" width:100%; text-align:center;">'.$v['name'].'</div></div>
+    		<div class="row" style="text-align:center;"><div class="col-md-12 col-sm-12 col-xs-12 zj_fz" style="color:#929191;text-align:center;" >'.$result['gametype'].'</div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['gameid'].'" role="button">开始</a></div></div>
     	</div>';
         }
@@ -50,8 +50,8 @@ include ('sou.php');
  	</div>
 </div>
 
-<!--<div class="container-fluid" style="background:url(/images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >-->
-<div class="row" style=" text-align:center; padding:5px 0px; color:#FFF"><div class="col-md-12 col-sm-12 col-xs-12" ><strong>&nbsp;</strong></div></div>
+<div class="container-fluid" style="background:url(/images/rq_bg.jpg) no-repeat; background-size:100% 100%;" >
+<div class="row" style=" text-align:center; color:#FFF"><div class="col-md-12 col-sm-12 col-xs-12" ><strong>&nbsp;</strong></div></div>
 	<div class="row">
         <?php
         foreach ($game_rq as $key=>$v)
@@ -64,8 +64,8 @@ include ('sou.php');
 
             echo '<div class="col-md-3 col-sm-3 col-xs-3 zj_di" style="margin-left:20px">
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a href="game?gameid='.$v['gameid'].'"><img src="'.$v['logo'].'" class="img-responsive"></a></div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12 zj_of" style=" width:100px;text-align:center;">'.$v['name'].'</div></div>
-    		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12" style="width:100px;text-align:center;"><small style="color:#929191;">'.$result['gametype'].'</small></div></div>
+    		<div class="row" style="text-align:center;"><div class="col-md-12 col-sm-12 col-xs-12 zj_of" >'.$v['name'].'</div></div>
+    		<div class="row" style="text-align:center;"><div class="col-md-12 col-sm-12 col-xs-12" ><small style="color:#929191;">'.$result['gametype'].'</small></div></div>
     		<div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-default btn-lg btn-block zj_down" href="game?gameid='.$v['gameid'].'" role="button">开始</a></div></div>
     	</div>';
         }

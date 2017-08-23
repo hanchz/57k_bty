@@ -5,6 +5,7 @@ if(isset($username) && !empty($username))
     //var_dump($uid);
     $_SESSION['username'] = $username;
     $_SESSION['uid'] = $uid;
+    $_SESSION['uid_zj'] = $uid_zj;
 
 }else{//echo "kong";
 }

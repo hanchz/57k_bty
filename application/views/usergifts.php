@@ -56,7 +56,7 @@ if(isset($result) && !empty($result)){
         <div class="col-md-12 col-sm-12 col-xs-12 zj_of" style=" width:200px; color:#999;"><small><nobr>'.$giftsinfo['giftsinfo'].'</nobr></small></div>
         </div>
     </div>
-    <div class="col-md-3 col-sm-3 col-xs-3" style="font-size:8px;margin-left:6px;">长按礼包码进行复制</div>
+    <div class="col-md-3 col-sm-3 col-xs-3" style="font-size:8px;margin-left:10px;">长按礼包码进行复制</div>
     </td></tr>
         ';
 

@@ -8,6 +8,8 @@ class Gamelogin extends CI_Controller {
     {
         $data = array();
 		$uid=$_SESSION['uid'];
+		$uid_zj=$_SESSION['uid_zj'];
+		$username=$_SESSION['username'];
 		//echo "<br />";
 		//echo $gameid;
         //$gameid = $this->input->get('gameid',true);
@@ -51,8 +53,11 @@ class Gamelogin extends CI_Controller {
 	$time=time();
 	$sign = strtolower(md5($uid.$serverid.$time.$gameid.$key));
 	if($url!=''){
-	$url=$url."?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameid=".$gameid."&sign=".$sign;	
+	$url=$url."?uid=".$uid_zj."&serverid=".$serverid."&time=".$time."&gameid=".$gameid."&sign=".$sign;	
 	}
+		
+		//echo $url;
+		//exit;
 	   
 echo '<script language="javascript">window.location.href="'.$url.'";</script>';
     }

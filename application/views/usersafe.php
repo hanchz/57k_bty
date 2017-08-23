@@ -25,9 +25,11 @@ if (isset($error) && !empty($error)) {
 ?>
 <body>
 
+
+
 <div class="container">
     <div class="row" style="padding:10px 0px; height:60px; border-bottom:1px solid #999;">
-        <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left:15px;"><a href="user"><div class="glyphicon glyphicon-menu-left btn-lg"></div></a></div>
+        <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left:15px;"><a href="/index.php/user"><div class="glyphicon glyphicon-menu-left btn-lg"></div></a></div>
         <div class="col-md-8 col-sm-8 col-xs-8" style="line-height:40px; vertical-align:middle; padding-left:40px;">
 		账号安全
         </div>
@@ -56,10 +58,10 @@ if (isset($error) && !empty($error)) {
        <tr><td style=" padding:5px 2px; ">
           
           
-           <a href="user_safe/is_bindphone?uid=<?php echo $uid;?>"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">绑定手机 </div></a>
-           <!--
-            <a href="bind_mobile"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">绑定手机 </div></a>
-         -->
+           <a href="http://www.h5.com/index.php/user_safe/is_bindphone?username=<?php echo $username;?>"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;" >绑定手机</div></a>
+           
+            <!--<a href="bind_mobile"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">绑定手机 </div></a>-->
+         
             <div class="col-md-7 col-sm-7 col-xs-7 " ></div>
        </td></tr> 
 
@@ -71,7 +73,6 @@ if (isset($error) && !empty($error)) {
 <?php
 include ('bottom.php');
 ?>
-
 
 
 </body>

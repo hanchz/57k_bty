@@ -30,7 +30,7 @@ class Login_user extends CI_Controller {
         $time=time();
         $sign=md5($username.$password.$time.$key);
         $url="http://mtg.57k.com/index.php/Apps/login.html?username=".$username."&password=".$password."&sign=".$sign."&time=".$time;
-
+		//$url="http://www.hs.com/index.php/Apps/login?username=".$username."&password=".$password."&sign=".$sign."&time=".$time;    	//	本地测试URL
         //echo $url;
         //exit;
 
@@ -52,9 +52,11 @@ class Login_user extends CI_Controller {
         {
             $_SESSION['username'] = $username;
             $_SESSION['uid'] = $output;
+            $_SESSION['uid_zj'] = $output;
             $data = array();
             $data['username']=$username;
             $data['uid']=$output;
+            $data['uid_zj']=$output;
             $this->load->view('login',$data);
 			
 			//redirect('user');

@@ -45,9 +45,9 @@ text-overflow: ellipsis; width:200px;"><small><nobr><?php echo substr($val['gift
     </div>
     
     <?php if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {?>
-    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;" role="button"  onClick="tc(<?php echo $val["id"].','.$uid?>)">领取</a></div>
+    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left: 15px;" role="button"  onClick="tc(<?php echo $val["id"].','.$uid_zj?>)">领取</a></div>
     <?php }else{?>
-    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red;"  role="button" onClick="loginurl()">领取</a></div>
+    <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left: 15px;"  role="button" onClick="loginurl()">领取</a></div>
     <?php }?>
     </td></tr>
 		

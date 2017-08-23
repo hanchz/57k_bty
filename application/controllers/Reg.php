@@ -39,9 +39,11 @@ class Reg extends CI_Controller {
             //header('Location: http://m.57k.com/');
             $_SESSION['username'] = $username;
             $_SESSION['uid'] = $result;
+            $_SESSION['uid_zj'] = $result;
             $data = array();
             $data['username']=$username;
             $data['uid']=$result;
+            $data['uid_zj']=$result;
             $this->load->view('login',$data);
 			redirect('regok');	
 			

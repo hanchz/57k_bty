@@ -54,7 +54,7 @@ text-overflow: ellipsis; width:200px;"><small><nobr>'.substr($result['about'],0,
     </div>
 </div>
 
-<div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:-20px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$result['gameid'].'" role="button">开始</a></div>
+<div class="col-md-2 col-sm-2 col-xs-2" style=" margin-left:0px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid='.$result['gameid'].'" role="button">开始</a></div>
 </td></tr>';
     }
 

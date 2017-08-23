@@ -61,7 +61,7 @@ include ('top.php');
 	//include ('gamelogin.php');
 	
 	
-	if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
+	if (isset($_SESSION['uid_zj']) && !empty($_SESSION['uid_zj'])) {
 	//echo gameurl($game["gameid"],$uid);
 	$game_url='gamelogin/index/'.$game["gameid"];
 	?>
@@ -125,7 +125,7 @@ include ('top.php');
 	//include ('gamelogin.php');
 	
 	
-	if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
+	if (isset($_SESSION['uid_zj']) && !empty($_SESSION['uid_zj'])) {
 	//echo gameurl($game["gameid"],$uid);
 	?>
     <div class="col-md-12 col-sm-12 col-xs-12"><a class="btn btn-danger" style=" width:100%; background:red; margin-left:0px; margin-top: 20px;" href="<?php echo $game_url?>" role="button">进入游戏</a></div>
@@ -183,9 +183,9 @@ include ('top.php');
                                             </div>
 
                                             <?php
-                                            if (isset($_SESSION['uid']) && !empty($_SESSION['uid'])) {
+                                            if (isset($_SESSION['uid_zj']) && !empty($_SESSION['uid_zj'])) {
                                                 ?>
-                                                <div class="col-md-2 col-sm-2 col-xs-2" style="margin-left: -30px;"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;"  onClick="tc(<?php echo $val['id'].','.$uid?>)" role="button">领取</a></div>  <!--href="get_gifts?id=<?php echo $val["gameid"]?>&uid=<?php echo $uid?>"--> 
+                                                <div class="col-md-2 col-sm-2 col-xs-2" style="margin-left: -30px;"><a class="btn btn-danger" style="margin-top:10px; width:80px; background:red; margin-left:-10px;"  onClick="tc(<?php echo $val['id'].','.$uid_zj?>)" role="button">领取</a></div>  <!--href="get_gifts?id=<?php echo $val["gameid"]?>&uid=<?php echo $uid_zj?>"--> 
 
 
                                                 <?php

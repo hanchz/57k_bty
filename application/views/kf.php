@@ -5,6 +5,9 @@ if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
     //var_dump($_SESSION['username']);
 
     //echo "<a href='indexx/logout'>点此退出</a>";
+	$uid=$_SESSION['uid'];
+	$uid_zj=$_SESSION['uid_zj'];
+    $username=$_SESSION['username'];
 }else{
     //echo "你还没有登录，<a href='login.php'>请登录</a>";
 }
@@ -98,7 +101,7 @@ $new_arr = json_decode($kf, true);
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2" style=" margin-top:20px; color:#999;"><small>
+                    <div class="col-md-2 col-sm-2 col-xs-2" style=" width: 70px; margin-top:20px; color:#999; margin-left: -20px;"><small>
                       S<?php echo $v1['serverid']; ?>服</small>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger"
@@ -153,7 +156,7 @@ $new_arr = json_decode($kf, true);
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2" style=" margin-top:20px; color:#999;">
+                    <div class="col-md-2 col-sm-2 col-xs-2" style=" width: 70px; margin-top:20px; color:#999; margin-left: -20px;">
                         S<?php echo $v1['serverid']; ?>服
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger"
@@ -210,7 +213,7 @@ $new_arr = json_decode($kf, true);
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2" style=" margin-top:20px; color:#999;">
+                    <div class="col-md-2 col-sm-2 col-xs-2" style="width: 70px; margin-top:20px; color:#999; margin-left: -20px;">
                         S<?php echo $v1['serverid']; ?>服
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-3"><a class="btn btn-danger"
