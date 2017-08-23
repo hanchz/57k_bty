@@ -153,7 +153,7 @@ function bind()
 				if(data2=='1')
 				{
 					//
-					alert("修改成功");
+					alert("绑定成功");
 					//通过后，跳转x下一个页面
 					window.location.href="/index.php/bindok?tel="+tel;
 				}else{
