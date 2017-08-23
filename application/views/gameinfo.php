@@ -226,7 +226,7 @@ include ('bottom.php');
 <div class="tanchukuang" id="tck" style="display:none;">
 	<div class="tck-top">领取礼包</div>
 	<div class="tck-con">
-    	<p style="width:100%">礼包内容：<span style="color:#999; width:100%" id="gifts_info"> 佛挡杀佛萨法撒旦法撒飞洒发达省份萨芬</span></p>
+    	<p style="width:100%">礼包内容：<span style="color:#999; width:100%" id="gifts_info"> 礼包内容XXX</span></p>
         
     	<p>礼包码：<div style="color:red; background:#ccc; width:70%; height:10%; float:left; text-align:center;" id="key"> </div></p>
         
