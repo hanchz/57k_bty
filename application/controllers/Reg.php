@@ -51,14 +51,14 @@ class Reg extends CI_Controller {
         }else
         {
 			if($result==-1){
-				echo '<script language="javascript">alert("用户名不合法");</script>';
+				echo '<script language="javascript">alert("用户名不合法");window.location.href="/index.php/reg";</script>';
 			}else if($result==-2)
 			{
-				echo '<script language="javascript">alert("包含不允许注册的词语");</script>';
+				echo '<script language="javascript">alert("包含不允许注册的词语");window.location.href="/index.php/reg";</script>';
 
 			}else if($result==-3)
 			{
-				echo '<script language="javascript">alert("用户名已经存在");</script>';
+				echo '<script language="javascript">alert("用户名已经存在");window.location.href="/index.php/reg";</script>';
 			}else{echo '<script language="JavaScript">
 		alert("注册失败");
 		window.location.href="http://m.57k.com/reg";</script>';}

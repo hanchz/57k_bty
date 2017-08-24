@@ -14,7 +14,7 @@ if(isset($error) && $error == 1)
     //echo '<script language="JavaScript">alert("注册失败")</script>';
 	
 			if($errorid==-1){
-				echo '<script language="javascript">alert("用户名不合法");</script>';
+				echo '<script language="javascript">alert("用户名不合法");window.location.go(-1);</script>';
 			}else if($errorid==-2)
 			{
 				echo '<script language="javascript">alert("包含不允许注册的词语");</script>';
@@ -162,7 +162,7 @@ a:hover{color:#FFF;}
         </div>
         
         <div class="col-md-3 col-sm-3 col-xs-3"  style="float:right; width:auto">
-        <a href="#" style="margin-left:25px;">注册</a>
+        <a href="/index.php/login_user" style="margin-left:25px;">登陆</a>
         </div>
     </div>
     
@@ -243,7 +243,7 @@ a:hover{color:#FFF;}
         </div>
         
         <div class="col-md-3 col-sm-3 col-xs-3"  style="float:right; width:auto">
-        <a href="#" style="margin-left:25px;">注册</a>
+        <a href="/index.php/login_user" style="margin-left:25px;">注册</a>
         </div>
     </div>
 		
