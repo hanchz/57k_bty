@@ -153,7 +153,7 @@ a:hover{color:#FFF;}
 	</ul>
     
     <div class="row" style="margin-top:60px; ">
-        <input  class="btn btn-default btn-lg btn-block zj_btn"   onclick="checkreg()" value="注册">
+        <bottom  class="btn btn-default btn-lg btn-block zj_btn"   onclick="checkreg()" value="">注册</bottom>
     </div>
     </form>
     <div class="row" style="margin-top:20px; color:#FFF;">
@@ -234,7 +234,7 @@ a:hover{color:#FFF;}
 	</ul>
     
     <div class="row" style="margin-top:60px; ">
-        <input  class="btn btn-default btn-lg btn-block zj_btn"   id="my_button" value="注册">
+		<bottom  class="btn btn-default btn-lg btn-block zj_btn"   id="my_button" value="">注册</bottom>
     </div>
     </form>
     <div class="row" style="margin-top:20px; color:#FFF;">

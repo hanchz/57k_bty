@@ -8,12 +8,7 @@ class User_safe extends CI_Controller {
 		
         $data = array();
 
-        //$this->load->model('kf_model');
-        //$result = $this->kf_model->kf_model();
-        //$data['kf']=$result;
-		
-		//$result = $this->is_bindphone();
-		
+        
         $this->load->view('usersafe',$data);
         //var_dump($data);
     }

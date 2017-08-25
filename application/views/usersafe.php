@@ -22,6 +22,32 @@ if (isset($error) && !empty($error)) {
     </script>';	
 	}
 }
+
+
+    function post_url($url)
+    {
+        //初始化
+        $ch = curl_init();
+        //$url="http://my.57k.com/api/login.php";
+        //设置选项，包括URL
+        curl_setopt($ch, CURLOPT_URL, "$url");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        //执行并获取HTML文档内容
+        $output = curl_exec($ch);
+        //释放curl句柄
+        curl_close($ch);
+        //打印获得的数据
+        //print_r($output);
+        return $output;
+    }
+
+$url='http://www.hs.com/index.php/Apps/user_mobile?username='.$username;
+$usermobile=post_url($url);
+
+//echo "===".$usermobile."+===";
+
+
 ?>
 <body>
 
@@ -44,25 +70,36 @@ if (isset($error) && !empty($error)) {
 
         <tr><td style=" padding:5px 2px; ">
                 <div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">账号 </div>
-                <div class="col-md-3 col-sm-3 col-xs-3" ></div>
-                <div class="col-md-4 col-sm-4 col-xs-4" style="color:#999; height: 50px; line-height: 50px; vertical-align: middle; margin-left: 10px;">
+                <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top: 20px;" ></div>
+                <div class="col-md-3 col-sm-3 col-xs-3" style="color:#999; height: 50px; line-height: 50px; vertical-align: middle; ">
                     <?php echo $username;?>
                 </div>
         </td></tr>
 
-    <tr><td style=" padding:5px 2px; ">
-            <a href="midifypw"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">密码修改 </div></a>
-            <div class="col-md-7 col-sm-7 col-xs-7 " ></div>
+    <tr><td style=" padding:5px 2px;">
+            <a href=""><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">密码修改 </div></a>
+            <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top: 20px;" >**************</div>
+            <div class="col-md-3 col-sm-3 col-xs-3" style="margin-top: 10px;"><a class="btn  zj_down" href="midifypw" role="button">修改密码</a></div>
         </td></tr>
         
        <tr><td style=" padding:5px 2px; ">
           
           
-           <a href="/index.php/user_safe/is_bindphone?username=<?php echo $username;?>"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;" >绑定手机</div></a>
+           <div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;" >绑定手机</div>
            
             <!--<a href="bind_mobile"><div class="col-md-4 col-sm-4 col-xs-4" style="color:#000; height: 50px; line-height: 50px; vertical-align: middle;">绑定手机 </div></a>-->
-         
-            <div class="col-md-7 col-sm-7 col-xs-7 " ></div>
+         <?php  
+		   
+		   if($usermobile!=0){?>
+          
+            <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top: 20px;" ><?php echo substr_replace($usermobile,'****',3,4);?></div>
+            <div class="col-md-3 col-sm-3 col-xs-3" style="margin-top: 10px;"><a class="btn  zj_down" href="/index.php/user_safe/is_bindphone?username=<?php echo $username;?>" role="button">更改绑定</a></div>
+           
+           <?php }else{?>
+            
+            <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top: 20px;" >暂未绑定手机</div>
+            <div class="col-md-3 col-sm-3 col-xs-3" style="margin-top: 10px;"><a class="btn  zj_down" href="/index.php/user_safe/is_bindphone?username=<?php echo $username;?>" role="button">绑定手机</a></div>
+            <?php }?>
        </td></tr> 
 
 </table>
