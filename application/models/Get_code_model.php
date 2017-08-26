@@ -31,6 +31,7 @@ class Get_code_Model extends CI_Model{
 		 //$row = $query->result_array();
 		$row = $query->first_row('array');
 		//return $query->first_row('array');
+		//var_dump($this->db->last_query());exit;
 		return $row;
 	}
 	

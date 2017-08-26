@@ -27,9 +27,10 @@ class Midifypw extends CI_Controller {
         $key = 'hsrepassword';
         $time=time();
         $sign=md5($username.$oldpw.$newpw.$time.$key);
-        $url="http://my.57k.com/api/repassword.php?username=".$username."&oldpwd=".$oldpw."&newpwd=".$newpw."&sign=".$sign."&time=".$time;
+        $url="http://mtg.57k.com/index.php/Apps/changepassword.html?username=".$username."&oldpassword=".$oldpw."&newpwd=".$newpw."&sign=".$sign."&time=".$time;
         $result = $this->login($url);
 		//echo $result;
+		//exit;
 		if($result=='-1')
 		{
 		$data = array();

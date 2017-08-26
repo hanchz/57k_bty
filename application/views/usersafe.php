@@ -42,7 +42,7 @@ if (isset($error) && !empty($error)) {
         return $output;
     }
 
-$url='http://www.hs.com/index.php/Apps/user_mobile?username='.$username;
+$url='http://mtg.57k.com/index.php/Apps/user_mobile?username='.$username;
 $usermobile=post_url($url);
 
 //echo "===".$usermobile."+===";
@@ -93,8 +93,8 @@ $usermobile=post_url($url);
 		   if($usermobile!=0){?>
           
             <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top: 20px;" ><?php echo substr_replace($usermobile,'****',3,4);?></div>
-            <div class="col-md-3 col-sm-3 col-xs-3" style="margin-top: 10px;"><a class="btn  zj_down" href="/index.php/user_safe/is_bindphone?username=<?php echo $username;?>" role="button">更改绑定</a></div>
-           
+            <!--<div class="col-md-3 col-sm-3 col-xs-3" style="margin-top: 10px;"><a class="btn  zj_down" href="/index.php/user_safe/is_bindphone?username=<?php echo $username;?>" role="button">更改绑定</a></div>-->
+		   <div class="col-md-3 col-sm-3 col-xs-3" style="margin-top: 20px; font-size: 12px;">已绑定</div>
            <?php }else{?>
             
             <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top: 20px;" >暂未绑定手机</div>

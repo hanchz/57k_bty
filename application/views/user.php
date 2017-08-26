@@ -38,7 +38,7 @@ $this->load->helper('url');
 <body  style=" ">
 
 
-<div class="container">
+<!--<div class="container">
     <div class="row" style="padding:10px 0px;">
         <div class="col-md-2 col-sm-2 col-xs-2"><a href="indexx"><img src="/images/57klogo.jpg" class="img-responsive" style="margin-left:10px;" ></a></div>
         <div class="col-md-8 col-sm-8 col-xs-8">
@@ -68,7 +68,12 @@ $this->load->helper('url');
         }
         ?>
     </div>
-</div>
+</div>-->
+
+<?php
+
+include ('sou_old.php');
+?>
 
 <div class="container" style=" background-size:100% 50%;   background: -webkit-linear-gradient(left top, #ff9c72 , #ff6529); 
   background: -o-linear-gradient(bottom right, #ff9c72, #ff6529);

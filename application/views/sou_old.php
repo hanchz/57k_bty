@@ -9,7 +9,7 @@
       			     <!--<img src="/images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;">-->
 					<input type="image" src="/images/sou.png" class="btn btn-default" style="border-bottom-left-radius:75px; border-top-left-radius:75px; background:#e8e8e8;" />
                      </span>
-					<input type="text" class="form-control" id="name" name="gamename" placeholder="" style="background:#e8e8e8; border-bottom-right-radius:75px; border-top-right-radius:75px;">
+					<input type="text" class="form-control" id="name" name="gamename" placeholder="" style="background:#e8e8e8; border-bottom-right-radius:75px; border-top-right-radius:75px; " value="三生三世">
                 </div>
             </form>
         </div>

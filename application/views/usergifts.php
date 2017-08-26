@@ -61,12 +61,21 @@ if(isset($result) && !empty($result)){
         ';
 
     }
+}else {
+	echo '<div class="row" style="text-align: center; line-height: 100px; vertical-align: middle">您还未领取游戏礼包</div>';
 }
 ?>
 
 </table>
 </div>
 </div>
+</div>
+<?php
+if(empty($result)){	};	
+?>
+<div class="container-fluid">
+	
+	
 </div>
 
 

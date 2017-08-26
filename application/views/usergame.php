@@ -64,7 +64,7 @@ text-overflow: ellipsis; width:200px;margin-left:-10px;"><small><nobr><?php echo
 
 <div class="col-md-3 col-sm-3 col-xs-3" style=" margin-left:0px;"><a class="btn btn-default btn-lg zj_down" style="margin-top:10px;" href="game?gameid=<?php echo $gameinfo['gameid']?>" role="button">开始</a></div>
 </td></tr>
-<?php }}else{echo "暂无游戏";}?>
+<?php }}else{echo '<div class="row" style="text-align: center; line-height: 100px; vertical-align: middle">您还未玩过游戏</div>';}?>
 </table>
 </div>
 </div>

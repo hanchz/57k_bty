@@ -1,4 +1,4 @@
-<div class="container-fluid" style=" background:#e7eaf1; position:fixed; bottom:0px; width:100%; margin-top:50px;" >
+<div class="container-fluid" style=" background:#e7eaf1; position:fixed; bottom:0px; width:100%; margin-top:100px;" >
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center; margin-top:2px;"><a href="indexx">首页&nbsp;</a>|&nbsp;<span id="app">57k游戏APP</span>&nbsp;|<a href="gifts">&nbsp;礼包</a></div>
     </div>

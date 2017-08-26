@@ -56,14 +56,23 @@ class Gamelogin extends CI_Controller {
     $serverid=1;
 	$time=time();
 	$sign = strtolower(md5($uid.$serverid.$time.$gameid.$key));
-	if($url!=''){
-	$url=$url."?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameid=".$gameid."&sign=".$sign;	
-	}
-		
+	//echo $gameid;
+	//	exit;
+	if($gameid=='5' || $gameid=='6')	
+	{
+	
 		//echo $url;
 		//exit;
-	   
-echo '<script language="javascript">window.location.href="'.$url.'";</script>';
+	   echo "<script language='javascript'>alert('暂未开放，敬请期待');	window.history.go(-1);</script>";
+
+	}else{
+		if($url!=''){
+		$url=$url."?uid=".$uid."&serverid=".$serverid."&time=".$time."&gameid=".$gameid."&sign=".$sign;	
+		}
+		
+		echo '<script language="javascript">window.location.href="'.$url.'";</script>';
+	}
+		
     }
 
 

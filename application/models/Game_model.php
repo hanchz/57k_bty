@@ -65,8 +65,11 @@ class Game_Model extends CI_Model{
     public function game_name_info($args)
     {
         $gamename = $args['gamename'];
-        $sql="select * from game_info where name = ? and display=1";
-        $query=$this->db->query($sql,array($gamename));
+		$likename='%'.$gamename.'%';
+        $sql="select * from game_info where name = ?  or (about like ?) and display=1";
+        $query=$this->db->query($sql,array($gamename,$likename));
+		
+		//var_dump($this->db->last_query());exit;
         //return $sql;
         $result=$query->result_array();
         //var_dump($result);
